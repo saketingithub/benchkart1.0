@@ -1,0 +1,40 @@
+
+
+Accept Bid not working
+
+1. Partner Signup
+2. Create Project Request
+3. Create Talent Request
+4. Need help in project posting
+5. Consultant Login
+6. Consultant Approve Request Project created
+7. Partner Login
+8. Customer Login
+
+Customer
+anurag@gmail.com
+
+Consultant
+consult@benchkart.com
+
+Partner
+test@test.com
+india
+
+TBD
+Link for "Need help in project posting"
+
+PartnerId
+times@times.com
+india
+
+Customer
+anurag@gmail.com
+kislay@gmail.com
+akshay@gmail.com
+krishan@gmail.com
+india
+
+Consultant
+b@b.com
+india

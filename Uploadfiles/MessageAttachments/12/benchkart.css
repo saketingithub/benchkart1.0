@@ -1,0 +1,176 @@
+﻿/*h1, h2, h3, h4, h5, h6, label, select, text, div,*/
+
+h3,h4, h5, h6 {
+    line-height: 1.5;
+}
+
+body
+{
+    font-family: 'Montserrat', sans-serif;   
+}
+
+
+
+    input[type=text] {
+        /*width: 80%;*/
+        margin: 0 auto;
+    }
+
+    input[type=submit], .Hyperlink {
+        /*width: 80%;*/
+        margin: 0 auto;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+        input[type=submit], .Hyperlink:hover {
+            background-color: #F79507;
+        }
+
+        
+/*Default Page*/
+@media only screen and (min-width: 699px) {
+    .contentbox {
+        text-align: center;
+        width: 60%;
+        padding: 5px;
+        margin: 0 auto;
+        background-color: White;
+        border: 1px solid gray;
+        color: Black;
+        font-size: medium;
+        margin-bottom: 40px;
+        margin-top: 50px;
+    }
+    h1 {
+            font-size: 40px;
+        }
+        /*h2 {
+            font-size: 20px;
+        }*/
+
+        .content {
+            margin: 0 auto;
+            background-color: White;
+            border: 1px solid gray;
+            color: Black;
+            font-size: medium;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-top: 100px;
+            width: 70%;
+        }
+    }
+
+    @media only screen and (max-width: 698px) {
+        .fieldtitle {
+            margin-top: 20px;
+            text-align: left;
+            font-size: small;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .contentbox {
+            text-align: center;
+            width: 85%;
+            padding: 5px;
+            margin: 0 auto;
+            background-color: White;
+            border: 1px solid gray;
+            color: Black;
+            font-size: medium;
+            margin-bottom: 40px;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 30px;
+        }
+        /*h2 {
+            font-size: 15px;
+        }*/
+
+        .content {
+            padding: 10px;
+            width: 70%;
+            background-color: White;
+            border: 1px solid gray;
+            color: Black;
+            font-size: medium;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 100px;
+            font-size: small;
+        }
+    }
+
+
+    .container-fluid {
+    }
+
+    .other-row {
+        width: 100%;
+        text-align: center;
+    }
+
+    div .other-row:after, div .other-row:before {
+        display: none;
+    }
+
+    /* mouse over link */
+    a {
+    }
+
+        a:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+    .radiostyle {
+        height: auto;
+        text-align: left;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+        .radiostyle label {
+            margin-left: 3px !important;
+            margin-right: 10px !important;
+            font-size: medium;
+            font-weight: normal;
+        }
+
+    
+.divHowItWorks {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #F79507;
+    text-align: center;
+    margin: 0 auto;
+    color: White;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.divBenchkartadvantages {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #F79507;
+    text-align: center;
+    margin: 0 auto;
+    color: White;
+    margin-top: 15px;
+}
+
+    /*Default Page*/
+ 
+ 
+    

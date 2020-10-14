@@ -1,0 +1,193 @@
+﻿/*Start - Partner Page*/
+body
+{
+    background-color: #f8f8f8;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-transform: none;
+    margin-top: 0;
+}
+
+h4 {
+    font-size: medium;
+    font-weight: normal;
+    margin-top: 0px;
+    line-height: 1;
+    color: gray;
+}
+
+h5 {
+    font-weight: bold;
+    color: #212529;
+    line-height: 1;
+}
+
+.fields {
+    padding: 20px 0px;
+    position: relative;
+    border-bottom: 1px solid lightgray;
+}
+
+.check input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.label {
+    color: Black;
+    font-size: medium;
+    font-weight: normal;
+    width: 100%;
+    /*word-break: break-all;*/
+    /*display: inline-flex;*/
+    white-space: pre-wrap;
+    margin-left: 40px;
+    overflow-wrap: break-word;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+.container {
+    padding: 2px 16px;
+}
+
+@media (max-width: 799px) {
+    .card {
+        width: 95%;
+    }
+}
+
+@media (min-width: 800px) {
+    .card {
+        width: 95%;
+    }
+}
+
+.bidfield {
+    margin-top: 10px;
+    text-align: left;
+    font-size: small;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: Black;
+}
+
+i {
+    font-weight: bold;
+    font-size: small;
+    margin-top: 0px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+.navbar {
+    width: 100%;
+    background-color: #000050;
+    overflow: auto;
+}
+
+    /* Navbar links */
+    .navbar a {
+        float: right;
+        text-align: center;
+        padding: 12px 48px 12px 48px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        /* Navbar links on mouse-over */
+        .navbar a:hover {
+            background-color: #000;
+        }
+
+/* Current/active navbar link */
+/*.active {
+            background-color: White;
+        }*/
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 800px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+
+    .divImage {
+        float: left;
+    }
+
+    .divAccept {
+        margin-top: 40px;
+    }
+}
+
+.info-box {
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    border-radius: .25rem;
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 1rem;
+    min-height: 80px;
+    padding: .5rem;
+    position: relative;
+}
+    .info-box .info-box-content {
+        -ms-flex: 1;
+        flex: 1;
+        padding: 5px 10px;
+    }
+    .info-box .info-box-icon {
+        border-radius: .25rem;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 1.875rem;
+        -ms-flex-pack: center;
+        justify-content: center;
+        text-align: center;
+        width: 70px;
+    }
+    .info-box .info-box-text, .info-box .progress-description {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .info-box .info-box-number {
+        display: block;
+        font-weight: 700;
+        font-size: 1.5em;
+    }
+.bg-info {
+    background-color: #F79507 !important;
+}
+
+.elevation-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24) !important;
+}
+.bg-danger {
+    background-color: #f04645 !important;
+}
+
+.bg-success {
+    background-color: #18D26E !important;
+}
+
+.bg-warning {
+    background-color: #17a2b8 !important;
+}
+
+
+
+/*End - Partner Page*/

@@ -1,0 +1,7 @@
+﻿User-agent: *
+Disallow: /Admin/
+Disallow: /Consultant/
+Disallow: /Customer/
+Disallow: /Partner/
+Sitemap: https://benchkart.com/sitemap.xml
+

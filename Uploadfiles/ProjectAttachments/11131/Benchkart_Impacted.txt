@@ -1,0 +1,29 @@
+Consultant
+Customer
+Partner
+PartnerAccount
+PartnerOtherServices
+PartnerServices
+PartnerSkills
+PreCustomer
+PrePartner
+
+Master Tables - ServicesMaster, SkillsMaster, Country, CountryState, StateCity 
+
+
+select * from Bidding
+
+select * from Contract
+select * from Messages
+select * from Milestones
+select * from Notifications
+
+select * from PaymentRelease
+select * from PaymentRequest
+
+select * from Project
+select * from ProjectClosure
+select * from RequestProject
+
+select * from Support
+

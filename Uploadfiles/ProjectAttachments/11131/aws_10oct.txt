@@ -1,0 +1,24 @@
+outsiede india users
+backup
+payment
+data stored geographically
+collaboration tool
+tech support 
+
+
+Create VPC - Custome VPC
+S3 - simple storage service
+Aurora
+enalbe HA architecture for production
+
+ELB
+CDN - cloudfront is about latency
+ha about not breaking the 
+
+Route53
+
+EC2->S3->RDS
+T3 instances(Bustable)
+M5
+
+Deploy on 3-tier architecture
