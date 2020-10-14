@@ -121,8 +121,8 @@ namespace Benchkart
         protected void Application_Error(object sender, EventArgs e)
         {
             //Comment during development
-            ClsLogError.LogErrorToText(Server.GetLastError().GetBaseException());
-            Response.Redirect("~/");
+            //ClsLogError.LogErrorToText(Server.GetLastError().GetBaseException());
+            //Response.Redirect("~/");
         }
 
         protected void Session_End(object sender, EventArgs e)

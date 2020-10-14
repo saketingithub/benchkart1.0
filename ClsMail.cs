@@ -5,6 +5,7 @@ using System.Web;
 using System.Net;
 using System.Net.Mail;
 using System.Threading;
+using System.Configuration;
 
 namespace Benchkart
 {
@@ -96,13 +97,23 @@ namespace Benchkart
 
         public static void SendEmail(string name, string email, string subject, string body)
         {
+            string EmailFrom = ConfigurationManager.AppSettings["EmailFrom"];
+            string EmailFromDisplayName = ConfigurationManager.AppSettings["EmailFromDisplayName"];
+            string EmailFromPwd = ConfigurationManager.AppSettings["EmailFromPwd"];
+            string EmailBcc = ConfigurationManager.AppSettings["EmailBcc"];
+            string EmailBccDisplayName = ConfigurationManager.AppSettings["EmailBccDisplayName"];
+            bool EmailIsSSL = Convert.ToBoolean(ConfigurationManager.AppSettings["EmailIsSSL"]);
+            int EmailPort = Convert.ToInt32(ConfigurationManager.AppSettings["EmailPort"]);
+            string EmailHost = ConfigurationManager.AppSettings["EmailHost"];
+
+
             //Create the msg object to be sent
             MailMessage msg = new MailMessage();
             //Add your email address to the recipients
             msg.To.Add(email);
-            msg.Bcc.Add("outsource@benchkart.com");
+            msg.Bcc.Add(EmailFrom);
             //Configure the address we are sending the mail from
-            MailAddress address = new MailAddress("outsource@benchkart.com", "Benchkart");
+            MailAddress address = new MailAddress(EmailFrom, EmailFromDisplayName);
             msg.From = address;
 
             msg.Subject = subject;
@@ -127,16 +138,16 @@ namespace Benchkart
             //Configure an SmtpClient to send the mail.
             SmtpClient client = new SmtpClient();
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.EnableSsl = false;
-            client.Host = "relay-hosting.secureserver.net";
-            client.Port = 25;
+            client.EnableSsl = EmailIsSSL;
+            client.Host = EmailHost;
+            client.Port = EmailPort;
 
             //Setup credentials to login to our sender email address ("UserName", "Password")
-            NetworkCredential credentials = new NetworkCredential("outsource@benchkart.com", "Benchkart191119");
+            NetworkCredential credentials = new NetworkCredential(EmailFrom, EmailFromPwd);
             client.UseDefaultCredentials = true;
             client.Credentials = credentials;
 
-            client.Send(msg);            
+            client.Send(msg);
 
         }
 
