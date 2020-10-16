@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="Benchkart.Customer.Payment" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaymentQuickProject.aspx.cs" Inherits="Benchkart.Customer.PaymentQuickProject" %>
 
 <!DOCTYPE html>
 
@@ -223,7 +223,7 @@
     </script>--%>
 </head>
 <body>
-    <form id="form1" runat="server" action="Payment.aspx?action=paymentcapture" method="post">
+    <form id="form1" runat="server" action="PaymentQuickProject.aspx?action=paymentcapture" method="post">
         <script id="payButton" style="display: none; margin-bottom: 200px !important;"
             src="https://checkout.razorpay.com/v1/checkout.js"
              <%--data-key="rzp_live_zoPlr5o13JZG7T"--%>
@@ -231,7 +231,7 @@
             data-amount="1"
             data-name="Razorpay"
             data-description="Purchase Description"
-            data-order_id="<%=orderId%>"
+            data-order_id="<%=razorPayOrderId%>"
             data-image="https://razorpay.com/favicon.png"
             data-prefill.name=""
             data-prefill.email=""
@@ -339,7 +339,7 @@
                     <div class="card" style="margin: 0 auto; background-color: White;">
                         <div class="container" style="background-color: White; border-radius: 5px; width: 90%; margin: 0 auto; margin-top: 30px; padding: 20px 0px;">
                             <asp:HiddenField runat="server" ID="hfPaymentRequestId" />
-                            <h3>Payment Details</h3>
+                            <h3>Quick Project Payment Details</h3>
                             <div class="bidfield" style="margin-left: 20px;">
                                 <h5>Amount (INR)</h5>
 
@@ -374,7 +374,7 @@
                                     data-amount="1"
                                     data-name="Razorpay"
                                     data-description="Purchase Description"
-                                    data-order_id="<%=orderId%>"
+                                    data-order_id="<%=razorPayOrderId%>"
                                     data-image="https://razorpay.com/favicon.png"
                                     data-prefill.name="Anurag Rawat"
                                     data-prefill.email="anurag.rawat@benchkart.com"

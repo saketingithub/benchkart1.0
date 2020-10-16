@@ -16,12 +16,12 @@ namespace Benchkart.Customer
         protected void Page_Load(object sender, EventArgs e)
         {
             //Test Keys
-            //string key = "rzp_test_n0Go0s9iSZW1OA";
-            //string secret = "WYU8IbCQaOYr9mNRhDq1bS93";
+            string key = "rzp_test_n0Go0s9iSZW1OA";
+            string secret = "WYU8IbCQaOYr9mNRhDq1bS93";
 
             //Live Keys
-            string key = "rzp_live_zoPlr5o13JZG7T";
-            string secret = "fQyHIMW2ESJwkjsR2SZWRC6o";
+            //string key = "rzp_live_zoPlr5o13JZG7T";
+            //string secret = "fQyHIMW2ESJwkjsR2SZWRC6o";
 
             RazorpayClient client = new RazorpayClient(key, secret);
             ClsPayment py = new ClsPayment();
