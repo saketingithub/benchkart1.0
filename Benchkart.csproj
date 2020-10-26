@@ -271,6 +271,7 @@
     <Content Include="Benchkart_Videos\Benchkart_new_1.mp4" />
     <Content Include="Benchkart_Videos\HowItworkVideo.mp4" />
     <Content Include="Benchkart_Videos\PartnerVideo.mp4" />
+    <Content Include="CaseStudy.aspx" />
     <Content Include="Consultant\Bid_Details.aspx" />
     <Content Include="Consultant\ConsultantLogin.aspx" />
     <Content Include="Consultant\Consultation_Request.aspx" />
@@ -877,6 +878,13 @@
       <DependentUpon>Request_Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppConstants\AppKeys.cs" />
+    <Compile Include="CaseStudy.aspx.cs">
+      <DependentUpon>CaseStudy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaseStudy.aspx.designer.cs">
+      <DependentUpon>CaseStudy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>

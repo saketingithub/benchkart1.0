@@ -27,6 +27,7 @@ namespace Benchkart
             routes.MapPageRoute("About-Us", "About", "~/About.aspx");
             //routes.MapPageRoute("Home", "Default", "~");
             routes.MapPageRoute("Covid", "Post-COVID", "~/Post-COVID.aspx");
+            routes.MapPageRoute("Case-studies", "Case-Study", "~/CaseStudy.aspx");
             //Customer
             routes.MapPageRoute("Customer-Bid-Details", "Customer/Bid-Details", "~/Customer/Bid-Details.aspx");
             routes.MapPageRoute("Customer-Customer_Review", "Customer/Customer_Review", "~/Customer/Customer_Review.aspx");
