@@ -46,6 +46,7 @@ namespace Benchkart
 
         public string StatusUpdateDate { get; set; }
 
+        public int PartnerPackageId { get; set; }
 
         public int CreatePaymentRequest()
         {
@@ -432,6 +433,39 @@ namespace Benchkart
 
         }
 
+        public int CreatePaymentRequestQuick()
+        {
+            
+
+            int paymentRequestId;
+            string connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connection))
+            {
+                SqlCommand cmd = new SqlCommand("proc_CreatePaymentRequestQuick", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@customerid", SqlDbType.Int).Value = CustomerId;
+                cmd.Parameters.Add("@partnerPackageId", SqlDbType.Int).Value = PartnerPackageId;
+                cmd.Parameters.Add("@paymentAmount", SqlDbType.Int).Value = PaymentAmount;
+
+               // cmd.Parameters.Add("@partnerRequestRemarks", SqlDbType.NVarChar).Value = LastRemark;
+                //cmd.Parameters.Add("@potentialPaybyDate", SqlDbType.DateTime).Value = PotentialPaybyDate;
+                //cmd.Parameters.Add("@isFinalDelivery", SqlDbType.Int).Value = IsFinalDelivery;
+                cmd.Parameters.Add("@paymentRequestId", SqlDbType.Int);
+                cmd.Parameters["@paymentRequestId"].Direction = ParameterDirection.Output;
+
+               
+                con.Open();
+                cmd.ExecuteNonQuery();
+                paymentRequestId = Convert.ToInt32(cmd.Parameters["@paymentRequestId"].Value);
+
+               
+
+                con.Close();
+            }
+           
+
+            return paymentRequestId;
+        }
 
     }
 }

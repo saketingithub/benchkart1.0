@@ -282,6 +282,7 @@
     <Content Include="Consultant\MailTemplates\Partner-Approval.html" />
     <Content Include="Consultant\ManualProject.aspx" />
     <Content Include="Consultant\PartnerList.aspx" />
+    <Content Include="Consultant\PartnerQuickProjectList.aspx" />
     <Content Include="Consultant\Partner_Details.aspx" />
     <Content Include="Consultant\PartTime.html" />
     <Content Include="Consultant\Post_NewRequest.aspx" />
@@ -289,6 +290,7 @@
     <Content Include="Consultant\Projects.aspx" />
     <Content Include="Consultant\Project_Bids.aspx" />
     <Content Include="Consultant\Project_Details.aspx" />
+    <Content Include="Consultant\QuickProjectList.aspx" />
     <Content Include="Consultant\Request-Details.aspx" />
     <Content Include="Consultant\Requests.aspx" />
     <Content Include="Consultant\ucConsultantHeader.ascx" />
@@ -311,6 +313,7 @@
     <Content Include="css_table\util.css" />
     <Content Include="Customer\Bid-Details.aspx" />
     <Content Include="Customer\Book_Consultation.aspx" />
+    <Content Include="Customer\CustomerQuickProject.aspx" />
     <Content Include="Customer\Customer_Review.aspx" />
     <Content Include="Customer\ForgetPassword.aspx" />
     <Content Include="Customer\HowItWorks.html" />
@@ -322,6 +325,7 @@
     <Content Include="Customer\Post_Project.aspx" />
     <Content Include="Customer\Projects_Dashboard.aspx" />
     <Content Include="Customer\Project_Details.aspx" />
+    <Content Include="Customer\QuickProjectPayment.aspx" />
     <Content Include="Customer\RejectPayment.aspx" />
     <Content Include="Customer\ReleasePayment.aspx" />
     <Content Include="Customer\ResetPassword.aspx" />
@@ -420,6 +424,7 @@
     <Content Include="Images\Partner_hiw3.png" />
     <Content Include="Images\Partner_hiw4.png" />
     <Content Include="Images\Partner_hiw5.png" />
+    <Content Include="Partner\AgencyDetails.aspx" />
     <Content Include="Post-Covid.html" />
     <Content Include="Partner\AcknowledgeSignup.html" />
     <Content Include="Partner\Create-Contract.aspx" />
@@ -905,6 +910,8 @@
     <Compile Include="ClsPayment.cs" />
     <Compile Include="ClsProject.cs" />
     <Compile Include="ClsProjectClosure.cs" />
+    <Compile Include="ClsQuickPackageDetails.cs" />
+    <Compile Include="ClsQuickProject.cs" />
     <Compile Include="ClsReferrals.cs" />
     <Compile Include="ClsRequest.cs" />
     <Compile Include="ClsService.cs" />
@@ -965,6 +972,13 @@
     <Compile Include="Consultant\PartnerList.aspx.designer.cs">
       <DependentUpon>PartnerList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Consultant\PartnerQuickProjectList.aspx.cs">
+      <DependentUpon>PartnerQuickProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant\PartnerQuickProjectList.aspx.designer.cs">
+      <DependentUpon>PartnerQuickProjectList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultant\Partner_Details.aspx.cs">
       <DependentUpon>Partner_Details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -999,6 +1013,13 @@
     </Compile>
     <Compile Include="Consultant\Project_Details.aspx.designer.cs">
       <DependentUpon>Project_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultant\QuickProjectList.aspx.cs">
+      <DependentUpon>QuickProjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultant\QuickProjectList.aspx.designer.cs">
+      <DependentUpon>QuickProjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consultant\Request-Details.aspx.cs">
       <DependentUpon>Request-Details.aspx</DependentUpon>
@@ -1037,6 +1058,13 @@
     </Compile>
     <Compile Include="Customer\CustomerProfile.aspx.designer.cs">
       <DependentUpon>CustomerProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerQuickProject.aspx.cs">
+      <DependentUpon>CustomerQuickProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerQuickProject.aspx.designer.cs">
+      <DependentUpon>CustomerQuickProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\Customer_Review.aspx.cs">
       <DependentUpon>Customer_Review.aspx</DependentUpon>
@@ -1107,6 +1135,13 @@
     </Compile>
     <Compile Include="Customer\Project_Details.aspx.designer.cs">
       <DependentUpon>Project_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\QuickProjectPayment.aspx.cs">
+      <DependentUpon>QuickProjectPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\QuickProjectPayment.aspx.designer.cs">
+      <DependentUpon>QuickProjectPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\RejectPayment.aspx.cs">
       <DependentUpon>RejectPayment.aspx</DependentUpon>
@@ -1222,6 +1257,13 @@
     </Compile>
     <Compile Include="KeepSessionAlive.ashx.cs">
       <DependentUpon>KeepSessionAlive.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Partner\AgencyDetails.aspx.cs">
+      <DependentUpon>AgencyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Partner\AgencyDetails.aspx.designer.cs">
+      <DependentUpon>AgencyDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Partner\Create-Contract.aspx.cs">
       <DependentUpon>Create-Contract.aspx</DependentUpon>

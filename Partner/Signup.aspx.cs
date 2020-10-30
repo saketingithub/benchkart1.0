@@ -485,8 +485,7 @@ namespace Benchkart.Partner
 
             int authenticate = pt.LoginPartner();
 
-            if (authenticate == -1)
-            {
+            if (authenticate == -1)            {
                 lblLoginError.Visible = true;
             }
             else if (authenticate == 0)

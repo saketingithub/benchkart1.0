@@ -610,6 +610,50 @@ namespace Benchkart
         }
 
 
+        public int New_QuickCustomer()
+        {
+
+            int authenticate;
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_New_QuickCustomer", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@FullName", SqlDbType.VarChar).Value = FullName;
+
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = Email;
+                command.Parameters.Add("@Password", SqlDbType.VarChar).Value = Password;
+                command.Parameters.Add("@CompanyName", SqlDbType.VarChar).Value = CompanyName;
+                command.Parameters.Add("@ContactNumber", SqlDbType.VarChar).Value = ContactNumber;
+
+                command.Parameters.Add("@exist", SqlDbType.Int);
+                command.Parameters["@exist"].Direction = ParameterDirection.Output;
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+
+                authenticate = Convert.ToInt32(command.Parameters["@exist"].Value);
+
+            }
+
+            //Email
+            //if (authenticate != 0)
+            //{
+            //    System.Threading.Thread email = new System.Threading.Thread(delegate ()
+            //    {
+            //        string subject = "Thanks for Registering With Us";
+            //        string body = "<p>If you are looking for any digital solution for your business then Benchkart is a one stop solution for it.</p><p>Now you can Post a Project and Benchkart will invite multiple Digital agencies across India to bid on your project.</p><p><b>This way you can control budget, time and quality for your project.</b></p>";
+            //        ClsMail.SendEmail(string.Empty, Email, subject, body);
+            //    });
+
+            //    email.IsBackground = true;
+            //    email.Start();
+            //}
+            return authenticate;
+        }
 
     }
 }

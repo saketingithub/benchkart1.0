@@ -22,6 +22,9 @@ namespace Benchkart.Customer
             
             if (!IsPostBack)
             {
+                //string subject = "Thanks for posting your company requirement - " + DateTime.Now.ToString();
+                //string body = "<p>Congratulations! DATE- " + DateTime.Now.ToString() + " Hundreds of companies are getting their projects executed end-to-end on Benchkart & you are joining them. Projects executed on Benchkart not only get you quality while saving your time & money, they also ensure that you have complete Peace Of Mind on matters related to security, payments & accountability.</p><p>Right now, your project is undergoing a short review & then will be live on platform. In case we require additional information, we may reach out to you on the email/phone number provided by you.</p><p>From now on, your Benchkart account becomes the place for action! Your shortlisted bids, contracts, project management, payments & reviews will all happen in your account.</p>";
+                //ClsMail.SendEmail("Shri Krishan", "shrikrishan.goldcash@gmail.com", subject, body);
                 pnlFirst.Attributes.Add("style", "display:block;");
                 string serviceId = string.Empty;
                 if (Request.QueryString["id"] != null)

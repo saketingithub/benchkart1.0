@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Services;
 using System.Web.UI.WebControls.WebParts;
+using System.Configuration;
 
 namespace Benchkart.Consultant
 {
@@ -36,9 +37,14 @@ namespace Benchkart.Consultant
             dt = clsprj.GetManualProjectByProject();
             if(dt.Rows.Count>0)
             {
+                grdManual.Visible = true;
                 grdManual.DataSource = dt;
                 grdManual.DataBind();
             }
+            else {
+                
+                    grdManual.Visible = false;
+                 }
         }
         public void GetState()
         {
@@ -62,7 +68,8 @@ namespace Benchkart.Consultant
         public static List<string> GetAutoCompleteData(string username)
         {
             List<string> result = new List<string>();
-            using (SqlConnection con = new SqlConnection("Data Source=LAPTOP-V7SETIQK\\SQLEXPRESS;Integrated Security=true;Initial Catalog=Benchkart"))
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(dbConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("proc_GetStateByLike", con))
                 {
@@ -106,7 +113,6 @@ namespace Benchkart.Consultant
             {
                 clspt.CompanyPrimarySourceOfRevenue = " not in('krishan')";
             }
-
             if (ddlEmployeeCount.SelectedValue != "") { 
                 string employeecount = string.Empty;
                 employeecount = GetEmployeeCount();
@@ -139,7 +145,7 @@ namespace Benchkart.Consultant
                 }
                 else
                 {
-                    city += "or CompanyCity ='" +search[k].Trim() + "'" + ' ';
+                    city += "or p.CompanyCity ='" +search[k].Trim() + "'" + ' ';
                 }
             }
             city= city.Replace('"', ' ');
@@ -152,12 +158,32 @@ namespace Benchkart.Consultant
             {
                 clspt.CompanyCity = " not in('xxx')";
             }
+            //string subcatgory = string.Empty;
+            //string[] catgory = Session["serviceId"].ToString().Split(',');
+            //for(int i = 0; i < catgory.Length ; i++)
+            //{
+            //    if (catgory[i] == catgory[0])
+            //    {
+            //        subcatgory = "='" + catgory[0].Trim() + "'" + ' ';
+            //    }
+            //    else
+            //    {
+            //        subcatgory="or Services ='"+catgory[i].Trim()+"'" + ' ';
+            //    }
+            //}
+            //subcatgory = subcatgory.Replace('"', ' ');
+            //clspt.OtherServices = Session["serviceId"].ToString();
             DataTable dt = new DataTable();
-            dt = clspt.GetPartnerManual( partnertype, Talent, Session["subcategory"].ToString());
+            dt = clspt.GetPartnerManual( partnertype, Talent,Convert.ToInt32(Session["serviceId"]));
             if (dt.Rows.Count > 0)
             {
+                grdManual.Visible = true;
                 grdManual.DataSource = dt;
                 grdManual.DataBind();
+            }
+            else
+            {
+                grdManual.Visible = false;
             }
 
         }
@@ -182,7 +208,7 @@ namespace Benchkart.Consultant
                 }
                 else
                 {
-                    partnertype += "or PartnerType ='" + listitem3[j] + "'" + ' ';
+                    partnertype += "or p.PartnerType ='" + listitem3[j] + "'" + ' ';
                 }
             }
             partnertype = partnertype.Replace('"', ' ');
@@ -209,7 +235,7 @@ namespace Benchkart.Consultant
                 }
                 else
                 {
-                    istalentshared += "or IsTalentShared ='" + listitem2[j] + "'" + ' ';
+                    istalentshared += "or p.IsTalentShared ='" + listitem2[j] + "'" + ' ';
                 }
             }
             istalentshared = istalentshared.Replace('"', ' '); 
@@ -237,12 +263,14 @@ namespace Benchkart.Consultant
                 }
                 else
                 {
-                    employeecount += "or EmployeeCount ='" + listitem[j] + "'" + ' ';
+                    employeecount += "or p.EmployeeCount ='" + listitem[j] + "'" + ' ';
                 }
             }
             employeecount = employeecount.Replace('"', ' ');
             return employeecount;
         }
+
+      
         public string GetPrimarySourceofRevenue()
         {
 
@@ -264,7 +292,7 @@ namespace Benchkart.Consultant
                 }
                 else
                 {
-                    primarysourceofrevenue += "or PrimarySourceOfRevenue ='" + listitem1[i] + "'" + ' ';
+                    primarysourceofrevenue += "or p.PrimarySourceOfRevenue ='" + listitem1[i] + "'" + ' ';
                 }
             }
             primarysourceofrevenue = primarysourceofrevenue.Replace('"', ' ');
@@ -288,6 +316,8 @@ namespace Benchkart.Consultant
                 CheckBox chk = (CheckBox)gv.FindControl("chkitem");
                 if (chk.Checked)
                 {
+
+                    
                     partneremailmanual += gv.Cells[3].Text + ',';
                 }
             }
@@ -309,20 +339,21 @@ namespace Benchkart.Consultant
                 }
             }
             ptmail = ptmail.Replace('"', ' ');
-            partner.Email = ptmail;
-            partner.ManualType ="Manual"+Session["projectid"].ToString();
-           // int projectid =Convert.ToInt32(Session["projectid"]);
-           // string manualproject= "Manual-" + Session["projectid"];
-            partner.UpdateManualTypePatner(Convert.ToInt32(Session["projectid"]));
-            string title = Session["title"].ToString();
-            string description = Session["description"].ToString();
-            string statecomments = Session["statusComment"].ToString();
-            string customername = Session["customerName"].ToString();
-            string customeremail = Session["customerEmail"].ToString();
-            string partneremail = Session["partnerEmail"].ToString();
-            string subcategory = Session["subcategory"].ToString();
+            if(ptmail !="") {
+                partner.Email = ptmail;
+                partner.ManualType = "Manual" + Session["projectid"].ToString();
+                // int projectid =Convert.ToInt32(Session["projectid"]);
+                // string manualproject= "Manual-" + Session["projectid"];
+                partner.UpdateManualTypePatner(Convert.ToInt32(Session["projectid"]));
+                string title = Session["title"].ToString();
+                string description = Session["description"].ToString();
+                string statecomments = Session["statusComment"].ToString();
+                string customername = Session["customerName"].ToString();
+                string customeremail = Session["customerEmail"].ToString();
+                string partneremail = Session["partnerEmail"].ToString();
+                string subcategory = Session["subcategory"].ToString();
 
-            System.Threading.Thread email = new System.Threading.Thread(delegate ()
+                System.Threading.Thread email = new System.Threading.Thread(delegate ()
                 {
                     string subject = "Great! Your Project is Live for Bidding";
                     string body = "<p><b>Project Title -</b> " + title + "</p><p>Your Project is now live on benchkart. Our expert agencies will now start bidding on your project. It will take around 48 hrs for the top bids to reflect in your dashboard, after the algorithm based matching and the automated bidding & review process. It will be worth the wait!!</p><p>You can then compare the bids and select the best bid/agency suited for your project requirement. You can watch a 3 min Video to understand the entire process: <a href=\"https://www.youtube.com/watch?v=Ce1ocIxwDgs\">Watch Video</a></p>";
@@ -338,12 +369,19 @@ namespace Benchkart.Consultant
                     //End - Email
 
                 });
-          
-            email.IsBackground = true;
-            email.Start();
-            Response.Redirect("../Consultant/Requests.aspx");
-            //End - Email                
 
+                email.IsBackground = true;
+                email.Start();
+                Response.Redirect("../Consultant/Requests.aspx");
+                //End - Email  
+            }
+
+            else
+            {
+                Response.Write("<script>alert('Email id get error')</script>");
+            }
         }
+
+       
     }
 }

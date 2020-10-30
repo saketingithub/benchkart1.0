@@ -58,6 +58,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             SearchText();
+          //  getcheck();
             getall(headercheck);
         });
         function SearchText() {
@@ -106,14 +107,57 @@
                 return split(term).pop();
             }
         }
-        function getall(headercheck) {
-            var ischeckbox = headercheck.checked;
-            parent = document.getElementById("grdmanual");
-            var item = document.getElementsByTagName("input");
-            for (i = 0; i < item.length; i++) {
-                if (item[i].id != headercheck && item[i].type == "checkbox") {
-                    if (item[i].checked != ischeckbox) {
-                        item[i].click();
+
+        function getcheck(chkitem) {
+            if (chkitem.checked == true) {
+                $("#btnsend").show();
+            }
+            else {
+                $("#btnsend").hide();
+            }
+           
+        }
+
+        //function getall(headercheck) {
+        //    $("#btnsend").show();
+        //    var ischeckbox = headercheck.checked;
+        //    parent = document.getElementById("grdmanual");
+        //    var item = document.getElementsByTagName("input");
+        //    for (i = 0; i < item.length; i++) {
+        //        if (item[i].id != headercheck && item[i].type == "checkbox" ) {
+        //            if (item[i].checked != ischeckbox) {
+        //                item[i].click();
+        //            }
+        //        }
+        //    }
+        //}
+        function getall(CheckBoxControl) {
+            if (CheckBoxControl.checked == true) {
+                $("#btnsend").show();
+                var i;
+                for (i = 0; i < document.forms[0].elements.length; i++) {
+
+                    if ((document.forms[0].elements[i].type == 'checkbox') &&
+
+                        (document.forms[0].elements[i].name.indexOf('grdManual') > -1)) {
+                        if (document.forms[0].elements[i].disabled) {
+                            document.forms[0].elements[i].checked = false;
+                        }
+                        else {
+                            document.forms[0].elements[i].checked = true;
+                        }
+                    }
+                }
+            }
+            else {
+                $("#btnsend").hide();
+                var i;
+                for (i = 0; i < document.forms[0].elements.length; i++) {
+
+                    if ((document.forms[0].elements[i].type == 'checkbox') &&
+
+                        (document.forms[0].elements[i].name.indexOf('grdManual') > -1)) {
+                        document.forms[0].elements[i].checked = false;
                     }
                 }
             }
@@ -212,7 +256,7 @@
                                 <asp:CheckBox ID="chkmultiselect" runat="server" Text="All Select" onclick="javascript:getall(this);" />
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <asp:CheckBox ID="chkitem" runat="server" />
+                                <asp:CheckBox ID="chkitem" runat="server" onclick="javascript:getcheck(this);"  />
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:BoundField HeaderText="PartnerId" DataField="PartnerId" />
@@ -243,7 +287,7 @@
                     </Columns>
                 </asp:GridView>
                 <br />
-                <asp:Button ID="btnsend" runat="server" Text="Send" OnClick="btnsend_Click" CssClass="btn btn-success" />
+                <asp:Button ID="btnsend" runat="server" Text="Send" style="display:none;" OnClick="btnsend_Click" CssClass="btn btn-success" />
                 <br />
             </div>
 

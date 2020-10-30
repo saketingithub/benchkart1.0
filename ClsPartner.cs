@@ -100,6 +100,11 @@ namespace Benchkart
 
         //krishan create line
         public string ManualType { get; set; }
+        public string Images { get; set; }
+        public string Description1 { get; set; }
+        public string Description2 { get; set; }
+        public string Description3 { get; set; }
+
         public int VerifyPartner()
         {
             int authenticate;
@@ -805,7 +810,7 @@ namespace Benchkart
         }
 
         //krishan create method 20-08-2020 14:00
-        public DataTable GetPartnerManual(   string partnertype,  string Talent, string services)
+        public DataTable GetPartnerManual(string partnertype,  string Talent,int services)
         {
             DataTable dtPartnerManual = new DataTable();
 
@@ -814,7 +819,7 @@ namespace Benchkart
             using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
             {
                
-                string str = "select * from Partner where (PartnerType "+partnertype+")and (PrimarySourceOfRevenue " + CompanyPrimarySourceOfRevenue+") and (EmployeeCount "+EmployeeCount+") and (IsTalentShared "+ Talent + ") and(CompanyCity "+CompanyCity+") and IsActive=2 and Services="+services+ "";
+                string str = "select * from Partner p inner join PartnerServices s on p.PartnerId=s.PartnerId where (p.PartnerType " + partnertype+")and (p.PrimarySourceOfRevenue " + CompanyPrimarySourceOfRevenue+") and (p.EmployeeCount "+EmployeeCount+") and (p.IsTalentShared "+ Talent + ") and(p.CompanyCity "+CompanyCity+ ") and s.ServiceId = " + services + " and p.IsActive=2";
 
                 SqlCommand command = new SqlCommand(str, sqlConnection);
                 //command.CommandType = CommandType.StoredProcedure;
@@ -870,5 +875,109 @@ namespace Benchkart
 
         //end
 
+        //krishan create method 22-09-2020 13:13
+
+        public DataTable GetPartnerQuickByPartnerId()
+        {
+            DataTable dtPartnerBankDetails = new DataTable();
+
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_GetPartnerQuickByPartnerId", sqlConnection);
+                //command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
+
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtPartnerBankDetails);
+                }
+            }
+
+            return dtPartnerBankDetails;
+        }
+        //end
+
+        //krishan create method 23-09-2020 10:10
+        public void UpdatePartnerQuickByPartnerId()
+        {
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+              
+                SqlCommand command = new SqlCommand("proc_UpdatePartnerQuickByPartnerId", sqlConnection);
+
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
+                command.Parameters.Add("@pocFullName", SqlDbType.VarChar).Value = PocFullName;
+                command.Parameters.Add("@images", SqlDbType.VarChar).Value = Images;
+                command.Parameters.Add("@companyCity", SqlDbType.VarChar).Value = CompanyCity;
+                command.Parameters.Add("@description1", SqlDbType.VarChar).Value = Description1;
+                command.Parameters.Add("@description2", SqlDbType.VarChar).Value = Description2;
+                command.Parameters.Add("@description3", SqlDbType.VarChar).Value = Description3;
+                
+
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+               
+
+
+                sqlConnection.Close();
+
+            }
+
+        }
+        //end
+
+        //start
+        public DataTable GetPartnerQuickDetailsAll()
+        {
+            DataTable dtPartnerBankDetails = new DataTable();
+
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_GetPartnerQuickDetailsAll", sqlConnection);
+              
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtPartnerBankDetails);
+                }
+            }
+
+            return dtPartnerBankDetails;
+        }
+        //end
+
+        //start
+        public DataTable GetPartnerQuickDetailsByPartnerIdSearch()
+        {
+            DataTable dtPartnerBankDetails = new DataTable();
+
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_GetPartnerQuickDetailsByPartnerIdSearch", sqlConnection);
+                //command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
+
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtPartnerBankDetails);
+                }
+            }
+
+            return dtPartnerBankDetails;
+        }
+        //end
     }
 }

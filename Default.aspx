@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Benchkart.Default" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Benchkart.Default" %>
 
 <!DOCTYPE html>
 
@@ -214,7 +215,8 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>--%>
-                            <li class="menu-has-children"><a href="#">Design</a>
+                            <li class="menu-has-children">
+                                <a href="#">Design</a>
                                 <ul>
                                     <li><a href="Category?id=11">Logo Creation & Adaptation</a></li>
                                     <li><a href="Category?id=12">Social Media Design</a></li>

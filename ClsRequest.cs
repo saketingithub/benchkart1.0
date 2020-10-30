@@ -450,7 +450,7 @@ namespace Benchkart
                     if (partnerEmails != string.Empty)
                     {
                         subject = "<b>New Project -</b> " + subCategory;
-                        body = "<p>There is a new project LEAD in your dashboard.</p><p><b>Project Title -</b> " + Title + "</p><p><b>Sub-Category -</b> " + subCategory + "</p><p><b>Description -</b> </p><p>" + Description + "</p><p><b>Status Comments -</b>" + StatusComment+ "</p><p>Post your BID before bidding timeframe (normally 12 - 48 Hrs*) closed for this project. To stop receiving project notifications over email, please write to outsource@benchkart.com.</p>";
+                        body = "<p>There is a new project LEAD in your dashboard.</p><p><b>Project Title -</b> " + Title + "</p><p><b>Sub-Category -</b> " + subCategory + "</p><p><b>Description -</b>" + Description + "</p><p><b>Status Comments -</b>" + StatusComment+ "</p><p>Post your BID before bidding timeframe (normally 12 - 48 Hrs*) closed for this project. To stop receiving project notifications over email, please write to outsource@benchkart.com.</p>";
                         ClsMail.SendBccEmail(partnerEmails, subject, body);
                     }
                     //End - Email
