@@ -5,11 +5,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Customer - SubCategory</title>
+  <%--  <title><%=_pageTitle %> </title>
+    <meta name="description" content="<%=_pageDescription %>" />
+    <meta name="keywords" content="<%=_pageKeywords %>" />--%>
+
     <meta charset='utf-8' />
     <meta content='width=device-width, initial-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="description" content="Sign In" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />

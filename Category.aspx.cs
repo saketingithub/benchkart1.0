@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
+using System.Web.UI.HtmlControls;
 
 namespace Benchkart
 {
@@ -49,7 +50,20 @@ namespace Benchkart
             {
                 lblsubcategory.Text = dtCategory.Tables[0].Rows[0]["Title"].ToString();
                 lbldescription.Text = dtCategory.Tables[0].Rows[0]["CategoryDescription"].ToString();
-                
+
+                this.Page.Title = lblsubcategory.Text;
+                HtmlMeta keywords = new HtmlMeta();
+                keywords.HttpEquiv = "keywords";
+                keywords.Name = "keywords";
+                keywords.Content = "KEYWORDS FROM DB GOES HERE";
+                this.Page.Header.Controls.Add(keywords);
+
+                //Add Description Meta Tag.
+                HtmlMeta description = new HtmlMeta();
+                description.HttpEquiv = "description";
+                description.Name = "description";
+                description.Content = lbldescription.Text;
+                this.Page.Header.Controls.Add(description);
             }           
             
         }
