@@ -2,7 +2,11 @@
 Disallow: /Admin/
 Disallow: /Consultant/
 Disallow: /Customer/
+Allow: /Customer/Signin
 Allow: /Customer/Post_Project
+Allow: /Customer/Book_Consultation
+Allow: /Customer/Signup
 Disallow: /Partner/
-Sitemap: https://benchkart.com/sitemap.xml
+Allow: /Partner/Signup
+Sitemap: https://www.benchkart.com/sitemap.xml
 

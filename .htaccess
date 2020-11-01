@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^benchkart.com [NC]
-RewriteRule ^(.*)$ https://www.benchkart.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} !^www.benchkart.com$
+RewriteRule ^(.*)$ https://www.benchkart.com/$1 [R=301,L]
 ErrorDocument 404 /404.html

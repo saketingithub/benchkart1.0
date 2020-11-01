@@ -24,22 +24,22 @@
 
     <!-- Favicons -->
     <link href="favicon.ico" rel="icon">
-    <link href="assets/casestudy/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assetscovid/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/casestudy/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/casestudy/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/casestudy/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/casestudy/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/casestudy/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/casestudy/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/casestudy/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assetscovid/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assetscovid/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assetscovid/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assetscovid/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assetscovid/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assetscovid/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assetscovid/vendor/aos/aos.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/casestudy/css/style.css" rel="stylesheet">
+    <link href="assetscovid/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -84,7 +84,7 @@
                         </p>
                         <p>At the time of writing, the client has already posted 7 projects within 3 months. They say “It’s like having your own team of 500 agencies, that you can reach at the click of a mouse”</p>
                     </div>
-                    <div class="image col-lg-6" style='background-image: url("assets/casestudy/img/wellness.jpg");' data-aos="fade-left"></div>
+                    <div class="image col-lg-6" style='background-image: url("assetscovid/img/wellness.jpg");' data-aos="fade-left"></div>
                 </div>
             </div>
         </section>
@@ -101,7 +101,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="row">
 
-                    <div class="image col-lg-6" style='background-image: url("assets/casestudy/img/realestate.jpg");' data-aos="fade-right"></div>
+                    <div class="image col-lg-6" style='background-image: url("assetscovid/img/realestate.jpg");' data-aos="fade-right"></div>
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                         <h3>A real estate major solved their social media execution challenge!</h3>
                         <p class="font-italic">
@@ -136,7 +136,7 @@
                            We are now exploring a unique partnership for KSA markets with this company, where we acn jointly provide Indian IT support to clients in their country!
                         </p>
                     </div>
-                    <div class="image col-lg-6" style='background-image: url("assets/casestudy/img/oil.jpg");' data-aos="fade-left"></div>
+                    <div class="image col-lg-6" style='background-image: url("assetscovid/img/oil.jpg");' data-aos="fade-left"></div>
                 </div>
             </div>
         </section>
@@ -146,7 +146,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="row">
 
-                    <div class="image col-lg-6" style='background-image: url("assets/casestudy/img/marketing.jpg");' data-aos="fade-right"></div>
+                    <div class="image col-lg-6" style='background-image: url("assetscovid/img/marketing.jpg");' data-aos="fade-right"></div>
                     <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                         <h3>A Marketing Agency migrates to the cloud</h3>
                         <p class="font-italic">
@@ -182,7 +182,7 @@
 
                         </p>
                     </div>
-                    <div class="image col-lg-6" style='background-image: url("assets/casestudy/img/startup.jpg");' data-aos="fade-left"></div>
+                    <div class="image col-lg-6" style='background-image: url("assetscovid/img/startup.jpg");' data-aos="fade-left"></div>
                 </div>
             </div>
         </section>
@@ -211,7 +211,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="row">
                    
-                    <div class="image col-lg-6" style='background-image: url("assets/casestudy/img/learnt.jpg");' data-aos="fade-right"></div>
+                    <div class="image col-lg-6" style='background-image: url("assetscovid/img/learnt.jpg");' data-aos="fade-right"></div>
                     <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-left " data-aos-delay="100">
                         <h4>What have we learnt </h4>
                          <ul>
@@ -316,19 +316,19 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="assets/casestudy/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/casestudy/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/casestudy/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/casestudy/vendor/php-email-form/validate.js"></script>
-    <script src="assets/casestudy/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/casestudy/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/casestudy/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/casestudy/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/casestudy/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/casestudy/vendor/aos/aos.js"></script>
+    <script src="assetscovid/vendor/jquery/jquery.min.js"></script>
+    <script src="assetscovid/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assetscovid/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assetscovid/vendor/php-email-form/validate.js"></script>
+    <script src="assetscovid/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assetscovid/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assetscovid/vendor/venobox/venobox.min.js"></script>
+    <script src="assetscovid/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assetscovid/vendor/counterup/counterup.min.js"></script>
+    <script src="assetscovid/vendor/aos/aos.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/casestudy/js/main.js"></script>
+    <script src="assetscovid/js/main.js"></script>
 
 </body>
 
