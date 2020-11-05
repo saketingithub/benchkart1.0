@@ -7,14 +7,14 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142828286-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    <% if(!Benchkart.AppSettings.isDevelopmentMode()) { %>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142828286-2"></script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
 
-        gtag('config', 'UA-142828286-2');
-    </script>
+            gtag('config', 'UA-142828286-2');
+    <% } %>
     <link rel="canonical" href="https://benchkart.com/">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">

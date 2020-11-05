@@ -425,7 +425,6 @@
     <Content Include="Images\Partner_hiw4.png" />
     <Content Include="Images\Partner_hiw5.png" />
     <Content Include="Partner\AgencyDetails.aspx" />
-    <Content Include="Post-Covid.html" />
     <Content Include="Partner\AcknowledgeSignup.html" />
     <Content Include="Partner\Create-Contract.aspx" />
     <Content Include="Partner\Create-Payment-Request.aspx" />
@@ -446,6 +445,7 @@
     <Content Include="Robots.txt" />
     <Content Include="Scripts\Cities.js" />
     <Content Include="sitemap.xml" />
+    <Content Include="SQL.sql" />
     <Content Include="Styles\style4.css" />
     <Content Include="Category.aspx" />
     <Content Include="Test.aspx" />
@@ -883,6 +883,7 @@
       <DependentUpon>Request_Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppConstants\AppKeys.cs" />
+    <Compile Include="AppSettings.cs" />
     <Compile Include="CaseStudy.aspx.cs">
       <DependentUpon>CaseStudy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -10,25 +10,25 @@ namespace Benchkart.AppConstants
     {
         public static string getKey()
         {
-            if(ConfigurationManager.AppSettings["IsLivePaymentMode"].ToString().ToLower() == "true")
+            if(AppSettings.isDevelopmentMode())
             {
-                return "rzp_live_zoPlr5o13JZG7T";
+                return "rzp_test_n0Go0s9iSZW1OA";
             }
             else
             {
-                return "rzp_test_n0Go0s9iSZW1OA";
+                return "rzp_live_zoPlr5o13JZG7T";
             }
         }
 
         public static string getSecret()
         {
-            if (ConfigurationManager.AppSettings["IsLivePaymentMode"].ToString().ToLower() == "true")
+            if (AppSettings.isDevelopmentMode())
             {
-                return "fQyHIMW2ESJwkjsR2SZWRC6o";
+                return "WYU8IbCQaOYr9mNRhDq1bS93";
             }
             else
             {
-                return "WYU8IbCQaOYr9mNRhDq1bS93";
+                return "fQyHIMW2ESJwkjsR2SZWRC6o";
             }
         }
     }
