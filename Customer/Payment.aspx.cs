@@ -13,17 +13,12 @@ namespace Benchkart.Customer
     public partial class Payment : System.Web.UI.Page
     {
         public string orderId;
+        public string razor_payment_key = RazorPayAppKeys.getKey();
+        string razor_payment_secret = RazorPayAppKeys.getSecret();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Test Keys
-            string key = "rzp_test_n0Go0s9iSZW1OA";
-            string secret = "WYU8IbCQaOYr9mNRhDq1bS93";
-
-            //Live Keys
-            //string key = "rzp_live_zoPlr5o13JZG7T";
-            //string secret = "fQyHIMW2ESJwkjsR2SZWRC6o";
-
-            RazorpayClient client = new RazorpayClient(key, secret);
+            RazorpayClient client = new RazorpayClient(razor_payment_key, razor_payment_secret);
             ClsPayment py = new ClsPayment();
 
             if (Request.QueryString["action"] == null)

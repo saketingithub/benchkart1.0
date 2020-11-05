@@ -226,8 +226,7 @@
     <form id="form1" runat="server" action="PaymentQuickProject.aspx?action=paymentcapture" method="post">
         <script id="payButton" style="display: none; margin-bottom: 200px !important;"
             src="https://checkout.razorpay.com/v1/checkout.js"
-             <%--data-key="rzp_live_zoPlr5o13JZG7T"--%>
-            data-key="rzp_test_n0Go0s9iSZW1OA"
+            data-key="<%=razor_payment_key %>"
             data-amount="1"
             data-name="Razorpay"
             data-description="Purchase Description"
@@ -370,7 +369,7 @@
 
                                 <script style="display: none;"
                                     src="https://checkout.razorpay.com/v1/checkout.js"
-                                    data-key="rzp_test_n0Go0s9iSZW1OA"
+                                    data-key="<%=razor_payment_key %>"
                                     data-amount="1"
                                     data-name="Razorpay"
                                     data-description="Purchase Description"

@@ -7,21 +7,20 @@ using System.Web.UI.WebControls;
 using System.Data;
 using Razorpay.Api;
 using System.Net;
-using Benchkart.AppConstants;
 
 namespace Benchkart.Customer
 {
     public partial class PaymentQuickProject : System.Web.UI.Page
     {
-        string key = RazorPayAppKeys.getKey();
-        string secret = RazorPayAppKeys.getSecret();
+        public string razor_payment_key = RazorPayAppKeys.getKey();
+        string razor_payment_secret = RazorPayAppKeys.getSecret();
         public string razorPayOrderId ;
         int transactionAmount = 100;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            RazorpayClient razorPayClient = new RazorpayClient(key, secret);
+            RazorpayClient razorPayClient = new RazorpayClient(razor_payment_key, razor_payment_secret);
             ClsPayment py = new ClsPayment();
 
             if (Request.QueryString["action"] == null)

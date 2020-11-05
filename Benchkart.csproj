@@ -882,7 +882,6 @@
     <Compile Include="Admin\Request_Details.aspx.designer.cs">
       <DependentUpon>Request_Details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AppConstants\AppKeys.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="CaseStudy.aspx.cs">
       <DependentUpon>CaseStudy.aspx</DependentUpon>
