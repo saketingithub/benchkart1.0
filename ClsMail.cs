@@ -155,51 +155,51 @@ namespace Benchkart
 
         public static void SendBccEmail(string bcc, string subject, string body)
         {
-            //Create the msg object to be sent
-            //MailMessage msg = new MailMessage();
-            //Add your email address to the recipients
-            string[] bccEmail = bcc.Split(',');
-            foreach (string bccEmailId in bccEmail)
-            {
-                msg.Bcc.Add(new MailAddress(bccEmailId)); //Adding Multiple BCC email Id
-            }
-            msg.Bcc.Add("outsource@benchkart.com");
-            //Configure the address we are sending the mail from
-            MailAddress address = new MailAddress("outsource@benchkart.com", "Benchkart");
-            msg.From = address;
+            ////Create the msg object to be sent
+            ////MailMessage msg = new MailMessage();
+            ////Add your email address to the recipients
+            //string[] bccEmail = bcc.Split(',');
+            //foreach (string bccEmailId in bccEmail)
+            //{
+            //    msg.Bcc.Add(new MailAddress(bccEmailId)); //Adding Multiple BCC email Id
+            //}
+            //msg.Bcc.Add("outsource@benchkart.com");
+            ////Configure the address we are sending the mail from
+            //MailAddress address = new MailAddress("outsource@benchkart.com", "Benchkart");
+            //msg.From = address;
 
-            msg.Subject = subject;
-            string strbody = string.Empty;
-            using (System.IO.StreamReader reader = new System.IO.StreamReader(System.Web.Hosting.HostingEnvironment.MapPath("~/EmailTemplates/General_template.html")))
-            {
-                strbody = reader.ReadToEnd();
-            }
-            strbody = strbody.Replace("{name}", string.Empty);
+            //msg.Subject = subject;
+            //string strbody = string.Empty;
+            //using (System.IO.StreamReader reader = new System.IO.StreamReader(System.Web.Hosting.HostingEnvironment.MapPath("~/EmailTemplates/General_template.html")))
+            //{
+            //    strbody = reader.ReadToEnd();
+            //}
+            //strbody = strbody.Replace("{name}", string.Empty);
             
-            strbody = strbody.Replace("{body}", body);
+            //strbody = strbody.Replace("{body}", body);
 
-            msg.Body = strbody;
-            msg.IsBodyHtml = true;
+            //msg.Body = strbody;
+            //msg.IsBodyHtml = true;
 
-            //Configure an SmtpClient to send the mail.
-            SmtpClient client = new SmtpClient();
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.EnableSsl = false;
-            client.Host = "relay-hosting.secureserver.net";
-            client.Port = 25;
+            ////Configure an SmtpClient to send the mail.
+            //SmtpClient client = new SmtpClient();
+            //client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //client.EnableSsl = false;
+            //client.Host = "relay-hosting.secureserver.net";
+            //client.Port = 25;
 
-            //Setup credentials to login to our sender email address ("UserName", "Password")
-            NetworkCredential credentials = new NetworkCredential("outsource@benchkart.com", "Benchkart191119");
-            client.UseDefaultCredentials = true;
-            client.Credentials = credentials;
+            ////Setup credentials to login to our sender email address ("UserName", "Password")
+            //NetworkCredential credentials = new NetworkCredential("outsource@benchkart.com", "Benchkart191119");
+            //client.UseDefaultCredentials = true;
+            //client.Credentials = credentials;
 
-            client.Send(msg);
+            //client.Send(msg);
 
-            List<string> toAddress = new List<string>();
-            List<string> ccAddress = new List<string>();
-            List<string> bccAddress = bcc.Split(',').ToList();
-            List<string> fileList = new List<string>();
-            ExecuteSendEmail(strbody, subject, toAddress, ccAddress, bccAddress, fileList, true);
+            //List<string> toAddress = new List<string>();
+            //List<string> ccAddress = new List<string>();
+            //List<string> bccAddress = bcc.Split(',').ToList();
+            //List<string> fileList = new List<string>();
+            //ExecuteSendEmail(strbody, subject, toAddress, ccAddress, bccAddress, fileList, true);
 
         }
         /// <summary>
