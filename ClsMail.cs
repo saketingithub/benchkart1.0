@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading;
 using System.Configuration;
+using System.Net.Mime;
+using System.IO;
 
 namespace Benchkart
 {
@@ -154,7 +156,7 @@ namespace Benchkart
         public static void SendBccEmail(string bcc, string subject, string body)
         {
             //Create the msg object to be sent
-            MailMessage msg = new MailMessage();
+            //MailMessage msg = new MailMessage();
             //Add your email address to the recipients
             string[] bccEmail = bcc.Split(',');
             foreach (string bccEmailId in bccEmail)
@@ -193,6 +195,88 @@ namespace Benchkart
 
             client.Send(msg);
 
+            List<string> toAddress = new List<string>();
+            List<string> ccAddress = new List<string>();
+            List<string> bccAddress = bcc.Split(',').ToList();
+            List<string> fileList = new List<string>();
+            ExecuteSendEmail(strbody, subject, toAddress, ccAddress, bccAddress, fileList, true);
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mailBody"></param>
+        /// <param name="mailSubject"></param>
+        /// <param name="toAddress"></param>
+        /// <param name="relativeFilePathsToBeAttached">"TEMP FILES/IMG_20200621_0001.jpg"</param>
+        /// <param name="IsBodyHtml"></param>
+        private static void ExecuteSendEmail(string mailBody, string mailSubject, List<string> toAddress, List<string> bccAddress, List<string> ccAddress, List<string> relativeFilePathsToBeAttached, bool IsBodyHtml)
+        {
+            string EmailFrom = ConfigurationManager.AppSettings["EmailFrom"];
+            string EmailFromDisplayName = ConfigurationManager.AppSettings["EmailFromDisplayName"];
+            string EmailFromPwd = ConfigurationManager.AppSettings["EmailFromPwd"];
+            string EmailBcc = ConfigurationManager.AppSettings["EmailBcc"];
+            string EmailBccDisplayName = ConfigurationManager.AppSettings["EmailBccDisplayName"];
+            bool EmailIsSSL = Convert.ToBoolean(ConfigurationManager.AppSettings["EmailIsSSL"]);
+            int EmailPort = Convert.ToInt32(ConfigurationManager.AppSettings["EmailPort"]);
+            string EmailHost = ConfigurationManager.AppSettings["EmailHost"];
+
+            //Create the msg object to be sent
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.Bcc.Add(EmailFrom);
+           
+
+
+            //Configure the address we are sending the mail from
+            MailAddress address = new MailAddress(EmailFrom, EmailFromDisplayName);
+            mailMessage.From = address;
+
+            //Loop all to recepients
+            foreach(string emailTo in toAddress)
+            {
+                mailMessage.To.Add(emailTo);
+            }
+            //Loop to add all Bcc addresses...
+            foreach (string emailBcc in bccAddress)
+            {
+                mailMessage.Bcc.Add(emailBcc);
+            }
+            //Loop to add all CC addresses...
+            foreach (string emailCc in ccAddress)
+            {
+                mailMessage.CC.Add(emailCc);
+            }
+            //Add attachments...
+            foreach (string filePathWithName in relativeFilePathsToBeAttached)
+            {
+                if (File.Exists(System.Web.HttpContext.Current.Server.MapPath(filePathWithName)))
+                {
+                    Attachment data = new Attachment(
+                       System.Web.HttpContext.Current.Server.MapPath(filePathWithName),
+                       MediaTypeNames.Application.Octet);
+                    // your path may look like Server.MapPath("~/file.ABC")
+                    mailMessage.Attachments.Add(data);
+                }
+            }
+
+
+
+            mailMessage.Subject = mailSubject;
+            mailMessage.Body = mailBody;
+            mailMessage.IsBodyHtml = IsBodyHtml;
+
+            //Configure an SmtpClient to send the mail.
+            SmtpClient client = new SmtpClient();
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = EmailIsSSL;
+            client.Host = EmailHost;
+            client.Port = EmailPort;
+
+            //Setup credentials to login to our sender email address ("UserName", "Password")
+            NetworkCredential credentials = new NetworkCredential(EmailFrom, EmailFromPwd);
+            client.UseDefaultCredentials = true;
+            client.Credentials = credentials;
+            client.Send(mailMessage);
         }
 
 

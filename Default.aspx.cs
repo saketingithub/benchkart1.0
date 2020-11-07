@@ -11,7 +11,12 @@ namespace Benchkart
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            //List<string> toAddress = new List<string>();
+            //toAddress.Add("saket.@cwl.co.in");
+            //List<string> fileList = new List<string>();
+            //fileList.Add("TEMP FILES/IMG_20200621_0001.jpg");
+            //fileList.Add("TEMP FILES/IMG_20200621_0002.pdf");
+            //ClsMail.ExecuteSendEmail("<html><body><h3>hey we are sending attachments as wel..</h3> <p>So the idea is to provide path and send the files as attachments</p></body></html>", "Email with attachments - " + DateTime.Now, toAddress, fileList, true);
         }
 
         //protected void btnSendMessage_Click(object sender, EventArgs e)
