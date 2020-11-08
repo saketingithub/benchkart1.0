@@ -215,8 +215,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#team">Team</a></li>--%>
-                            <li class="menu-has-children">
-                                <a href="#">Design</a>
+                            <li class="menu-has-children"><a href="#">Design</a>
                                 <ul>
                                     <li><a href="Category?id=11">Logo Creation & Adaptation</a></li>
                                     <li><a href="Category?id=12">Social Media Design</a></li>
@@ -224,7 +223,7 @@
                                     <li><a href="Category?id=14">Packaging Design</a></li>
                                     <li><a href="Category?id=15">Banner Ads</a></li>
                                     <li><a href="Category?id=16">Presentation Design</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=17">Any Other</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Website & Apps</a>
@@ -233,7 +232,7 @@
                                     <li><a href="Category?id=19">Website Designing - UI/UX</a></li>
                                     <li><a href="Category?id=20">Website Maintenance</a></li>
                                     <li><a href="Category?id=21">Mobile Applications</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=22">Any Other</a></li>
                                 </ul>
                             </li>
 
@@ -248,7 +247,7 @@
                                     <li><a href="Category?id=29">Content Marketing</a></li>
                                     <li><a href="Category?id=30">Search Engine Optimization (SEO)</a></li>
                                     <li><a href="Category?id=31">Data Mining & Analytics</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=32">Any Other</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Software</a>
@@ -262,7 +261,7 @@
                                     <li><a href="Category?id=39">Game Development</a></li>
                                     <li><a href="Category?id=40">IoT Solutions</a></li>
                                     <li><a href="Category?id=41">Chatbots</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=42">Any Other</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Cloud & Infra</a>
@@ -273,7 +272,7 @@
                                     <li><a href="Category?id=46">Remote IT Management</a></li>
                                     <li><a href="Category?id=47">Cloud Setup & Migration</a></li>
                                     <li><a href="Category?id=48">Cloud Consulting & Strategy</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=49">Any Other</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Call Center</a>
@@ -281,7 +280,7 @@
                                     <li><a href="Category?id=50">Inbound Calling</a></li>
                                     <li><a href="Category?id=51">Outbound Calling</a></li>
                                     <li><a href="Category?id=52">Outbound - Debt Collection</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=53">Any Other</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">KPO</a>
@@ -295,7 +294,7 @@
                                     <li><a href="Category?id=60">IT Training & Development</a></li>
                                     <li><a href="Category?id=61">Market Research</a></li>
                                     <li><a href="Category?id=62">Public Relations</a></li>
-                                    <li><a href="#">Any Other</a></li>
+                                    <li><a href="Category?id=63">Any Other</a></li>
                                 </ul>
                             </li>
                             <li class="menu-has-children"><a href="#">Back Office</a>
@@ -309,7 +308,7 @@
                                     <li><a href="Category?id=70">Offline & Online Catalogues </a></li>
                                     <li><a href="Category?id=71">Field Executive Support</a></li>
                                     <li><a href="Category?id=72">Writing & Translation Services</a></li>
-                                    <li><a href="#">Any other</a></li>
+                                    <li><a href="Category?id=73">Any other</a></li>
                                 </ul>
                             </li>
 
@@ -359,10 +358,10 @@
                             </div>
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2>Procure B2B Services</h2>
-                                    <p>Find & work with the Right Agency for the Right Price. Get India’s finest agencies across Digital Marketing, IT Services & BPO to work for you.</p>
-                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Post a Project</a>
-                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Free Consultation</a>
+                                    <h2>Save Time & Money</h2>
+                                    <p>Free access to hundreds of agencies for your IT Services & Marketing projects.</p>
+                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Start a new Project</a>
+                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Request Consultation</a>
 
                                     <%--<a href="Customer/Post_Talent" class="btn-get-started scrollto">Hire a Developer</a>--%>
                                 </div>
@@ -376,9 +375,9 @@
                             <div class="carousel-container">
                                 <div class="carousel-content">
                                     <h2>Post Projects for Free</h2>
-                                    <p>Find & work with the Right Agency for the Right Price. Get India’s finest agencies across Digital Marketing, IT Services & BPO to work for you.</p>
-                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Post a Project</a>
-                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Free Consultation</a>
+                                    <p>Free access to hundreds of agencies for your IT Services & Marketing projects.</p>
+                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Start a new Project</a>
+                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Request Consultation</a>
 
                                     <%-- <a href="Customer/Post_Talent" class="btn-get-started scrollto">Hire a Developer</a>--%>
                                 </div>
@@ -392,9 +391,9 @@
                             <div class="carousel-container">
                                 <div class="carousel-content">
                                     <h2>Get Competitive Bids</h2>
-                                    <p>Find & work with the Right Agency for the Right Price. Get India’s finest agencies across Digital Marketing, IT Services & BPO to work for you.</p>
-                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Post a Project</a>
-                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Free Consultation</a>
+                                    <p>Free access to hundreds of agencies for your IT Services & Marketing projects.</p>
+                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Start a new Project</a>
+                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Request Consultation</a>
 
                                     <%--<a href="Customer/Post_Talent" class="btn-get-started scrollto">Hire a Developer</a>--%>
                                 </div>
@@ -408,9 +407,9 @@
                             <div class="carousel-container">
                                 <div class="carousel-content">
                                     <h2>Engage Top Agencies</h2>
-                                    <p>Find & work with the Right Agency for the Right Price. Get India’s finest agencies across Digital Marketing, IT Services & BPO to work for you.</p>
-                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Post a Project</a>
-                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Free Consultation</a>
+                                    <p>Free access to hundreds of agencies for your IT Services & Marketing projects.</p>
+                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Start a new Project</a>
+                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Request Consultation</a>
 
                                     <%-- <a href="Customer/Post_Talent" class="btn-get-started scrollto">Hire a Developer</a>--%>
                                 </div>
@@ -423,10 +422,10 @@
                             </div>
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2>Save Time & Money</h2>
-                                    <p>Find & work with the Right Agency for the Right Price. Get India’s finest agencies across Digital Marketing, IT Services & BPO to work for you.</p>
-                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Post a Project</a>
-                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Free Consultation</a>
+                                    <h2>Get Expert Help</h2>
+                                    <p>Free access to hundreds of agencies for your IT Services & Marketing projects.</p>
+                                    <a href="Customer/Post_Project" class="btn-get-started scrollto">Start a new Project</a>
+                                    <a href="Customer/Book_Consultation" class="btn-get-started scrollto">Request Consultation</a>
                                     <%-- <a href="Customer/Post_Talent" class="btn-get-started scrollto">Hire a Developer</a>--%>
                                 </div>
                             </div>
@@ -457,20 +456,20 @@
 
                         <div class="col-lg-4 box">
                             <i class="ion-ios-bookmarks-outline"></i>
-                            <h4 class="title"><a href="#">It is built for quality</a></h4>
-                            <p class="description">We get work done only through reputed mid-sized agencies who have expertise in your project area</p>
+                            <h4 class="title"><a href="#">Choice</a></h4>
+                            <p class="description">Hundreds of hand-picked agencies with skillsets matched for your project from across the country</p>
                         </div>
 
                         <div class="col-lg-4 box box-bg">
                             <i class="ion-ios-stopwatch-outline"></i>
-                            <h4 class="title"><a href="#">It saves you time & money</a></h4>
-                            <p class="description">We help you get competitive bids from matched agencies within hours</p>
+                            <h4 class="title"><a href="#">Speed</a></h4>
+                            <p class="description">Guaranteed agency within 48-72 hrs from your project going live. Within minutes if urgent.</p>
                         </div>
 
                         <div class="col-lg-4 box">
                             <i class="ion-ios-heart-outline"></i>
-                            <h4 class="title"><a href="#">It is free!</a></h4>
-                            <p class="description">Posting a project or Consulting with our advisors is absolutely free right now</p>
+                            <h4 class="title"><a href="#">Reliability</a><h4>
+                            <p class="description">Quality partners, smart algorithms & processes, built in security and post-project support.</p>
                         </div>
 
                     </div>
@@ -480,19 +479,21 @@
             <!-- ======= Call To Action Section ======= -->
             <section id="call-to-action" class="wow fadeIn">
                 <div class="container text-center">
-                    <h3>Don’t let COVID-19 push you down!</h3>
-                    <p>Benchkart is helping 250+ businesses counter the impact of COVID-19. Learn from our framework & evaluate 5 things that you can do.</p>
-                    <a class="cta-btn" href="Post-COVID">Learn More</a>
+                    <h3>Outsourcing with Choice, Speed & Reliability!</h3>
+                    <p>Benchkart is helping India go digital like never before. Learn how your business can leverage Benchkart too.</p>
+                    <a class="cta-btn" href="/ITServices.aspx">IT Services</a>
+                    <a class="cta-btn" href="/Post-COVID">Marketing</a>
                 </div>
             </section>
             <!-- End Call To Action Section -->
+           
             <!-- ======= About Us Section ======= -->
             <section id="about">
                 <div class="container">
 
                     <header class="section-header">
                         <h3>HOW IT WORKS</h3>
-                        <p>Our platform is powered by strong partner onboarding processes, project matching algorithms and built-in security features.</p>
+                        <p>Benchkart does not charge anything for its services to the customers. We earn single-digit commissions from agencies who execute your work.
                     </header>
 
                     <div class="row about-cols">
@@ -502,7 +503,7 @@
                                     <img src="assets/img/about-mission.jpg" alt="mission" class="img-fluid">
                                     <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
                                 </div>
-                                <h2 class="title"><a href="#">Post Requirement</a></h2>
+                                <h2 class="title"><a href="#">1| Post Requirement</a></h2>
                                 <p>
                                     Post your Project through the link above. Let our algorithms do all the work & get you the best agency proposals.
                                 </p>
@@ -515,7 +516,7 @@
                                     <img src="assets/img/about-plan.jpg" alt="agency" class="img-fluid">
                                     <div class="icon"><i class="ion-ios-list-outline"></i></div>
                                 </div>
-                                <h2 class="title"><a href="#">Select Agency</a></h2>
+                                <h2 class="title"><a href="#">2| Select Agency</a></h2>
                                 <p>
                                     Discuss & finalise the agency you want to work with. Record your expectations clearly with the agency & with your relationship manager.
                                 </p>
@@ -528,7 +529,7 @@
                                     <img src="assets/img/about-vision.jpg" alt="delivery" class="img-fluid">
                                     <div class="icon"><i class="ion-ios-eye-outline"></i></div>
                                 </div>
-                                <h2 class="title"><a href="#">Get Work done</a></h2>
+                                <h2 class="title"><a href="#">3| Get Work done</a></h2>
                                 <p>
                                     Use our secure payment system which ensures 100% security for your payments. Release payment only when you approve the work.
                                 </p>
@@ -627,7 +628,15 @@
             </div>
         </section>--%>
             <!-- End Skills Section -->
-
+             <!-- ======= Call To Action Section ======= -->
+            <section id="call-to-action" class="wow fadeIn">
+                <div class="container text-center">
+                    <h3>We have stories to tell!</h3>
+                    <p>Hundreds of Companies have used the Benchkart platform to transform their businesses. We are inspired by many of them. </p>
+                    <a class="cta-btn" href="/CaseStudy.aspx">Case Studies</a>
+                </div>
+            </section>
+            <!-- End Call To Action Section -->
             <!-- ======= Facts Section ======= -->
             <section id="facts" class="wow fadeIn">
                 <div class="container">
@@ -1139,6 +1148,14 @@
             </section>--%>
             <!-- End Contact Section -->
 
+            <section id="call-to-action" class="wow fadeIn">
+                <div class="container text-center">
+                    <h3>Benchkart Post COVID Framework!</h3>
+                    <p>Everyone is getting ready for the New Normal. We have a ringside seat to learn from their strategies. We even made a framework based on this!  </p>
+                    <a class="cta-btn" href="/DigitalTransformation.aspx">The New Normal Framework</a>
+                </div>
+            </section>
+            <!-- End Call To Action Section -->
         </main><!-- End #main -->
 
         <!-- ======= Footer ======= -->

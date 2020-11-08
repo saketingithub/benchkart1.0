@@ -68,7 +68,7 @@
                                 <div class="row fields">
                                     <div class="col-sm-4">
                                         <div class="bidfield">
-                                            <h5>Bid Amount (INR)</h5>
+                                            <h5>Bid Amount</h5>
                                         </div>
                                         <div>
                                             <h4>

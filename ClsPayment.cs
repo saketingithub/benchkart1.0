@@ -46,7 +46,6 @@ namespace Benchkart
 
         public string StatusUpdateDate { get; set; }
 
-        public int PartnerPackageId { get; set; }
 
         public int CreatePaymentRequest()
         {
@@ -98,9 +97,9 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string customerSubject = "Agency has Requested for Payment Pre Funding!";
+                string customerSubject = "Notification: Request for Payment";
 
-                string customerBody = "<p>Project Title - " + projectTitle + "</p><p>The Agency has requested you to fund the project. Please note that this payment will remain in the nodal account and released to the agency basis your timely approval.</p><p>You can log in to your dashboard from here: <a href=\"https://benchkart.com/Customer/Signin\">Signin</a></p>";
+                string customerBody = "<p>Project Title - " + projectTitle + "</p><p>The Agency has requested you to fund the project. Please note that this payment will remain in the nodal account and released to the agency basis your approval.</p><p>You can log in to your dashboard from here: <a href=\"https://benchkart.com/Customer/Signin\">Signin</a></p>";
 
                 ClsMail.SendEmail(customerName, customerEmail, customerSubject, customerBody);
             });
@@ -240,12 +239,12 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Thanks for Your Payment!";
-                string body = "<p>Project Title - " + projectTitle + "</p><p>Thank you for your payment! You can see the details for the same in your dashboard.</p><p>Your payment will remain in the nodal account and released to agency after you approve their Payment Release Request.</p>";
+                string subject = "Notification: Payment Received";
+                string body = "<p>Project Title - " + projectTitle + "</p><p>Thank you for your payment! You can see the details for the same in your dashboard.</p><p>Your payment will remain in the nodal account and released to agency after you approve the Payment Release Request.</p>";
                 ClsMail.SendEmail(customerName, customerEmail, subject, body);
 
-                subject = "Payment is Submitted by Customer";
-                body = "<p>Project Title - " + projectTitle + "</p><p>Customer has successfully submitted the payment.</p><p>Please work on delivering the project and then raise - Payment Release Request which will be paid to you after customer approval.</p>";
+                subject = "Notification: Payment Submitted by Customer";
+                body = "<p>Project Title - " + projectTitle + "</p><p>Customer has successfully submitted the payment.</p><p>Please work on delivering the project and then raise the 'Payment Release Request'. Payment will be credited to your account after customer approval on the release request.</p>";
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, body);
             });
             email.IsBackground = true;
@@ -300,8 +299,8 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Your Payment Request is Rejected by Customer";
-                string body = "<p>Project Title - " + projectTitle + "</p><p>Your payment request is rejected by customer.</p><p>Please discuss with customer and raise a new payment request if required.</p>";
+                string subject = "Notification: Payment Request Rejected";
+                string body = "<p>Project Title - " + projectTitle + "</p><p>Your payment request has been rejected by customer.</p><p>Please discuss with customer and raise a new payment request if required.</p>";
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, body);
             });
 
@@ -358,7 +357,7 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Payment Release Request by Agency";
+                string subject = "Notification: Payment Release Request";
                 string body = "<p>Project Title - " + projectTitle + "</p><p>The Agency has requested for release of payments towards delivery of the project.</p><p>Please review & take the required action in your dashboard: <a href=\"https://benchkart.com/Customer/Signin\">Signin</a></p>";
                 ClsMail.SendEmail(customerName, customerEmail, subject, body);
             });
@@ -419,8 +418,8 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Your Payment Release Request is Approved";
-                string partnerBody = "<p>Project Title - " + projectTitle + "</p><p>Congratulations! Your payment release request is approved by customer.</p><p>Benchkart will soon release the amount to your mentioned bank account. Please cross check your bank details in  the Profile section.</p>";
+                string subject = "Notification: Payment Release Request Approved";
+                string partnerBody = "<p>Project Title - " + projectTitle + "</p><p> Your payment release request has been approved by the customer.</p><p>Benchkart will soon release the amount to bank account. Please keep your bank details updates in the 'Profile' section.</p>";
 
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, partnerBody);
             });
@@ -433,39 +432,6 @@ namespace Benchkart
 
         }
 
-        public int CreatePaymentRequestQuick()
-        {
-            
-
-            int paymentRequestId;
-            string connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(connection))
-            {
-                SqlCommand cmd = new SqlCommand("proc_CreatePaymentRequestQuick", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@customerid", SqlDbType.Int).Value = CustomerId;
-                cmd.Parameters.Add("@partnerPackageId", SqlDbType.Int).Value = PartnerPackageId;
-                cmd.Parameters.Add("@paymentAmount", SqlDbType.Int).Value = PaymentAmount;
-
-               // cmd.Parameters.Add("@partnerRequestRemarks", SqlDbType.NVarChar).Value = LastRemark;
-                //cmd.Parameters.Add("@potentialPaybyDate", SqlDbType.DateTime).Value = PotentialPaybyDate;
-                //cmd.Parameters.Add("@isFinalDelivery", SqlDbType.Int).Value = IsFinalDelivery;
-                cmd.Parameters.Add("@paymentRequestId", SqlDbType.Int);
-                cmd.Parameters["@paymentRequestId"].Direction = ParameterDirection.Output;
-
-               
-                con.Open();
-                cmd.ExecuteNonQuery();
-                paymentRequestId = Convert.ToInt32(cmd.Parameters["@paymentRequestId"].Value);
-
-               
-
-                con.Close();
-            }
-           
-
-            return paymentRequestId;
-        }
 
     }
 }

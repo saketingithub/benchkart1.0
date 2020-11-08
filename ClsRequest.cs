@@ -442,15 +442,15 @@ namespace Benchkart
                 //Email
                 System.Threading.Thread email = new System.Threading.Thread(delegate ()
                 {
-                    string subject = "Great! Your Project is Live for Bidding";
-                    string body = "<p><b>Project Title -</b> " + Title + "</p><p>Your Project is now live on benchkart. Our expert agencies will now start bidding on your project. It will take around 48 hrs for the top bids to reflect in your dashboard, after the algorithm based matching and the automated bidding & review process. It will be worth the wait!!</p><p>You can then compare the bids and select the best bid/agency suited for your project requirement. You can watch a 3 min Video to understand the entire process: <a href=\"https://www.youtube.com/watch?v=Ce1ocIxwDgs\">Watch Video</a></p>";
+                    string subject = "Your Project is now Live on Benchkart";
+                    string body = "<p><b>Project Title -</b> " + Title + "</p><p>Your Project is now live on Benchkart. Agencies will now start bidding on your project basis the project details. It will take around 48-72 hrs for the top bids to reflect in your dashboard. It will be worth the wait!!</p><p>You can then compare the bids and select the best bid/agency suited for your project requirement.</p>";
                     ClsMail.SendEmail(customerName, customerEmail, subject, body);
 
                     //Email
                     if (partnerEmails != string.Empty)
                     {
-                        subject = "<b>New Project -</b> " + subCategory;
-                        body = "<p>There is a new project LEAD in your dashboard.</p><p><b>Project Title -</b> " + Title + "</p><p><b>Sub-Category -</b> " + subCategory + "</p><p><b>Description -</b>" + Description + "</p><p><b>Status Comments -</b>" + StatusComment+ "</p><p>Post your BID before bidding timeframe (normally 12 - 48 Hrs*) closed for this project. To stop receiving project notifications over email, please write to outsource@benchkart.com.</p>";
+                        subject = "New Project - " + subCategory;
+                        body = "<p>There is a new project LEAD in your dashboard.</p><p><b>Project Title -</b> " + Title + "</p><p><b>Sub-Category -</b> " + subCategory + "</p><p><b>Description -</b> </p><p>" + Description + "</p><p><b>Status Comments -</b>" + StatusComment+ "</p><p> We request you to post your bid within the deadline (48 Hrs, unless otherwise specified in comments). To stop receiving project notifications over email, please write to outsource@benchkart.com.</p>";
                         ClsMail.SendBccEmail(partnerEmails, subject, body);
                     }
                     //End - Email
@@ -567,8 +567,8 @@ namespace Benchkart
             //    //Email
             //    System.Threading.Thread email = new System.Threading.Thread(delegate ()
             //    {
-            //        string subject = "Great! Your Project is Live for Bidding";
-            //        string body = "<p><b>Project Title -</b> " + Title + "</p><p>Your Project is now live on benchkart. Our expert agencies will now start bidding on your project. It will take around 48 hrs for the top bids to reflect in your dashboard, after the algorithm based matching and the automated bidding & review process. It will be worth the wait!!</p><p>You can then compare the bids and select the best bid/agency suited for your project requirement. You can watch a 3 min Video to understand the entire process: <a href=\"https://www.youtube.com/watch?v=Ce1ocIxwDgs\">Watch Video</a></p>";
+            //        string subject = "Your Project is Live on Benchkart";
+            //        string body = "<p><b>Project Title -</b> " + Title + "</p><p>Your Project is now live on Benchkart. Agencies will now start bidding on your project basis project details. It will take 48-72 hrs for the top bids to reflect in your dashboard. It will be worth the wait!!</p><p>You can then compare the bids and select the best bid/agency suited for your project requirement.</p>";
             //        ClsMail.SendEmail(customerName, customerEmail, subject, body);
 
             //        //Email

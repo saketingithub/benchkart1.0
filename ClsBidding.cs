@@ -234,7 +234,7 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string partnerSubject = "Message Received from Customer";
+                string partnerSubject = "Notification: Message from Customer";
 
                 string partnerBody = "<p>Project Title - " + projectTitle + "</p><p>A message has been received from the customer.</p><p>Please login to your benchkart dashboard to view and respond.</p>";
 
@@ -338,8 +338,8 @@ namespace Benchkart
             }
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Great! Your Bid is Accepted by Customer";
-                string body = "<p>Project Title - " + projectTitle + "</p><p>Great! Your bid is accepted by customer.</p><p>Now the next steps is to login into benchkart, go to PROJECTS tab and reach out to customer for finalization of project and send a final CONTRACT to customer after the discussion.</p><p>Please discuss with customer as early as possible as customer has the right to select another bid and override yours. In that case this project will no longer be available in your projects list. Do let us know if we can be of any help.</p>";
+                string subject = "Notification: Your Bid is Accepted by Customer";
+                string body = "<p>Project Title - " + projectTitle + "</p><p>Great! Your bid has been accepted by the customer.</p><p>Now the next steps is to login into Benchkart, go to PROJECTS tab and reach out to customer for finalization of project and send a final CONTRACT to customer after the discussions.</p><p>Please discuss with customer as early as possible as customer has the right to select another bid and override yours. In that case this project will no longer be available in your projects list. Do let us know if we can be of any help.</p>";
 
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, body);
             });
@@ -412,8 +412,8 @@ namespace Benchkart
             }
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Customer Requested for Call Back";
-                string body = "<p>Project Title - " + projectTitle + "</p><p>The Customer has requested for a CALL. Please reach out to the customer. Here are the contact details. </p><p>Customer Name : " + fullName + "</p><p>Customer Company Name : "+ companyName + "</p><p>Customer Contact Number : "+ contactNumber + "</p>";
+                string subject = "Notification: Call Back Request";
+                string body = "<p>Project Title - " + projectTitle + "</p><p>The Customer has requested for a Call Back. Please reach out to the customer. Here are the contact details. </p><p>Customer Name : " + fullName + "</p><p>Customer Company Name : "+ companyName + "</p><p>Customer Contact Number : "+ contactNumber + "</p>";
 
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, body);
             });

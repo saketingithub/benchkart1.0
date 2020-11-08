@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace Benchkart.Consultant
 {
@@ -13,23 +15,79 @@ namespace Benchkart.Consultant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetPackageData();
+            if (Request.Cookies["ConsultantId"] == null)
+            {
+                Response.Redirect("ConsultantLogin.aspx");
+            }
+            if (!IsPostBack)
+            {
+                GetPartnerPackageData();
+            }
+           
         }
-        public void GetPackageData()
+        public void GetPartnerPackageData()
         {
             DataTable dt = new DataTable();
             ClsQuickProject clsqp = new ClsQuickProject();
-            clsqp.PartnerId = Convert.ToInt32(Request.QueryString["PartnerId"]);
-            dt = clsqp.GetPartnerPackage();
-            if (dt.Rows.Count > 0)
+            if (Request.QueryString["PartnerIdAll"] != null)
             {
-                grdPackage.Visible = true;
-                grdPackage.DataSource = dt;
-                grdPackage.DataBind();
+                clsqp.PartnerId = Convert.ToInt32(Request.QueryString["PartnerIdAll"]);
+                dt = clsqp.GetPartnerPackage();
+                if (dt.Rows.Count > 0)
+                {
+                    grdPackage.Visible = true;
+                    grdPackage.DataSource = dt;
+                    grdPackage.DataBind();
+                }
+                else
+                {
+                    grdPackage.Visible = false;
+                }
             }
-            else
+            else if(Request.QueryString["PartnerIdActive"] != null)
             {
-                grdPackage.Visible = false;
+                clsqp.PartnerId = Convert.ToInt32(Request.QueryString["PartnerIdActive"]);
+                dt = clsqp.GetPartnerPackageActive();
+                if (dt.Rows.Count > 0)
+                {
+                    grdPackage.Visible = true;
+                    grdPackage.DataSource = dt;
+                    grdPackage.DataBind();
+                }
+                else
+                {
+                    grdPackage.Visible = false;
+                }
+            }
+            else if (Request.QueryString["PartnerIdInActive"] != null)
+            {
+                clsqp.PartnerId = Convert.ToInt32(Request.QueryString["PartnerIdInActive"]);
+                dt = clsqp.GetPartnerPackageInActive();
+                if (dt.Rows.Count > 0)
+                {
+                    grdPackage.Visible = true;
+                    grdPackage.DataSource = dt;
+                    grdPackage.DataBind();
+                }
+                else
+                {
+                    grdPackage.Visible = false;
+                }
+            }
+            else if (Request.QueryString["PartnerIdReject"] != null)
+            {
+                clsqp.PartnerId = Convert.ToInt32(Request.QueryString["PartnerIdReject"]);
+                dt = clsqp.GetPartnerPackageReject();
+                if (dt.Rows.Count > 0)
+                {
+                    grdPackage.Visible = true;
+                    grdPackage.DataSource = dt;
+                    grdPackage.DataBind();
+                }
+                else
+                {
+                    grdPackage.Visible = false;
+                }
             }
         }
         public void SetSubCategoryedit(int serviceId)
@@ -61,7 +119,7 @@ namespace Benchkart.Consultant
                     int serviceId = Convert.ToInt32(ddlCategoryedit.SelectedValue);
                     SetSubCategoryedit(serviceId);
                     ddlSubCategoryedit.SelectedValue = dt.Rows[0]["SubCategoryId"].ToString();
-
+                    GetPackageType();
                     ddlPackageTypeedit.SelectedValue = dt.Rows[0]["PackageType"].ToString();
                     txtPackageNameedit.Text = dt.Rows[0]["PackageName"].ToString();
                     txtPackageDescriptionedit.Text = dt.Rows[0]["PackageDescription"].ToString();
@@ -169,12 +227,30 @@ namespace Benchkart.Consultant
             clscpp.IsActive = Convert.ToInt32(ddlIsActive.SelectedValue);
             clscpp.UpdatePartnerPackageByAdmin();
             pnlMyModal.Attributes.Add("style", "display:none;");
-            GetPackageData();
+            GetPartnerPackageData();
         }
 
         protected void grdpackagedetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
+        }
+
+        public void GetPackageType()
+        {
+            ClsPackageType clspk = new ClsPackageType();
+            DataTable dt = new DataTable();
+            clspk.SubCategoryId = Convert.ToInt32(ddlSubCategoryedit.SelectedValue);
+            dt = clspk.GetPackageData();
+            ddlPackageTypeedit.DataTextField = "PackageTypeName";
+            ddlPackageTypeedit.DataValueField = "PackageTypeId";
+            ddlPackageTypeedit.DataSource = dt;
+            ddlPackageTypeedit.DataBind();
+            ddlPackageTypeedit.Items.Insert(0, new ListItem("Select PackageType", ""));
+
+        }
+        protected void ddlSubCategoryedit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetPackageType();
         }
     }
 }

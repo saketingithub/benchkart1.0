@@ -22,9 +22,6 @@ namespace Benchkart.Customer
             
             if (!IsPostBack)
             {
-                //string subject = "Thanks for posting your company requirement - " + DateTime.Now.ToString();
-                //string body = "<p>Congratulations! DATE- " + DateTime.Now.ToString() + " Hundreds of companies are getting their projects executed end-to-end on Benchkart & you are joining them. Projects executed on Benchkart not only get you quality while saving your time & money, they also ensure that you have complete Peace Of Mind on matters related to security, payments & accountability.</p><p>Right now, your project is undergoing a short review & then will be live on platform. In case we require additional information, we may reach out to you on the email/phone number provided by you.</p><p>From now on, your Benchkart account becomes the place for action! Your shortlisted bids, contracts, project management, payments & reviews will all happen in your account.</p>";
-                //ClsMail.SendEmail("Shri Krishan", "shrikrishan.goldcash@gmail.com", subject, body);
                 pnlFirst.Attributes.Add("style", "display:block;");
                 string serviceId = string.Empty;
                 if (Request.QueryString["id"] != null)
@@ -117,7 +114,7 @@ namespace Benchkart.Customer
             int otp = rnd.Next(1000, 9999);
             ViewState["otpemail"] = otp;
             ViewState["Email"] = txtEmailid.Text;
-            string otpmessage = otp + " is otp from benchkart.com ";
+            string otpmessage = otp + " is the OTP from Benchkart";
 
             ClsMail mail = new ClsMail();
             mail.EmailTo = txtEmailid.Text;
@@ -252,8 +249,8 @@ namespace Benchkart.Customer
                 //Email
                 System.Threading.Thread emailThread = new System.Threading.Thread(delegate ()
                 {
-                    string subject = "Thanks for posting your company requirement";
-                    string body = "<p>Congratulations! Hundreds of companies are getting their projects executed end-to-end on Benchkart & you are joining them. Projects executed on Benchkart not only get you quality while saving your time & money, they also ensure that you have complete Peace Of Mind on matters related to security, payments & accountability.</p><p>Right now, your project is undergoing a short review & then will be live on platform. In case we require additional information, we may reach out to you on the email/phone number provided by you.</p><p>From now on, your Benchkart account becomes the place for action! Your shortlisted bids, contracts, project management, payments & reviews will all happen in your account.</p>";
+                    string subject = "Your project has been received";
+                    string body = "<p>We have received your project. With a Project executed on Benchkart, you not only save Time & Money but also unmatched quality, security & reliability.</p><p>Right now, your project is undergoing a short review before it can be LIVE on the platform. In case we require additional information, we may reach out to you on the email/phone number provided by you.</p><p>From now on, your Benchkart account becomes the place for action! Your shortlisted bids, contracts, project management, payments & reviews will all happen in your account.</p>";
 
                     ClsMail.SendEmail(txtFullname.Text, email, subject, body);
 

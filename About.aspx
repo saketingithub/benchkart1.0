@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="About Us" name="description">
+    <meta content="benchkart, marketplace for outsourcing, Graphics & Design,Website & Apps,Digital Marketing,Software,Cloud & Infra,Call Center,KPO,Back-Office," name="keywords">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>Benchkart - About Us</title>
 
@@ -164,6 +165,15 @@
 
         </div>
     </div>
+    <div class="container text">
+        <p class="para">
+            The journey is as important as the destination!<br />
+            <br />
+            As we work towards our mission, we are conscious that digital transformation is the heart of a modern enterprise. Being a platform of choice for companies to outsource their IT Services & Digital Marketing projects requires us to be focused on our core values!
+        </p>
+        Our core values are Excellence, Focus, Collaboration & Integrity
+        </p>
+    </div>
     <div class="container bg-overlay excellence">
         <div class="row text-left">
             <h2 style="margin-top: 10%;"><span>Excellence - Always moving, always improving</span></h2>
@@ -190,7 +200,7 @@
     </div>
     <div class="container bg-overlay founders" style="margin-top: 300px;">
         <div class="row text-left">
-            <h2 style="margin-top: 10%;"><span>Our Founders</span></h2>
+            <h2 style="margin-top: 10%;"><span>Our Founder</span></h2>
 
         </div>
     </div>
@@ -198,9 +208,8 @@
         <p class="para">
             Kislay Kumar, our CEO, has spent 21 years post his MBA from IIM Calcutta being part of organizations like Unilever, Asian Paints, Nokia & Microsoft. As part of the leadership team of 3 MNCs and as advisor to many start-ups, he has gained valuable lessons on what it takes to drive business success with a transparent, compliant & customer centric organization.<br />
             <br />
-            Anurag Rawat, our CTO, leads platform development & customer success for Benchkart, having spent more than 12 years in this space, with companies like Accenture & Birla Soft. A serial entrepreneur, he is passionately invested in making sure that the Benchkart platform provides the highest value to its users<br />
-            <br />
-            They are just a mail away at kislay.kumar@benchkart.com & anurag.rawat@benchkart.com<br />
+                        
+            He is just a mail away at kislay.kumar@benchkart.com<br />
         </p>
     </div>
     <footer style="background-color: #252121;">

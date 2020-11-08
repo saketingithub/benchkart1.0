@@ -238,15 +238,14 @@
                                 <div class="divField">
                                     Primary Source of Revenue
                                             <asp:DropDownList ID="ddlPrimarySourceofRevenue" CssClass="form-control" runat="server">
-                                                <asp:ListItem Value="Graphics & Design">Graphics & Design</asp:ListItem>
-                                                <asp:ListItem Value="Web Development">Web Development</asp:ListItem>
-                                                <asp:ListItem Value="Ecommerce">Ecommerce</asp:ListItem>
-                                                <asp:ListItem Value="Digital Marketing">Digital Marketing</asp:ListItem>
-                                                <asp:ListItem Value="Apps & Software">Apps & Software</asp:ListItem>
-                                                <asp:ListItem Value="Cloud & Infrastructure">Cloud & Infrastructure</asp:ListItem>
-                                                <asp:ListItem Value="Voice Services">Voice Services</asp:ListItem>
-                                                <asp:ListItem Value="Knowledge Services">Knowledge Services</asp:ListItem>
-                                                <asp:ListItem Value="Backoffice Operations">Backoffice Operations</asp:ListItem>
+                                                 <asp:ListItem Value="Website & Apps">Website & Apps</asp:ListItem>
+                                                    <asp:ListItem Value="Graphics & Design">Graphics & Design</asp:ListItem>
+                                                    <asp:ListItem Value="Digital Marketing">Digital Marketing</asp:ListItem>
+                                                    <asp:ListItem Value="Software">Software</asp:ListItem>
+                                                    <asp:ListItem Value="Cloud & Infra">Cloud & Infra</asp:ListItem>
+                                                    <asp:ListItem Value="Call Center">Call Center</asp:ListItem>
+                                                    <asp:ListItem Value="KPO">KPO</asp:ListItem>
+                                                    <asp:ListItem Value="Back-Office">Back-Office</asp:ListItem>
                                             </asp:DropDownList>
 
                                 </div>

@@ -111,7 +111,7 @@
                 </div>
                 <div class="col-sm-8">
                     <h4>
-                        <i class="fa fa-fw fa-money fa-x"></i><b>Budget (INR)</b></h4>
+                        <i class="fa fa-fw fa-money fa-x"></i><b>Budget</b></h4>
                     <asp:Label ID="lblBudget" runat="server" class="label">
                     </asp:Label>
                 </div>
@@ -230,7 +230,7 @@
             <div class="row fields">
                 <div class="col-sm-12">
                     <h4>
-                        <i class="fa fa-fw fa-bullseye fa-x"></i><b>Bid Amount (INR)</b></h4>
+                        <i class="fa fa-fw fa-bullseye fa-x"></i><b>Bid Amount</b></h4>
                     <asp:Label ID="txtBid" runat="server" MaxLength="8" Width="30%" Style="margin-left: 40px;">
                     </asp:Label>
 

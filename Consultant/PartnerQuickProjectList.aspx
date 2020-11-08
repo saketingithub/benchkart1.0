@@ -82,68 +82,82 @@
             <uc1:ucHeader runat="server" ID="ucHeader" />
                  </div>
              <div class="row">
+             <div class="col-lg-4" style="margin-left:20px; margin-top:30px;margin-bottom:10px;"> 
+                 <asp:HyperLink ID="hylQuickPackage" runat ="server" Style="font-size:large;color:forestgreen; text-decoration: underline;" NavigateUrl="~/Consultant/Requests.aspx" >Back</asp:HyperLink>
+             </div>
+             </div>
+             <div class="row">
                  <div class="col-lg-2">
                      
                  </div>
                  <div class="col-lg-3">
-                       <asp:TextBox ID="txtpartnerId" CssClass="form-control" placeholder="Please fill partner id" runat ="server" ></asp:TextBox>  
+                       <asp:TextBox ID="txtsearch" CssClass="form-control" placeholder="Please fill partner name or companyname" runat ="server" ></asp:TextBox>  
                  </div>
                  <div class="col-lg-2">
                      <asp:Button ID="btnsearch" runat ="server" CssClass="form-control btn btn-primary" Text ="Search Partner" OnClick="btnsearch_Click" />
                  </div>
                  
              </div>
-             <div class="row" style="margin-top:30px;">
-                 <div class="col-lg-12" style="margin:20px;">
-                     <asp:GridView ID="grdpartnerQuickdetails" runat ="server" Width="90%" AutoGenerateColumns ="false">
+             <div class="row" style="margin-top:30px; ">
+                 <div class="col-lg-12" style="margin:20px;overflow:scroll;">
+                     <asp:GridView ID="grdpartnerQuickdetails" runat ="server"   Width="90%" AutoGenerateColumns ="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" CssClass="table-bordered">
                          <Columns>
-                             <asp:TemplateField HeaderText="PocFullName">
+                             <asp:TemplateField HeaderText="Partner Name" >
                                  <ItemTemplate>
-                                     <%#Eval("PocFullName") %>
+                                     <%#Eval("CompanyName") %>
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="Email">
+                              <asp:TemplateField HeaderText="PartnerType">
                                  <ItemTemplate>
-                                     <%#Eval("Email") %>
+                                     <%#Eval("PartnerType").ToString()=="1"? "Economy":Eval("PartnerType").ToString()=="2"?"Standard":"Premium" %>
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="ContactNumber">
+                              <asp:TemplateField HeaderText="PrimarySourceOfRevenue">
                                  <ItemTemplate>
-                                     <%#Eval("ContactNumber") %>
+                                     <%#Eval("PrimarySourceOfRevenue") %>
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="Images">
+                             
+                              <asp:TemplateField HeaderText="AllPkg">
                                  <ItemTemplate>
-                                     <%#Eval("Images") %>
+                                     <%#Eval("AllPackages") %>
+                                      <asp:HyperLink ID="hylall" runat ="server" Text="ViewDetails" NavigateUrl='<%# String.Format("~/Consultant/QuickProjectList.aspx?PartnerIdAll={0}", Eval("PartnerId")) %>' ></asp:HyperLink>
+                                   
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="Description1">
+                               <asp:TemplateField HeaderText="Active">
+
                                  <ItemTemplate>
-                                     <%#Eval("Description1") %>
+                                     <%#Eval("ActivePkg") %>
+                                      <asp:HyperLink ID="hylactive" runat ="server" Text="ViewDetails" NavigateUrl='<%# String.Format("~/Consultant/QuickProjectList.aspx?PartnerIdActive={0}", Eval("PartnerId")) %>' ></asp:HyperLink>
+                                   
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="Description2">
+                               <asp:TemplateField HeaderText="InActive">
                                  <ItemTemplate>
-                                     <%#Eval("Description2") %>
+                                     <%#Eval("InActivePkg") %>
+                                      <asp:HyperLink ID="hylinactive" runat ="server" Text="ViewDetails" NavigateUrl='<%# String.Format("~/Consultant/QuickProjectList.aspx?PartnerIdInActive={0}", Eval("PartnerId")) %>' ></asp:HyperLink>
+                                   
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="Description3">
+                               <asp:TemplateField HeaderText="Reject">
                                  <ItemTemplate>
-                                     <%#Eval("Description3") %>
+                                     <%#Eval("RejectPkg") %>
+                                      <asp:HyperLink ID="hylreject" runat ="server" Text="ViewDetails" NavigateUrl='<%# String.Format("~/Consultant/QuickProjectList.aspx?PartnerIdReject={0}", Eval("PartnerId")) %>' ></asp:HyperLink>
+                                   
                                  </ItemTemplate>
                              </asp:TemplateField>
-                              <asp:TemplateField HeaderText="QP_count">
-                                 <ItemTemplate>
-                                     <%#Eval("QP_count")+ " Project" %>
-                                 </ItemTemplate>
-                             </asp:TemplateField>
-                              <asp:TemplateField HeaderText="Action">
-                                <ItemTemplate>
-                                    <asp:HyperLink ID="hylviewdetails" runat ="server" Text="ViewDetails" NavigateUrl='<%# String.Format("~/Consultant/QuickProjectList.aspx?PartnerId={0}", Eval("PartnerId")) %>' ></asp:HyperLink>
-                                    
-                                </ItemTemplate>
-                             </asp:TemplateField>
+                             
                          </Columns>
+                         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                         <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                         <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                         <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                         <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                      </asp:GridView>
                  </div>
              </div>

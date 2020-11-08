@@ -555,7 +555,90 @@
 
         </div>
 
+                <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
 
+                        <div class="col-lg-3 col-md-6 footer-info">
+                            <h1>benchkart</h1>
+                            <p>Benchkart is a new age digital marketplace for procurement of digital B2B services. Founded by an erstwhile member of Microsoft India Leadership, we are committed to solving the challenges in procurement of services, especially for start-ups and small businesses across the world.</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="ion-ios-arrow-right"></i><a href="#">Home</a></li>
+                                <li><i class="ion-ios-arrow-right"></i><a href="About" target="_blank">About us</a></li>
+                                <li><i class="ion-ios-arrow-right"></i><a href="Html/Faq.html" target="_blank">FAQs</a></li>
+                                <li><i class="ion-ios-arrow-right"></i><a href="Partner/Signup">Become a Partner</a></li>
+                                <li><i class="ion-ios-arrow-right"></i><a href="Policies/Terms-of-use-for-Clients.html" target="_blank">TERMS OF USE FOR CLIENTS</a></li>
+                                <li><i class="ion-ios-arrow-right"></i><a href="Policies/Terms-of-use-for-Partners.html" target="_blank">TERMS OF USE FOR PARTNERS</a></li>
+                                <li><i class="ion-ios-arrow-right"></i><a href="Policies/Benchkart-Privacy-Policy.html" target="_blank">PRIVACY POLICY</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h4>Contact Us</h4>
+                            <p>
+                                DW 254, Nirvana Country
+                            <br>
+                                Gurgaon, Haryana  122018<br>
+                                India
+                            <br>
+                                <strong>Phone:</strong> +91 9911780051<br>
+                                <strong>Email:</strong> outsource@benchkart.com<br>
+                            </p>
+
+                            <div class="social-links">
+                                <a href="https://twitter.com/benchkart?ref_src=twsrc%5Etfw" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="https://facebook.com/benchkart-111486960437160" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <%--<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>--%>
+                                <a href="https://linkedin.com/company/benchkart" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-newsletter">
+                            <h4>BECOME A PARTNER</h4>
+                            <p>We are inviting only a few of India's top rated (mid-sized) agencies to join the benchkart platform. If you feel your domain expertise & innovation can add value to our customers, please let our assessment team know.</p>
+                            <%--<form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>--%>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong>2020 Benchkart Services Pvt Ltd</strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                </div>
+            </div>
+            <!--Start of Tawk.to Script-->
+            <%--<script type="text/javascript">
+                var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+                (function () {
+                    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                    s1.async = true;
+                    s1.src = 'https://embed.tawk.to/5d983f3fdb28311764d765fe/default';
+                    s1.charset = 'UTF-8';
+                    s1.setAttribute('crossorigin', '*');
+                    s0.parentNode.insertBefore(s1, s0);
+                })();
+            </script>--%>
+            <!--End of Tawk.to Script-->
+
+
+
+        </footer>
+        <!-- End Footer -->
 
         <div style ="background-color:black; font-weight:bold; color:white; text-align :center; padding-top:20px; padding-bottom:20px;">
              

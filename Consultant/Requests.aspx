@@ -136,9 +136,9 @@
                     <td>
                         <asp:HyperLink ID="HyperLink1" runat="server" Style="font-size:large;color:white; text-decoration: underline;" NavigateUrl="~/Consultant/PartnerList.aspx">Partner Approval</asp:HyperLink>
                     </td>
-                    <%--<td>
-                      <asp:HyperLink ID="HyperLink2" runat ="server" Style="font-size:large;color:white; text-decoration: underline;" NavigateUrl="~/Consultant/Post_NewRequest.aspx" >Create New Request</asp:HyperLink>
-                    </td>--%>
+                    <td>
+                      <asp:HyperLink ID="hylQuickPackage" runat ="server" Style="font-size:large;color:white; text-decoration: underline;" NavigateUrl="~/Consultant/PartnerQuickProjectList.aspx" >Qik Project</asp:HyperLink>
+                    </td>
                     <td>
                       <asp:HyperLink ID="hplConsult" runat ="server" Style="font-size:large;color:white; text-decoration: underline;" NavigateUrl="~/Consultant/Consultation_Request.aspx" >Consultation</asp:HyperLink>
                     </td>

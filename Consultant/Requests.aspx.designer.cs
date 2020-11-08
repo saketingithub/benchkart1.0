@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Benchkart.Consultant {
-    
-    
-    public partial class Requests {
-        
+namespace Benchkart.Consultant
+{
+
+
+    public partial class Requests
+    {
+
         /// <summary>
         /// Head1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// ScriptManager1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
+
         /// <summary>
         /// ucHeader control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Benchkart.Consultant.ucConsultantHeader ucHeader;
-        
+
         /// <summary>
         /// ddlRequestStatus control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlRequestStatus;
-        
+
         /// <summary>
         /// txtContactNumber control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
-        
+
         /// <summary>
         /// reqtxtContactNumber control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqtxtContactNumber;
-        
+
         /// <summary>
         /// btnSearch control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
+
         /// <summary>
         /// hplCustomerList control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplCustomerList;
-        
+
         /// <summary>
         /// HyperLinkProjectList control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkProjectList;
-        
+
         /// <summary>
         /// HyperLink1 control.
         /// </summary>
@@ -110,7 +112,16 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-        
+
+        /// <summary>
+        /// hylQuickPackage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hylQuickPackage;
+
         /// <summary>
         /// hplConsult control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace Benchkart.Consultant {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplConsult;
-        
+
         /// <summary>
         /// rptRequests control.
         /// </summary>

@@ -24,6 +24,15 @@ namespace Benchkart.Partner
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// pnlagency control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlagency;
+
+        /// <summary>
         /// firstrow control.
         /// </summary>
         /// <remarks>
@@ -40,24 +49,6 @@ namespace Benchkart.Partner
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRepresentativeName;
-
-        /// <summary>
-        /// fileuploadPic control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileuploadPic;
-
-        /// <summary>
-        /// imagePic control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imagePic;
 
         /// <summary>
         /// txtLocation control.
@@ -139,6 +130,15 @@ namespace Benchkart.Partner
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlpackage;
+
+        /// <summary>
+        /// grdAgencyDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdAgencyDetails;
 
         /// <summary>
         /// grdPackage control.
@@ -492,15 +492,6 @@ namespace Benchkart.Partner
         protected global::System.Web.UI.WebControls.TextBox txtPremium8;
 
         /// <summary>
-        /// txtPackageAmountCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPackageAmountCost;
-
-        /// <summary>
         /// txtPackageCost1 control.
         /// </summary>
         /// <remarks>
@@ -616,15 +607,6 @@ namespace Benchkart.Partner
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdpackagedetails;
-
-        /// <summary>
-        /// txtpackageamountedit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpackageamountedit;
 
         /// <summary>
         /// txtbasicpackagecostedit control.

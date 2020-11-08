@@ -42,13 +42,22 @@ namespace Benchkart.Consultant
         protected global::Benchkart.Consultant.ucConsultantHeader ucHeader;
 
         /// <summary>
-        /// txtpartnerId control.
+        /// hylQuickPackage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpartnerId;
+        protected global::System.Web.UI.WebControls.HyperLink hylQuickPackage;
+
+        /// <summary>
+        /// txtsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtsearch;
 
         /// <summary>
         /// btnsearch control.

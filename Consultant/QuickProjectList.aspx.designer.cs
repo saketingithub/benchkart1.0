@@ -42,6 +42,15 @@ namespace Benchkart.Consultant
         protected global::Benchkart.Consultant.ucConsultantHeader ucHeader;
 
         /// <summary>
+        /// hylQuickPackage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hylQuickPackage;
+
+        /// <summary>
         /// grdPackage control.
         /// </summary>
         /// <remarks>
@@ -130,15 +139,6 @@ namespace Benchkart.Consultant
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grdpackagedetails;
-
-        /// <summary>
-        /// txtpackageamountedit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtpackageamountedit;
 
         /// <summary>
         /// txtbasicpackagecostedit control.

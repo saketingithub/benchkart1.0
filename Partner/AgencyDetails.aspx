@@ -76,22 +76,22 @@
 
             if (fullname == "") {
 
-                alert("Please fill Full Name");
+                alert("Please enter full name");
                 document.getElementById("ContentPlaceHolder1_txtRepresentativeName").focus;
                 return false;
             }
 
-            var image = document.getElementById("ContentPlaceHolder1_fileuploadPic").value;
-             var picimage = document.getElementById("ContentPlaceHolder1_imagePic").baseURI;
-            if (image == "" && picimage=="") {
-                alert("Please upload the pic");
-                document.getElementById("ContentPlaceHolder1_fileuploadPic").focus;
-                return false;
-            }
+            //var image = document.getElementById("ContentPlaceHolder1_fileuploadPic").value;
+            // var picimage = document.getElementById("ContentPlaceHolder1_imagePic").baseURI;
+            //if (image == "" && picimage=="") {
+            //    alert("Please upload the pic");
+            //    document.getElementById("ContentPlaceHolder1_fileuploadPic").focus;
+            //    return false;
+            //}
 
             var location = document.getElementById("ContentPlaceHolder1_txtLocation").value;
             if (location == "") {
-                alert("Please fill the location");
+                alert("Please choose the location/s");
                 document.getElementById("ContentPlaceHolder1_txtLocation").focus;
                 return false;
             }
@@ -105,28 +105,28 @@
 
             var companystarted = document.getElementById("ContentPlaceHolder1_txtCompanyStarted").value;
             if (companystarted == "") {
-                alert("Please fill the companystarted years");
+                alert("Please fill the yrs of operation");
                 document.getElementById("ContentPlaceHolder1_txtCompanyStarted").focus;
                 return false;
             }
 
             var description1 = document.getElementById("ContentPlaceHolder1_txtDescribedAs").value;
             if (description1 == "") {
-                alert("Please fill the described as");
+                alert("Please fill 'Described as'");
                 document.getElementById("ContentPlaceHolder1_txtDescribedAs").focus;
                 return false;
             }
 
             var description2 = document.getElementById("ContentPlaceHolder1_txtConsiderUsBecause").value;
             if (description2 == "") {
-                alert("Please fill consider us because");
+                alert("Please fill 'Consider us because'");
                 document.getElementById("ContentPlaceHolder1_txtConsiderUsBecause").focus;
                 return false;
             }
 
             var description3 = document.getElementById("ContentPlaceHolder1_txtOurTopCustomersAre").value;
             if (description3 == "") {
-                alert("Please fil our top customers are");
+                alert("Please fil 'Our top customers are'");
                 document.getElementById("ContentPlaceHolder1_txtOurTopCustomersAre").focus;
                 return false;
             }
@@ -136,7 +136,7 @@
                 return true;
             }
             else {
-                alert('Please check agree to the terms & conditions')
+                alert('Please agree to the terms')
                 document.getElementById("ContentPlaceHolder1_chkTerms").focus;
                 return false;
             }
@@ -163,35 +163,37 @@
             }
             var packagename = document.getElementById("ContentPlaceHolder1_txtPackageName").value;
             if (packagename == "") {
-                alert("Please fill the package name");
+                alert("Please enter the package name");
                 document.getElementById("ContentPlaceHolder1_txtPackageName").focus;
                 return false;
             }
             var packagedescription = document.getElementById("ContentPlaceHolder1_txtPackageDescription").value;
             if (packagedescription == "") {
-                alert("Please fill the package description");
+                alert("Please enter the package description");
                 document.getElementById("ContentPlaceHolder1_txtPackageDescription").focus;
                 return false;
             }
             var packagecostbasic = document.getElementById("ContentPlaceHolder1_txtPackageCost1").value;
-            if (packagecostbasic == "") {
-                alert("Please fill the package basic cost");
+            var packagecoststandardcost = document.getElementById("ContentPlaceHolder1_txtPackageCost2").value;
+            var packagecostpremium = document.getElementById("ContentPlaceHolder1_txtPackageCost3").value;
+            if (packagecostbasic == "" && packagecoststandardcost == "" && packagecostpremium == "") {
+                alert("You must enter the package cost");
                 document.getElementById("ContentPlaceHolder1_txtPackageCost1").focus;
                 return false;
             }
            
-            var packagecoststandardcost = document.getElementById("ContentPlaceHolder1_txtPackageCost2").value;
-            if (packagecoststandardcost == "") {
-                alert("Please fill the package standard cost");
-                document.getElementById("ContentPlaceHolder1_txtPackageCost2").focus;
-                return false;
-            }
-            var packagecostpremium = document.getElementById("ContentPlaceHolder1_txtPackageCost3").value;
-            if (packagecostpremium == "") {
-                alert("Please fill the package premium cost");
-                document.getElementById("ContentPlaceHolder1_txtPackageCost3").focus;
-                return false;
-            }
+            
+            //if (packagecoststandardcost == "") {
+            //    alert("Please fill the package standard cost");
+            //    document.getElementById("ContentPlaceHolder1_txtPackageCost2").focus;
+            //    return false;
+            //}
+           
+            //if (packagecostpremium == "") {
+            //    alert("Please fill the package premium cost");
+            //    document.getElementById("ContentPlaceHolder1_txtPackageCost3").focus;
+            //    return false;
+            //}
 
         }
         function Allvalidationedit() {
@@ -215,34 +217,27 @@
             }
             var packagenameedit = document.getElementById("ContentPlaceHolder1_txtPackageNameedit").value;
             if (packagenameedit == "") {
-                alert("Please fill the package name");
+                alert("Please enter the package name");
                 document.getElementById("ContentPlaceHolder1_txtPackageNameedit").focus;
                 return false;
             }
             var packagedescriptionedit = document.getElementById("ContentPlaceHolder1_txtPackageDescriptionedit").value;
             if (packagedescriptionedit == "") {
-                alert("Please fill the package description");
+                alert("Please enter the package description");
                 document.getElementById("ContentPlaceHolder1_txtPackageDescriptionedit").focus;
                 return false;
             }
             var packagecostbasicedit = document.getElementById("ContentPlaceHolder1_txtbasicpackagecostedit").value;
-            if (packagecostbasicedit == "") {
-                alert("Please fill the package basic cost");
+            var packagecoststandardcostedit = document.getElementById("ContentPlaceHolder1_txtstandardpackagecostedit").value;
+            var packagecostpremiumedit = document.getElementById("ContentPlaceHolder1_txtpremiumpackagecostedit").value;
+            if (packagecostbasicedit == "" && packagecoststandardcostedit == "" && packagecostpremiumedit == "") {
+                alert("You must enter the package cost");
                 document.getElementById("ContentPlaceHolder1_txtbasicpackagecostedit").focus;
                 return false;
             }
-            var packagecoststandardcostedit = document.getElementById("ContentPlaceHolder1_txtstandardpackagecostedit").value;
-            if (packagecoststandardcostedit == "") {
-                alert("Please fill the package standard cost");
-                document.getElementById("ContentPlaceHolder1_txtstandardpackagecostedit").focus;
-                return false;
-            }
-            var packagecostpremiumedit = document.getElementById("ContentPlaceHolder1_txtpremiumpackagecostedit").value;
-            if (packagecostpremiumedit == "") {
-                alert("Please fill the package premium cost");
-                document.getElementById("ContentPlaceHolder1_txtpremiumpackagecostedit").focus;
-                return false;
-            }
+
+
+
 
         }
     </script>
@@ -261,17 +256,17 @@
             $("#ContentPlaceHolder1_txtpremiumpackagecostedit").attr("maxlength", 8);
 
         });
-        function ShowImagePreview(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $("#ContentPlaceHolder1_imagePic").prop('src', e.target.result)
-                        .width(150)
-                        .height(150);
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+        //function ShowImagePreview(input) {
+        //    if (input.files && input.files[0]) {
+        //        var reader = new FileReader();
+        //        reader.onload = function (e) {
+        //            $("#ContentPlaceHolder1_imagePic").prop('src', e.target.result)
+        //                .width(150)
+        //                .height(150);
+        //        };
+        //        reader.readAsDataURL(input.files[0]);
+        //    }
+        //}
         function SearchText() {
             $("#ContentPlaceHolder1_txtLocation").autocomplete({
                 source: function (request, response) {
@@ -323,6 +318,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:Panel ID="pnlagency" runat="server" style="border:1px solid green;" >
     <div class="container-fluid" style="background-color: #f8f8f8;">
         <div class="row" style="margin: 20px;">
             <div class="tab-content" id="firstrow" runat="server" style="text-align: center; margin-left: 20px; margin-right: 20px; padding: 20px; width: 90%; border-radius: 30px; background-color: White; border: 1px solid green; color: Black; font-size: medium; margin-top: 10px;">
@@ -331,7 +327,7 @@
 
 
                 <div>
-
+                    
                     <div class="row">
                         <div class="col-sm-12">
                             <h3 style="color: gray;">Agency Details</h3>
@@ -351,19 +347,19 @@
 
                         </div>
                     </div>
-                    <div class="row">
+                    <%--<div class="row">
                         <div class="col-sm-12">
                             <div class="fieldtitle">
                                 <asp:FileUpload ID="fileuploadPic" onchange="ShowImagePreview(this);" runat="server" />
 
-                                <asp:Image ID="imagePic" runat="server" Style="margin-left: 500px;" />
+                                <asp:Image ID="imagePic" runat="server"  Style="margin-left: 500px;" />
 
 
 
                             </div>
 
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="fieldtitle">
@@ -455,7 +451,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="fieldtitle">
-                                <asp:CheckBox runat="server" ID="chkTerms" Style="margin-left: 1%; font-size: small; text-align: left;" />&nbsp;&nbsp; I Agree to the <a href="../Policies/Terms-of-use-for-Partners.html" style="font-size: small; font-weight: bold;" target="_blank">Terms of use for Partners</a>&nbsp; & &nbsp;<a href="../Policies/Benchkart-Privacy-Policy.html" style="font-size: small; font-weight: bold;" target="_blank">Privacy Policy</a>
+                                <asp:CheckBox runat="server" ID="chkTerms" Style="margin-left: 1%; font-size: small; text-align: left;" />&nbsp;&nbsp; I Agree to the <a href="../Policies/Terms-Packages.html" style="font-size: small; font-weight: bold;" target="_blank">Qik Project Terms</a>
                             </div>
                         </div>
                     </div>
@@ -477,6 +473,7 @@
 
         </div>
     </div>
+        </asp:Panel>
     <br />
 
     <asp:Panel ID="pnlpackage" runat="server" Style="display: none; overflow:auto; background-color: #f8f8f8;">
@@ -484,8 +481,40 @@
             <div class="row">
                 <div class="col-md-12 packagedetails" style="overflow:scroll;">
                     <div class ="form-group">
+                        <h4 style="text-align :center; font-weight :bold; color:green;">Agency Details</h4>
+                        
+                        <asp:GridView ID="grdAgencyDetails" runat ="server" Width="100%" OnRowCommand="grdAgencyDetails_RowCommand" AutoGenerateColumns="false" RowStyle-Wrap="True" HeaderStyle-Wrap="True" PagerStyle-Wrap="True" >
+                            <Columns>
+                                <asp:TemplateField HeaderText="Representative Name"  >
+                                 
+                                    <ItemTemplate >
+                                        
+                                        <%#Eval("PocFullName") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Office Location">
+                                    
+                                    <ItemTemplate>
+                                        <%#Eval("CompanyCity") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Created/Modified on">
+                                    <ItemTemplate>
+                                        <%#Eval("ModificationDate") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Action">
+                                    <ItemTemplate>
+                                      <asp:LinkButton ID="btneditAgency" runat ="server" ForeColor="Blue" Font-Bold="true" CommandArgument='<%#Eval("PartnerId") %>' CommandName ="EdtAgency">Edit</asp:LinkButton>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <br />
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();"><i class="fa fa-plus">Add New Package</i></button><br />
-                    <br />
+                    
+                        
+                       <h4 style ="text-align:center; font-weight :bold; color:green;"> Package Details</h4>
                     <asp:GridView ID="grdPackage" runat="server" Width="100%"  AutoGenerateColumns="false" AlternatingRowStyle-Wrap="true" OnRowCommand="grdPackage_RowCommand" RowStyle-Wrap="True" HeaderStyle-Wrap="True" PagerStyle-Wrap="True">
                         <Columns>
                             <asp:TemplateField HeaderText="PackageId" >
@@ -493,23 +522,93 @@
                                     <%#Eval("PartnerPackageId") %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="PackageName" >
+                            <asp:TemplateField HeaderText="Package Name" >
                                 <ItemTemplate >
                                     <%#Eval("PackageName") %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="PackageDescription" >
+                            <asp:TemplateField HeaderText="Package Description" >
                                 <ItemTemplate >
 
                                     <%#Eval("PackageDescription") %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="PackageType">
+                            <asp:TemplateField HeaderText="Package Type">
                                 <ItemTemplate>
-                                    <%#Eval("PackageType").ToString()=="1"? "Economy" : Eval("PackageType").ToString()=="2"? "Standard":"Premium" %>
+                                    <%#Eval("PackageType").ToString()=="1"? "Logo" : Eval("PackageType").ToString()=="2"? "Other"
+                                            :  Eval("PackageType").ToString()=="3"? "Social Media Banners": Eval("PackageType").ToString()=="4"? "Other"
+                                            :  Eval("PackageType").ToString()=="5"? "Flyer/Poster Design": Eval("PackageType").ToString()=="6"? "Brochure Design"
+                                            :  Eval("PackageType").ToString()=="7"? "Catalogue Design": Eval("PackageType").ToString()=="8"? "Other"
+                                            :  Eval("PackageType").ToString()=="9"? "Packaging Design": Eval("PackageType").ToString()=="10"? "Other"
+                                            :  Eval("PackageType").ToString()=="11"? "Banner Ads": Eval("PackageType").ToString()=="12"? "Other"
+                                            :  Eval("PackageType").ToString()=="13"? "Presentation Design": Eval("PackageType").ToString()=="14"? "Other"
+                                            :  Eval("PackageType").ToString()=="15"? "Video Making": Eval("PackageType").ToString()=="16"? "Animation"
+                                            :  Eval("PackageType").ToString()=="17"? "3D Design": Eval("PackageType").ToString()=="18"? "Graphics - Any Other"
+                                            :  Eval("PackageType").ToString()=="19"? "Simple Website": Eval("PackageType").ToString()=="20"? "Dynamic Website"
+                                            :  Eval("PackageType").ToString()=="21"? "Landing Page": Eval("PackageType").ToString()=="22"? "Ecommerce Website"
+                                            :  Eval("PackageType").ToString()=="23"? "API Integrations": Eval("PackageType").ToString()=="24"? "Other"
+                                            :  Eval("PackageType").ToString()=="25"? "Website Designing - UI/UX": Eval("PackageType").ToString()=="26"? "Other"
+                                            :  Eval("PackageType").ToString()=="27"? "Bug Fixing & Maintenance": Eval("PackageType").ToString()=="28"? "Ecommerce Management"
+                                            :  Eval("PackageType").ToString()=="29"? "Other": Eval("PackageType").ToString()=="30"? "Readymade Apps"
+                                            :  Eval("PackageType").ToString()=="31"? "Apps - Any Other": Eval("PackageType").ToString()=="32"? "Website - Any Other"
+                                            :  Eval("PackageType").ToString()=="33"? "Digital Strategy	": Eval("PackageType").ToString()=="34"? "Other"
+                                            :  Eval("PackageType").ToString()=="35"? "PPC": Eval("PackageType").ToString()=="36"? "Other"
+                                            :  Eval("PackageType").ToString()=="37"? "Video Marketing": Eval("PackageType").ToString()=="38"? "Other"
+                                            :  Eval("PackageType").ToString()=="39"? "Email-Marketing": Eval("PackageType").ToString()=="40"? "Other"
+                                            :  Eval("PackageType").ToString()=="41"? "SMM": Eval("PackageType").ToString()=="42"? "Other"
+                                            :  Eval("PackageType").ToString()=="43"? "Influencer Marketing": Eval("PackageType").ToString()=="44"? "Other"
+                                            :  Eval("PackageType").ToString()=="45"? "Content Writing": Eval("PackageType").ToString()=="46"? "Content Marketing"
+                                            :  Eval("PackageType").ToString()=="47"? "Other": Eval("PackageType").ToString()=="48"? "SEO"
+                                            :  Eval("PackageType").ToString()=="49"? "Other": Eval("PackageType").ToString()=="50"? "Data Mining & Analytics"
+                                            :  Eval("PackageType").ToString()=="51"? "Other": Eval("PackageType").ToString()=="52"? "Lead generation"
+                                            :  Eval("PackageType").ToString()=="53"? "Ecommerce Marketing": Eval("PackageType").ToString()=="54"? "Podcast Marketing"
+                                            :  Eval("PackageType").ToString()=="55"? "Web Traffic": Eval("PackageType").ToString()=="56"? "Music Promotion"
+                                            :  Eval("PackageType").ToString()=="57"? "DM - Any Other": Eval("PackageType").ToString()=="58"? "Hire a Developer"
+                                            :  Eval("PackageType").ToString()=="59"? "Software Development": Eval("PackageType").ToString()=="60"? "Other"
+                                            :  Eval("PackageType").ToString()=="61"? "SaaS Applications"
+                                            :  Eval("PackageType").ToString()=="62"? "Other": Eval("PackageType").ToString()=="63"? "Testing & QA"
+                                            :  Eval("PackageType").ToString()=="64"? "Other": Eval("PackageType").ToString()=="65"? "Maintenance & Support"
+                                            :  Eval("PackageType").ToString()=="66"? "Other": Eval("PackageType").ToString()=="67"? "Cloud Computing Applications"
+                                            :  Eval("PackageType").ToString()=="68"? "Other": Eval("PackageType").ToString()=="69"? "Integration & Migration Services"
+                                            :  Eval("PackageType").ToString()=="70"? "Other": Eval("PackageType").ToString()=="71"? "Game Development"
+                                            :  Eval("PackageType").ToString()=="72"? "Other": Eval("PackageType").ToString()=="73"? "IoT Solutions"
+                                            :  Eval("PackageType").ToString()=="74"? "Other": Eval("PackageType").ToString()=="75"? "Chatbots"
+                                            :  Eval("PackageType").ToString()=="76"? "Other": Eval("PackageType").ToString()=="77"? "Packaged Software Implementation"
+                                            :  Eval("PackageType").ToString()=="78"? "Software Subscription Services": Eval("PackageType").ToString()=="79"? "Software - Any Other"
+                                            :  Eval("PackageType").ToString()=="80"? "Server Setup & Troubleshooting": Eval("PackageType").ToString()=="81"? "Other"
+                                            :  Eval("PackageType").ToString()=="82"? "Server Management & Webmaster Services": Eval("PackageType").ToString()=="83"? "Other"
+                                            :  Eval("PackageType").ToString()=="84"? "Network Setup And Management": Eval("PackageType").ToString()=="85"? "Other"
+                                            :  Eval("PackageType").ToString()=="86"? "Remote IT Management": Eval("PackageType").ToString()=="87"? "Other"
+                                            :  Eval("PackageType").ToString()=="88"? "Cloud Setup & Migration": Eval("PackageType").ToString()=="89"? "Other"
+                                            :  Eval("PackageType").ToString()=="90"? "Cloud Consulting & Strategy": Eval("PackageType").ToString()=="91"? "Other"
+                                            :  Eval("PackageType").ToString()=="92"? "Cloud - Any Other": Eval("PackageType").ToString()=="93"? "Other"
+                                            :  Eval("PackageType").ToString()=="94"? "Support": Eval("PackageType").ToString()=="95"? "Other"
+                                            :  Eval("PackageType").ToString()=="96"? "Tele Sales": Eval("PackageType").ToString()=="97"? "Other"
+                                            :  Eval("PackageType").ToString()=="98"? "Debt Collection": Eval("PackageType").ToString()=="99"? "Other"
+                                            :  Eval("PackageType").ToString()=="100"? "BPO - Any Other": Eval("PackageType").ToString()=="101"? "Other"
+                                            :  Eval("PackageType").ToString()=="102"? "HR Services": Eval("PackageType").ToString()=="103"? "Other"
+                                            :  Eval("PackageType").ToString()=="104"? "Consulting": Eval("PackageType").ToString()=="105"? "Other"
+                                            :  Eval("PackageType").ToString()=="106"? "Legal Support": Eval("PackageType").ToString()=="107"? "Other"
+                                            :  Eval("PackageType").ToString()=="108"? "Chartered Accountant Services": Eval("PackageType").ToString()=="109"? "Other"
+                                            :  Eval("PackageType").ToString()=="110"? "Healthcare": Eval("PackageType").ToString()=="111"? "Other"
+                                            :  Eval("PackageType").ToString()=="112"? "IT Consulting	": Eval("PackageType").ToString()=="113"? "Other"
+                                            :  Eval("PackageType").ToString()=="114"? "IT Training ": Eval("PackageType").ToString()=="115"? "Other"
+                                            :  Eval("PackageType").ToString()=="116"? "Market Research": Eval("PackageType").ToString()=="117"? "Other"
+                                            :  Eval("PackageType").ToString()=="118"? "Public Relations	": Eval("PackageType").ToString()=="119"? "Other"
+                                            :  Eval("PackageType").ToString()=="120"? "KPO - Any Other": Eval("PackageType").ToString()=="121"? "Other"
+                                            :  Eval("PackageType").ToString()=="122"? "24X7 Chat": Eval("PackageType").ToString()=="123"? "Other"
+                                            :  Eval("PackageType").ToString()=="124"? "Email Management": Eval("PackageType").ToString()=="125"? "Other"
+                                            :  Eval("PackageType").ToString()=="126"? "Data Entry Operator Monthly": Eval("PackageType").ToString()=="127"? "Other"
+                                            :  Eval("PackageType").ToString()=="128"? "Data Processing": Eval("PackageType").ToString()=="129"? "Other"
+                                            :  Eval("PackageType").ToString()=="130"? "Digitization": Eval("PackageType").ToString()=="131"? "Other"
+                                            :  Eval("PackageType").ToString()=="132"? "Research & Analytics": Eval("PackageType").ToString()=="133"? "Other"
+                                            :  Eval("PackageType").ToString()=="134"? "Offline & Online Catalogues ": Eval("PackageType").ToString()=="135"? "Other"
+                                            :  Eval("PackageType").ToString()=="136"? "Field Executive Support": Eval("PackageType").ToString()=="137"? "Other"
+                                            :  Eval("PackageType").ToString()=="138"? "Writing & Translation Services": Eval("PackageType").ToString()=="139"? "Other"
+                                            :  Eval("PackageType").ToString()=="140"? "Back Office - Any Other": "Other" %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="IsActive">
+                            <asp:TemplateField HeaderText="Is Active">
                                 <ItemTemplate>
                                     <%#Eval("IsActive").ToString()=="0"? "Not Active":"Active" %>
                                 </ItemTemplate>
@@ -563,8 +662,8 @@
                             <div class="row" style="margin: 10px; padding: 10px;">
                                 <div class="form-group">
 
-                                    <asp:DropDownList ID="ddlSubCategory" AutoPostBack="true" class="form-control" runat="server"
-                                        Style="border-radius: 10px;">
+                                    <asp:DropDownList ID="ddlSubCategory" AutoPostBack="true"  class="form-control" runat="server"
+                                        Style="border-radius: 10px;" OnSelectedIndexChanged="ddlSubCategory_SelectedIndexChanged">
 
                                         <%--<asp:ListItem Value="18">Website Development</asp:ListItem>
                                                     <asp:ListItem Value="19">Website Designing - UI/UX</asp:ListItem>
@@ -579,10 +678,7 @@
                                 <div class="form-group">
                                     <asp:DropDownList ID="ddlPackageType" class="form-control" runat="server"
                                         Style="border-radius: 10px;">
-                                        <asp:ListItem Value="">Select Package</asp:ListItem>
-                                        <asp:ListItem Value="1">Economy</asp:ListItem>
-                                        <asp:ListItem Value="2">Standard</asp:ListItem>
-                                        <asp:ListItem Value="3">Premium</asp:ListItem>
+                                       
                                     </asp:DropDownList>
 
                                 </div>
@@ -607,18 +703,18 @@
                         <div class="form-group">
 
                             <table id="tblparameter" style="width: 100%; border: 2px solid green;">
-                                <thead style="background-color: blanchedalmond; border: 2px solid green; font-weight: bold; font-size: large;">
+                                <thead style="background-color: darkseagreen; border: 2px solid green; font-weight: bold; font-size: large;">
                                     <tr>
-                                        <th>Parameter type</th>
-                                        <th>Basic</th>
-                                        <th>Standard</th>
-                                        <th>Premium</th>
+                                        <th>Parameter type <br />(Max 100 char.)</th>
+                                        <th style="text-align:center;">Basic<br />(Max 10 char.)</th>
+                                        <th style="text-align:center;">Standard<br />(Max 10 char.)</th>
+                                        <th style="text-align:center;">Premium<br />(Max 10 char.)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <asp:TextBox ID="txtParameter1" runat="server" MaxLength="100" CssClass="form-control"></asp:TextBox>
+                                            <asp:TextBox ID="txtParameter1" runat="server" MaxLength="100" placeholder="You must've at-least 1 parameter" CssClass="form-control"></asp:TextBox>
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtBasic1" class="form-control" runat="server" MaxLength="10"></asp:TextBox>
@@ -729,19 +825,19 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <asp:TextBox ID="txtPackageAmountCost" runat="server"  CssClass="form-control" Style="font-size: large; font-weight: bold;" Text=" Package Amount Cost" ReadOnly="true"></asp:TextBox>
+                                        <td style="text-align:center;">
+                                            <b>Qik Project Cost incl. taxes</b>
                                             
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtPackageCost1" class="form-control" runat="server" MaxLength="8" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" ></asp:TextBox>
+                                            <asp:TextBox ID="txtPackageCost1" onpaste="return false;" class="form-control" runat="server" MaxLength="8" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" ></asp:TextBox>
                                             
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtPackageCost2" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
+                                            <asp:TextBox ID="txtPackageCost2" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtPackageCost3" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
+                                            <asp:TextBox ID="txtPackageCost3" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -749,7 +845,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="4" style="text-align: center;">
-                                            <asp:Button ID="btnadd" runat="server" Text="Add" CssClass="btn btn-primary form-control"
+                                            <asp:Button ID="btnadd" runat="server" Text="Submit Package" CssClass="btn btn-primary form-control"
                                                 OnClick="btnadd_Click" Style="border-radius: 10px;" OnClientClick="return AddValidation();" />
 
                                         </td>
@@ -804,7 +900,7 @@
                         <div class="form-group">
 
                             <asp:DropDownList ID="ddlSubCategoryedit" AutoPostBack="true" class="form-control" runat="server"
-                                Style="border-radius: 10px;">
+                                Style="border-radius: 10px;" OnSelectedIndexChanged="ddlSubCategoryedit_SelectedIndexChanged">
 
                                 <%--<asp:ListItem Value="18">Website Development</asp:ListItem>
                                                     <asp:ListItem Value="19">Website Designing - UI/UX</asp:ListItem>
@@ -819,10 +915,7 @@
                         <div class="form-group">
                             <asp:DropDownList ID="ddlPackageTypeedit" class="form-control" runat="server"
                                 Style="border-radius: 10px;">
-                                <asp:ListItem Value="">Select Package</asp:ListItem>
-                                <asp:ListItem Value="1">Economy</asp:ListItem>
-                                <asp:ListItem Value="2">Standard</asp:ListItem>
-                                <asp:ListItem Value="3">Premium</asp:ListItem>
+                                
                             </asp:DropDownList>
 
                         </div>
@@ -842,7 +935,7 @@
                 </div>
             </div>
 
-            <div class="row" style="margin: 10px; width:100%; padding: 10px;">
+            <div class="row" style="margin: 10px; width:100%; padding: 10px; overflow:scroll;">
                 <div class="form-group">
                     <asp:UpdatePanel ID="UpdatePaneledit" runat ="server" >
                         <ContentTemplate>
@@ -882,7 +975,7 @@
                                     <asp:TextBox ID="txtpremiumedit" runat="server" Text='<%#Eval("PremiumDisplayText") %>'></asp:TextBox>
                                 </EditItemTemplate>
                             </asp:TemplateField>
-                            <asp:CommandField ShowEditButton="true" ShowDeleteButton="true" />
+                            <asp:CommandField ShowEditButton="true" />
                         </Columns>
                     </asp:GridView>
                             </ContentTemplate>
@@ -895,20 +988,32 @@
                     <table id="tblparameteredit" style="width: 100%; border: 2px solid green;">
 
                        
-
+                          <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td>
+                                   <b>Basic</b>
+                                </td>
+                                <td>
+                                    <b>Standard</b>
+                                </td>
+                                <td>
+                                  <b>  Premium </b>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="txtpackageamountedit" runat="server"  CssClass="form-control"
-                                        Style="font-size: large; font-weight: bold;" Text=" Package Amount Cost" ReadOnly="true"></asp:TextBox>
+                                 <b>Qik Project Cost incl. Taxes</b>   
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtbasicpackagecostedit" class="form-control" runat="server" MaxLength="8" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');"></asp:TextBox>
+                                    <asp:TextBox ID="txtbasicpackagecostedit" class="form-control" runat="server" MaxLength="8" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtstandardpackagecostedit" class="form-control" runat="server" MaxLength="8" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');"></asp:TextBox>
+                                    <asp:TextBox ID="txtstandardpackagecostedit" class="form-control" runat="server" MaxLength="8" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtpremiumpackagecostedit" class="form-control" runat="server" MaxLength="8" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');"></asp:TextBox>
+                                    <asp:TextBox ID="txtpremiumpackagecostedit" class="form-control" runat="server" MaxLength="8" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>

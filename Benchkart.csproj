@@ -91,6 +91,11 @@
     <Content Include="Admin\Request_Details.aspx" />
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="assetscovid\css\style.css" />
+    <Content Include="assetscovid\css\StyleCase.css" />
+    <Content Include="assetscovid\css\StyleDT.css" />
+    <Content Include="assetscovid\css\StyleIT.css" />
+    <Content Include="assetscovid\img\Form-min.jpg" />
+    <Content Include="assetscovid\img\hero-bg2.jpg" />
     <Content Include="assetscovid\img\about.jpg" />
     <Content Include="assetscovid\img\counts-img.jpg" />
     <Content Include="assetscovid\img\apple-touch-icon.png" />
@@ -108,7 +113,14 @@
     <Content Include="assetscovid\img\cta-bg.jpg" />
     <Content Include="assetscovid\img\favicon.png" />
     <Content Include="assetscovid\img\features.jpg" />
-    <Content Include="assetscovid\img\hero-bg.jpg" />
+    <Content Include="assetscovid\img\hero-bg1.jpg" />
+    <Content Include="assetscovid\img\ITServices.jpg" />
+    <Content Include="assetscovid\img\learnt.jpg" />
+    <Content Include="assetscovid\img\marketing.jpg" />
+    <Content Include="assetscovid\img\new normal.jpg" />
+    <Content Include="assetscovid\img\oil.jpg" />
+    <Content Include="assetscovid\img\Partner Awards.jpg" />
+    <Content Include="assetscovid\img\Partner Awards1.jpg" />
     <Content Include="assetscovid\img\portfolio\portfolio-1.jpg" />
     <Content Include="assetscovid\img\portfolio\portfolio-2.jpg" />
     <Content Include="assetscovid\img\portfolio\portfolio-3.jpg" />
@@ -121,7 +133,9 @@
     <Content Include="assetscovid\img\portfolio\portfolio-details-1.jpg" />
     <Content Include="assetscovid\img\portfolio\portfolio-details-2.jpg" />
     <Content Include="assetscovid\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="assetscovid\img\realestate.jpg" />
     <Content Include="assetscovid\img\slide\slide-17.jpg" />
+    <Content Include="assetscovid\img\startup.jpg" />
     <Content Include="assetscovid\img\team\team-1.jpg" />
     <Content Include="assetscovid\img\team\team-2.jpg" />
     <Content Include="assetscovid\img\team\team-3.jpg" />
@@ -132,6 +146,7 @@
     <Content Include="assetscovid\img\testimonials\testimonials-3.jpg" />
     <Content Include="assetscovid\img\testimonials\testimonials-4.jpg" />
     <Content Include="assetscovid\img\testimonials\testimonials-5.jpg" />
+    <Content Include="assetscovid\img\wellness.jpg" />
     <Content Include="assetscovid\js\main.js" />
     <Content Include="assetscovid\vendor\aos\aos.css" />
     <Content Include="assetscovid\vendor\aos\aos.js" />
@@ -199,6 +214,9 @@
     <Content Include="assets\img\intro-carousel\3.jpg" />
     <Content Include="assets\img\intro-carousel\4.jpg" />
     <Content Include="assets\img\intro-carousel\5.jpg" />
+    <Content Include="assets\img\learnt.jpg" />
+    <Content Include="assets\img\marketing.jpg" />
+    <Content Include="assets\img\oil.jpg" />
     <Content Include="assets\img\portfolio\app1.jpg" />
     <Content Include="assets\img\portfolio\app2.jpg" />
     <Content Include="assets\img\portfolio\app3.jpg" />
@@ -211,6 +229,8 @@
     <Content Include="assets\img\preloader.gif" />
     <Content Include="assets\img\quote-sign-left.png" />
     <Content Include="assets\img\quote-sign-right.png" />
+    <Content Include="assets\img\realestate.jpg" />
+    <Content Include="assets\img\startup.jpg" />
     <Content Include="assets\img\team-1.jpg" />
     <Content Include="assets\img\team-2.jpg" />
     <Content Include="assets\img\team-3.jpg" />
@@ -220,6 +240,7 @@
     <Content Include="assets\img\testimonial-3.jpg" />
     <Content Include="assets\img\testimonial-4.jpg" />
     <Content Include="assets\img\testimonial-5.jpg" />
+    <Content Include="assets\img\wellness.jpg" />
     <Content Include="assets\js\main.js" />
     <Content Include="assets\vendor\animate.css\animate.css" />
     <Content Include="assets\vendor\animate.css\animate.min.css" />
@@ -313,19 +334,16 @@
     <Content Include="css_table\util.css" />
     <Content Include="Customer\Bid-Details.aspx" />
     <Content Include="Customer\Book_Consultation.aspx" />
-    <Content Include="Customer\CustomerQuickProject.aspx" />
     <Content Include="Customer\Customer_Review.aspx" />
     <Content Include="Customer\ForgetPassword.aspx" />
     <Content Include="Customer\HowItWorks.html" />
     <Content Include="Customer\Message_Details.aspx" />
     <Content Include="Customer\Notifications.aspx" />
-    <Content Include="Customer\PaymentQuickProject.aspx" />
     <Content Include="Customer\Payment.aspx" />
     <Content Include="Customer\PaymentDetails.aspx" />
     <Content Include="Customer\Post_Project.aspx" />
     <Content Include="Customer\Projects_Dashboard.aspx" />
     <Content Include="Customer\Project_Details.aspx" />
-    <Content Include="Customer\QuickProjectPayment.aspx" />
     <Content Include="Customer\RejectPayment.aspx" />
     <Content Include="Customer\ReleasePayment.aspx" />
     <Content Include="Customer\ResetPassword.aspx" />
@@ -341,6 +359,7 @@
     <Content Include="Customer\ucCustomerFooter.ascx" />
     <Content Include="Customer\ucCustomerMenu.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="DigitalTransformation.aspx" />
     <Content Include="EmailTemplates\General_template.html" />
     <Content Include="favicon.ico" />
     <Content Include="favicon\android-chrome-192x192.png" />
@@ -368,10 +387,12 @@
     <Content Include="Images\Category\14.jpg" />
     <Content Include="Images\Category\15.jpg" />
     <Content Include="Images\Category\16.jpg" />
+    <Content Include="Images\Category\17.jpg" />
     <Content Include="Images\Category\18.jpg" />
     <Content Include="Images\Category\19.jpg" />
     <Content Include="Images\Category\20.jpg" />
     <Content Include="Images\Category\21.jpg" />
+    <Content Include="Images\Category\22.jpg" />
     <Content Include="Images\Category\23.jpg" />
     <Content Include="Images\Category\24.jpg" />
     <Content Include="Images\Category\25.jpg" />
@@ -381,6 +402,7 @@
     <Content Include="Images\Category\29.jpg" />
     <Content Include="Images\Category\30.jpg" />
     <Content Include="Images\Category\31.jpg" />
+    <Content Include="Images\Category\32.jpg" />
     <Content Include="Images\Category\33.jpg" />
     <Content Include="Images\Category\34.jpg" />
     <Content Include="Images\Category\35.jpg" />
@@ -390,15 +412,18 @@
     <Content Include="Images\Category\39.jpg" />
     <Content Include="Images\Category\40.jpg" />
     <Content Include="Images\Category\41.jpg" />
+    <Content Include="Images\Category\42.jpg" />
     <Content Include="Images\Category\43.jpg" />
     <Content Include="Images\Category\44.jpg" />
     <Content Include="Images\Category\45.jpg" />
     <Content Include="Images\Category\46.jpg" />
     <Content Include="Images\Category\47.jpg" />
     <Content Include="Images\Category\48.jpg" />
+    <Content Include="Images\Category\49.jpg" />
     <Content Include="Images\Category\50.jpg" />
     <Content Include="Images\Category\51.jpg" />
     <Content Include="Images\Category\52.jpg" />
+    <Content Include="Images\Category\53.jpg" />
     <Content Include="Images\Category\54.jpg" />
     <Content Include="Images\Category\55.jpg" />
     <Content Include="Images\Category\56.jpg" />
@@ -408,6 +433,7 @@
     <Content Include="Images\Category\60.jpg" />
     <Content Include="Images\Category\61.jpg" />
     <Content Include="Images\Category\62.jpg" />
+    <Content Include="Images\Category\63.jpg" />
     <Content Include="Images\Category\64.jpg" />
     <Content Include="Images\Category\65.jpg" />
     <Content Include="Images\Category\66.jpg" />
@@ -417,6 +443,8 @@
     <Content Include="Images\Category\70.jpg" />
     <Content Include="Images\Category\71.jpg" />
     <Content Include="Images\Category\72.jpg" />
+    <Content Include="Images\Category\73.jpg" />
+    <Content Include="Images\Category\Form3-min.jpg" />
     <Content Include="Images\company_logo.jpg" />
     <Content Include="Images\FAQ-min.jpg" />
     <Content Include="Images\Partner_hiw1.png" />
@@ -424,7 +452,10 @@
     <Content Include="Images\Partner_hiw3.png" />
     <Content Include="Images\Partner_hiw4.png" />
     <Content Include="Images\Partner_hiw5.png" />
+    <Content Include="ITServices.aspx" />
     <Content Include="Partner\AgencyDetails.aspx" />
+    <Content Include="Policies\Terms-Packages.html" />
+    <Content Include="Post-Covid.html" />
     <Content Include="Partner\AcknowledgeSignup.html" />
     <Content Include="Partner\Create-Contract.aspx" />
     <Content Include="Partner\Create-Payment-Request.aspx" />
@@ -905,6 +936,7 @@
     <Compile Include="ClsMessage.cs" />
     <Compile Include="ClsMilestones.cs" />
     <Compile Include="ClsNotifications.cs" />
+    <Compile Include="ClsPackageType.cs" />
     <Compile Include="ClsPartner.cs" />
     <Compile Include="ClsPartnerReview.cs" />
     <Compile Include="ClsPayment.cs" />
@@ -1059,13 +1091,6 @@
     <Compile Include="Customer\CustomerProfile.aspx.designer.cs">
       <DependentUpon>CustomerProfile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerQuickProject.aspx.cs">
-      <DependentUpon>CustomerQuickProject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customer\CustomerQuickProject.aspx.designer.cs">
-      <DependentUpon>CustomerQuickProject.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Customer\Customer_Review.aspx.cs">
       <DependentUpon>Customer_Review.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1093,13 +1118,6 @@
     </Compile>
     <Compile Include="Customer\Notifications.aspx.designer.cs">
       <DependentUpon>Notifications.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\PaymentQuickProject.aspx.cs">
-      <DependentUpon>PaymentQuickProject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customer\PaymentQuickProject.aspx.designer.cs">
-      <DependentUpon>PaymentQuickProject.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
@@ -1135,13 +1153,6 @@
     </Compile>
     <Compile Include="Customer\Project_Details.aspx.designer.cs">
       <DependentUpon>Project_Details.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\QuickProjectPayment.aspx.cs">
-      <DependentUpon>QuickProjectPayment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Customer\QuickProjectPayment.aspx.designer.cs">
-      <DependentUpon>QuickProjectPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\RejectPayment.aspx.cs">
       <DependentUpon>RejectPayment.aspx</DependentUpon>
@@ -1252,8 +1263,22 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DigitalTransformation.aspx.cs">
+      <DependentUpon>DigitalTransformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DigitalTransformation.aspx.designer.cs">
+      <DependentUpon>DigitalTransformation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ITServices.aspx.cs">
+      <DependentUpon>ITServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ITServices.aspx.designer.cs">
+      <DependentUpon>ITServices.aspx</DependentUpon>
     </Compile>
     <Compile Include="KeepSessionAlive.ashx.cs">
       <DependentUpon>KeepSessionAlive.ashx</DependentUpon>

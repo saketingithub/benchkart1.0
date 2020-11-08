@@ -240,7 +240,7 @@
                         </ul>
                     </li>
                      <li>
-                        <a id="a_MyPackages" runat="server" href='AgencyDetails'><i class="fa fa-bullseye" style="color: lightgray;"></i><span>MyPackage</span></a>
+                        <a id="a_MyPackages" runat="server" href='AgencyDetails'><i class="fa fa-bullseye" style="color: lightgray;"></i><span>Qik Projects</span></a>
                     </li>
                 </ul>
 

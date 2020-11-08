@@ -51,18 +51,22 @@ namespace Benchkart
                 lblsubcategory.Text = dtCategory.Tables[0].Rows[0]["Title"].ToString();
                 lbldescription.Text = dtCategory.Tables[0].Rows[0]["CategoryDescription"].ToString();
 
-                this.Page.Title = lblsubcategory.Text;
+                string metaTitle = dtCategory.Tables[0].Rows[0]["MetaTitle"].ToString();
+                string metaDescription = dtCategory.Tables[0].Rows[0]["MetaDescription"].ToString();
+                string metaKeywords = dtCategory.Tables[0].Rows[0]["MetaKeywords"].ToString();
+
+                this.Page.Title = metaTitle;
                 HtmlMeta keywords = new HtmlMeta();
                 keywords.HttpEquiv = "keywords";
                 keywords.Name = "keywords";
-                keywords.Content = "KEYWORDS FROM DB GOES HERE";
+                keywords.Content = metaKeywords;
                 this.Page.Header.Controls.Add(keywords);
 
                 //Add Description Meta Tag.
                 HtmlMeta description = new HtmlMeta();
                 description.HttpEquiv = "description";
                 description.Name = "description";
-                description.Content = lbldescription.Text;
+                description.Content = metaDescription;
                 this.Page.Header.Controls.Add(description);
             }           
             

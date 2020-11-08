@@ -431,14 +431,14 @@ namespace Benchkart
                 //Email
                 System.Threading.Thread email = new System.Threading.Thread(delegate ()
                 {
-                    string subject = "The Best Bids for Your Project Have Arrived";
-                    string body = "<p>Project Title - " + projectTitle + "</p><p>We are pleased to inform you that the best bids on your project have arrived!</p><p>These bids will be displayed under the BIDS tab in your Benchkart dashboard. You can start connecting with the agencies and select the best agency suitable for your project.</p><p>You can log in to your dashboard and view bids from here: <a href=\"https://benchkart.com/Customer/Signin\">VIEW BIDS</a></p>";
+                    string subject = "Notification: Bids are now available in your dashboard";
+                    string body = "<p>Project Title - " + projectTitle + "</p><p>We are pleased to inform you that the shortlisted bids for your project have arrived!</p><p>These bids will be displayed under the BIDS tab in your Benchkart dashboard. You can start connecting with the agencies and select the best agency suitable for your project.</p><p>You can log in to your dashboard and view bids from here: <a href=\"https://benchkart.com/Customer/Signin\">VIEW BIDS</a></p>";
                     ClsMail.SendEmail(customerName, customerEmail, subject, body);
 
                     //Email
                     if (partnerEmails != string.Empty)
                     {
-                        subject = "Your bid is shortlisted and displayed to the customer";
+                        subject = "Notification: Your bid is shortlisted";
                         body = "<p>Project Title - " + projectTitle + "</p><p>Your bid has been shortlisted and sent to the customer. Only a few bids are shortlisted & provided to customer for selection.</p><p>As the next step, the Customer may reach out to you for further clarification or finalization. Do help the customer understand the processes for project management & payment on our platform.</p>";
                         ClsMail.SendBccEmail(partnerEmails, subject, body);
                     }

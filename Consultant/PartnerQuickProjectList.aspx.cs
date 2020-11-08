@@ -13,8 +13,16 @@ namespace Benchkart.Consultant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            grdpartnerQuickdetails.Visible = true;
-            GetPackageData();
+            if (Request.Cookies["ConsultantId"] == null)
+            {
+                Response.Redirect("ConsultantLogin.aspx");
+            }
+
+            if (!IsCrossPagePostBack)
+            {
+                grdpartnerQuickdetails.Visible = true;
+                GetPackageData();
+            }
         }
         public void GetPackageData()
         {
@@ -38,7 +46,8 @@ namespace Benchkart.Consultant
         {
             DataTable dt = new DataTable();
             ClsPartner clsqp = new ClsPartner();
-            clsqp.PartnerId = Convert.ToInt32(txtpartnerId.Text);
+            clsqp.PocFullName = txtsearch.Text;
+            clsqp.CompanyName = txtsearch.Text;
             dt = clsqp.GetPartnerQuickDetailsByPartnerIdSearch();
             if (dt.Rows.Count > 0)
             {

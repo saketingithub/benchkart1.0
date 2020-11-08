@@ -28,7 +28,8 @@ namespace Benchkart
             //routes.MapPageRoute("Home", "Default", "~");
             routes.MapPageRoute("Covid", "Post-COVID", "~/Post-COVID.aspx");
             routes.MapPageRoute("Case-studies", "Case-Study", "~/CaseStudy.aspx");
-            routes.MapPageRoute("EmailTemplates/General_template.html", "EmailTemplates/General_template.html", "~/EmailTemplates/General_template.html");
+            routes.MapPageRoute("ITServices", "ITServices", "~/ITServices.aspx");
+            routes.MapPageRoute("DigitalTransformation", "DigitalTransformation", "~/DigitalTransformation.aspx");
             //Customer
             routes.MapPageRoute("Customer-Bid-Details", "Customer/Bid-Details", "~/Customer/Bid-Details.aspx");
             routes.MapPageRoute("Customer-Customer_Review", "Customer/Customer_Review", "~/Customer/Customer_Review.aspx");
@@ -94,8 +95,8 @@ namespace Benchkart
             routes.MapPageRoute("Partner-Support", "Partner/Support", "~/Partner/Support.aspx");
             routes.MapPageRoute("Partner-AgencyDetails", "Partner/AgencyDetails", "~/Partner/AgencyDetails.aspx");
 
-            //Consultant
-            routes.MapPageRoute("Consultant-Request-Details", "Consultant/Request-Details.aspx", "~/Consultant/Request-Details.aspx");
+            routes.MapPageRoute("QuickProject-Payment", "QuickProject/Payment", "~/Customer/PaymentQuickProject.aspx");
+
         }
 
 

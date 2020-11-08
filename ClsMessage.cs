@@ -131,7 +131,7 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Message Received from Agency";
+                string subject = "Notificaion: Message Received from Agency";
                 string body = "<p>Project Title - " + projectTitle + "</p><p>A message has been received from the agency.</p><p>Please login to your Benchkart dashboard to view and respond.</p>";
                 ClsMail.SendEmail(customerName, customerEmail, subject, body);
             });
@@ -192,8 +192,8 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Message Received from Customer";
-                string customerBody = "<p>Project Title - " + projectTitle + "</p><p>You have received a message from customer.</p><p>Please login to Benchkart and respond.</p>";
+                string subject = "Notification: Message Received from Customer";
+                string customerBody = "<p>Project Title - " + projectTitle + "</p><p>You have received a message from the customer.</p><p>Please login to Benchkart and respond.</p>";
 
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, customerBody);
             });
@@ -251,7 +251,7 @@ namespace Benchkart
             //Email
             System.Threading.Thread email = new System.Threading.Thread(delegate ()
             {
-                string subject = "Message Received from Customer";
+                string subject = "Notification: Message Received from Customer";
                 string customerBody = "<p>Project Title - " + projectTitle + "</p><p>You have received a message from customer.</p><p>Please login to Benchkart and respond.</p>";
 
                 ClsMail.SendEmail(partnerName, partnerEmail, subject, customerBody);

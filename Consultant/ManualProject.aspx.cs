@@ -113,6 +113,7 @@ namespace Benchkart.Consultant
             {
                 clspt.CompanyPrimarySourceOfRevenue = " not in('krishan')";
             }
+
             if (ddlEmployeeCount.SelectedValue != "") { 
                 string employeecount = string.Empty;
                 employeecount = GetEmployeeCount();
@@ -339,7 +340,6 @@ namespace Benchkart.Consultant
                 }
             }
             ptmail = ptmail.Replace('"', ' ');
-            if(ptmail !="") {
                 partner.Email = ptmail;
                 partner.ManualType = "Manual" + Session["projectid"].ToString();
                 // int projectid =Convert.ToInt32(Session["projectid"]);
@@ -374,12 +374,7 @@ namespace Benchkart.Consultant
                 email.Start();
                 Response.Redirect("../Consultant/Requests.aspx");
                 //End - Email  
-            }
 
-            else
-            {
-                Response.Write("<script>alert('Email id get error')</script>");
-            }
         }
 
        

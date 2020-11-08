@@ -41,8 +41,8 @@ namespace Benchkart.Partner
                 int oppurtunitiesCount = 0, bidCount = 0, selectedbidCount = 0, activeProjectCount = 0;
 
                 dtOppurtunities = pj.GetProjectsforPartner(PartnerId, ref oppurtunitiesCount, ref bidCount, ref selectedbidCount, ref activeProjectCount);
-
-                lblOppurtunitiesCount.Text = oppurtunitiesCount.ToString();
+                lblOppurtunitiesCount.Text = dtOppurtunities.Rows.Count.ToString();
+                //lblOppurtunitiesCount.Text = oppurtunitiesCount.ToString();
                 lblBidCount.Text = bidCount.ToString();
                 lblSelectedbidCount.Text = selectedbidCount.ToString();
                 lblActiveProjectCount.Text = activeProjectCount.ToString();

@@ -146,13 +146,18 @@
            <asp:ScriptManager ID="ScriptManager1" runat="server" EnableCdn="true">
     </asp:ScriptManager>
          <div class="container-fluid">
+             
              <div class="row">
             <uc1:ucHeader runat="server" ID="ucHeader" />
                  </div>
-             
-             <div class="row" style="margin-top:30px;">
+             <div class="row">
+             <div class="col-lg-4" style="margin-left:20px; margin-top:20px; margin-bottom:10px;"> 
+                 <asp:HyperLink ID="hylQuickPackage" runat ="server" Style="font-size:large;color:forestgreen; text-decoration: underline;" NavigateUrl="~/Consultant/PartnerQuickProjectList.aspx" >Qik Project</asp:HyperLink>
+             </div>
+             </div>
+             <div class="row" style="margin-top:30px; overflow:scroll;">
                  <div class="col-lg-12" style="margin:20px;">
-                     <asp:GridView ID="grdPackage" runat="server" Width="90%"  AutoGenerateColumns="False" OnRowCommand="grdPackage_RowCommand" >
+                     <asp:GridView ID="grdPackage" runat="server" Width="90%"  AutoGenerateColumns="False" OnRowCommand="grdPackage_RowCommand" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" >
                         <Columns>
                             <asp:TemplateField HeaderText="PackageId">
                                 <ItemTemplate>
@@ -215,12 +220,82 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="PackageType">
                                 <ItemTemplate>
-                                    <%#Eval("PackageType").ToString()=="1"? "Economy" : Eval("PackageType").ToString()=="2"? "Standard":"Premium" %>
+                                     <%#Eval("PackageType").ToString()=="1"? "Logo" : Eval("PackageType").ToString()=="2"? "Other"
+                                            :  Eval("PackageType").ToString()=="3"? "Social Media Banners": Eval("PackageType").ToString()=="4"? "Other"
+                                            :  Eval("PackageType").ToString()=="5"? "Flyer/Poster Design": Eval("PackageType").ToString()=="6"? "Brochure Design"
+                                            :  Eval("PackageType").ToString()=="7"? "Catalogue Design": Eval("PackageType").ToString()=="8"? "Other"
+                                            :  Eval("PackageType").ToString()=="9"? "Packaging Design": Eval("PackageType").ToString()=="10"? "Other"
+                                            :  Eval("PackageType").ToString()=="11"? "Banner Ads": Eval("PackageType").ToString()=="12"? "Other"
+                                            :  Eval("PackageType").ToString()=="13"? "Presentation Design": Eval("PackageType").ToString()=="14"? "Other"
+                                            :  Eval("PackageType").ToString()=="15"? "Video Making": Eval("PackageType").ToString()=="16"? "Animation"
+                                            :  Eval("PackageType").ToString()=="17"? "3D Design": Eval("PackageType").ToString()=="18"? "Graphics - Any Other"
+                                            :  Eval("PackageType").ToString()=="19"? "Simple Website": Eval("PackageType").ToString()=="20"? "Dynamic Website"
+                                            :  Eval("PackageType").ToString()=="21"? "Landing Page": Eval("PackageType").ToString()=="22"? "Ecommerce Website"
+                                            :  Eval("PackageType").ToString()=="23"? "API Integrations": Eval("PackageType").ToString()=="24"? "Other"
+                                            :  Eval("PackageType").ToString()=="25"? "Website Designing - UI/UX": Eval("PackageType").ToString()=="26"? "Other"
+                                            :  Eval("PackageType").ToString()=="27"? "Bug Fixing & Maintenance": Eval("PackageType").ToString()=="28"? "Ecommerce Management"
+                                            :  Eval("PackageType").ToString()=="29"? "Other": Eval("PackageType").ToString()=="30"? "Readymade Apps"
+                                            :  Eval("PackageType").ToString()=="31"? "Apps - Any Other": Eval("PackageType").ToString()=="32"? "Website - Any Other"
+                                            :  Eval("PackageType").ToString()=="33"? "Digital Strategy	": Eval("PackageType").ToString()=="34"? "Other"
+                                            :  Eval("PackageType").ToString()=="35"? "PPC": Eval("PackageType").ToString()=="36"? "Other"
+                                            :  Eval("PackageType").ToString()=="37"? "Video Marketing": Eval("PackageType").ToString()=="38"? "Other"
+                                            :  Eval("PackageType").ToString()=="39"? "Email-Marketing": Eval("PackageType").ToString()=="40"? "Other"
+                                            :  Eval("PackageType").ToString()=="41"? "SMM": Eval("PackageType").ToString()=="42"? "Other"
+                                            :  Eval("PackageType").ToString()=="43"? "Influencer Marketing": Eval("PackageType").ToString()=="44"? "Other"
+                                            :  Eval("PackageType").ToString()=="45"? "Content Writing": Eval("PackageType").ToString()=="46"? "Content Marketing"
+                                            :  Eval("PackageType").ToString()=="47"? "Other": Eval("PackageType").ToString()=="48"? "SEO"
+                                            :  Eval("PackageType").ToString()=="49"? "Other": Eval("PackageType").ToString()=="50"? "Data Mining & Analytics"
+                                            :  Eval("PackageType").ToString()=="51"? "Other": Eval("PackageType").ToString()=="52"? "Lead generation"
+                                            :  Eval("PackageType").ToString()=="53"? "Ecommerce Marketing": Eval("PackageType").ToString()=="54"? "Podcast Marketing"
+                                            :  Eval("PackageType").ToString()=="55"? "Web Traffic": Eval("PackageType").ToString()=="56"? "Music Promotion"
+                                            :  Eval("PackageType").ToString()=="57"? "DM - Any Other": Eval("PackageType").ToString()=="58"? "Hire a Developer"
+                                            :  Eval("PackageType").ToString()=="59"? "Software Development": Eval("PackageType").ToString()=="60"? "Other"
+                                            :  Eval("PackageType").ToString()=="61"? "SaaS Applications"
+                                            :  Eval("PackageType").ToString()=="62"? "Other": Eval("PackageType").ToString()=="63"? "Testing & QA"
+                                            :  Eval("PackageType").ToString()=="64"? "Other": Eval("PackageType").ToString()=="65"? "Maintenance & Support"
+                                            :  Eval("PackageType").ToString()=="66"? "Other": Eval("PackageType").ToString()=="67"? "Cloud Computing Applications"
+                                            :  Eval("PackageType").ToString()=="68"? "Other": Eval("PackageType").ToString()=="69"? "Integration & Migration Services"
+                                            :  Eval("PackageType").ToString()=="70"? "Other": Eval("PackageType").ToString()=="71"? "Game Development"
+                                            :  Eval("PackageType").ToString()=="72"? "Other": Eval("PackageType").ToString()=="73"? "IoT Solutions"
+                                            :  Eval("PackageType").ToString()=="74"? "Other": Eval("PackageType").ToString()=="75"? "Chatbots"
+                                            :  Eval("PackageType").ToString()=="76"? "Other": Eval("PackageType").ToString()=="77"? "Packaged Software Implementation"
+                                            :  Eval("PackageType").ToString()=="78"? "Software Subscription Services": Eval("PackageType").ToString()=="79"? "Software - Any Other"
+                                            :  Eval("PackageType").ToString()=="80"? "Server Setup & Troubleshooting": Eval("PackageType").ToString()=="81"? "Other"
+                                            :  Eval("PackageType").ToString()=="82"? "Server Management & Webmaster Services": Eval("PackageType").ToString()=="83"? "Other"
+                                            :  Eval("PackageType").ToString()=="84"? "Network Setup And Management": Eval("PackageType").ToString()=="85"? "Other"
+                                            :  Eval("PackageType").ToString()=="86"? "Remote IT Management": Eval("PackageType").ToString()=="87"? "Other"
+                                            :  Eval("PackageType").ToString()=="88"? "Cloud Setup & Migration": Eval("PackageType").ToString()=="89"? "Other"
+                                            :  Eval("PackageType").ToString()=="90"? "Cloud Consulting & Strategy": Eval("PackageType").ToString()=="91"? "Other"
+                                            :  Eval("PackageType").ToString()=="92"? "Cloud - Any Other": Eval("PackageType").ToString()=="93"? "Other"
+                                            :  Eval("PackageType").ToString()=="94"? "Support": Eval("PackageType").ToString()=="95"? "Other"
+                                            :  Eval("PackageType").ToString()=="96"? "Tele Sales": Eval("PackageType").ToString()=="97"? "Other"
+                                            :  Eval("PackageType").ToString()=="98"? "Debt Collection": Eval("PackageType").ToString()=="99"? "Other"
+                                            :  Eval("PackageType").ToString()=="100"? "BPO - Any Other": Eval("PackageType").ToString()=="101"? "Other"
+                                            :  Eval("PackageType").ToString()=="102"? "HR Services": Eval("PackageType").ToString()=="103"? "Other"
+                                            :  Eval("PackageType").ToString()=="104"? "Consulting": Eval("PackageType").ToString()=="105"? "Other"
+                                            :  Eval("PackageType").ToString()=="106"? "Legal Support": Eval("PackageType").ToString()=="107"? "Other"
+                                            :  Eval("PackageType").ToString()=="108"? "Chartered Accountant Services": Eval("PackageType").ToString()=="109"? "Other"
+                                            :  Eval("PackageType").ToString()=="110"? "Healthcare": Eval("PackageType").ToString()=="111"? "Other"
+                                            :  Eval("PackageType").ToString()=="112"? "IT Consulting	": Eval("PackageType").ToString()=="113"? "Other"
+                                            :  Eval("PackageType").ToString()=="114"? "IT Training ": Eval("PackageType").ToString()=="115"? "Other"
+                                            :  Eval("PackageType").ToString()=="116"? "Market Research": Eval("PackageType").ToString()=="117"? "Other"
+                                            :  Eval("PackageType").ToString()=="118"? "Public Relations	": Eval("PackageType").ToString()=="119"? "Other"
+                                            :  Eval("PackageType").ToString()=="120"? "KPO - Any Other": Eval("PackageType").ToString()=="121"? "Other"
+                                            :  Eval("PackageType").ToString()=="122"? "24X7 Chat": Eval("PackageType").ToString()=="123"? "Other"
+                                            :  Eval("PackageType").ToString()=="124"? "Email Management": Eval("PackageType").ToString()=="125"? "Other"
+                                            :  Eval("PackageType").ToString()=="126"? "Data Entry Operator Monthly": Eval("PackageType").ToString()=="127"? "Other"
+                                            :  Eval("PackageType").ToString()=="128"? "Data Processing": Eval("PackageType").ToString()=="129"? "Other"
+                                            :  Eval("PackageType").ToString()=="130"? "Digitization": Eval("PackageType").ToString()=="131"? "Other"
+                                            :  Eval("PackageType").ToString()=="132"? "Research & Analytics": Eval("PackageType").ToString()=="133"? "Other"
+                                            :  Eval("PackageType").ToString()=="134"? "Offline & Online Catalogues ": Eval("PackageType").ToString()=="135"? "Other"
+                                            :  Eval("PackageType").ToString()=="136"? "Field Executive Support": Eval("PackageType").ToString()=="137"? "Other"
+                                            :  Eval("PackageType").ToString()=="138"? "Writing & Translation Services": Eval("PackageType").ToString()=="139"? "Other"
+                                            :  Eval("PackageType").ToString()=="140"? "Back Office - Any Other": "Other" %>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="IsActive">
                                 <ItemTemplate>
-                                    <%#Eval("IsActive").ToString()=="0"? "Not Active":"Active" %>
+                                    <%#Eval("IsActive").ToString()=="0"? "Not Active":Eval("IsActive").ToString()=="1"?"Active":Eval("IsActive").ToString()=="2"?"Reject":"AllPkg" %>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Action">
@@ -230,10 +305,19 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                         <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                         <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                         <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                         <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                         <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                         <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                         <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                         <SortedDescendingHeaderStyle BackColor="#93451F" />
                     </asp:GridView>
                  </div>
              </div>
-             <div class="row">
+             <div class="row" style="overflow :scroll;">
                  <asp:Panel ID="pnlMyModal" runat="server" Style="display: none; width: 80%;  border: 1px solid green; border-radius: 20px;">
         <div class="modal-body" style="background-color: #f8f8f8; width: 80%; margin-left:50px; margin-right:50px; border-radius:20px; border: 1px solid green;">
             <div class="row" style="margin: 10px; padding: 10px;">
@@ -268,7 +352,7 @@
                         <div class="form-group">
 
                             <asp:DropDownList ID="ddlSubCategoryedit" AutoPostBack="true" class="form-control" runat="server"
-                                Style="border-radius: 10px;">
+                                Style="border-radius: 10px;" OnSelectedIndexChanged="ddlSubCategoryedit_SelectedIndexChanged" >
 
                                 <%--<asp:ListItem Value="18">Website Development</asp:ListItem>
                                                     <asp:ListItem Value="19">Website Designing - UI/UX</asp:ListItem>
@@ -283,10 +367,7 @@
                         <div class="form-group">
                             <asp:DropDownList ID="ddlPackageTypeedit" class="form-control" runat="server"
                                 Style="border-radius: 10px;">
-                                <asp:ListItem Value="">Select Package</asp:ListItem>
-                                <asp:ListItem Value="1">Economy</asp:ListItem>
-                                <asp:ListItem Value="2">Standard</asp:ListItem>
-                                <asp:ListItem Value="3">Premium</asp:ListItem>
+                               
                             </asp:DropDownList>
 
                         </div>
@@ -307,11 +388,11 @@
             </div>
            
 
-            <div class="row" style="margin:10px; padding: 10px;">
-                <div class="form-group">
+            <div class="row" style="margin:10px; padding: 10px; ">
+                <div class="form-group" style="overflow:scroll;">
                     <asp:UpdatePanel ID="UpdatePaneledit" runat ="server" >
                         <ContentTemplate>
-                    <asp:GridView ID="grdpackagedetails" DataKeyNames="PartnerPackageDetailsId" Width="90" runat="server"  AutoGenerateColumns="false"
+                    <asp:GridView ID="grdpackagedetails"  DataKeyNames="PartnerPackageDetailsId" Width="90" runat="server"  AutoGenerateColumns="false"
                         OnRowUpdating="grdpackagedetails_RowUpdating" OnRowCancelingEdit="grdpackagedetails_RowCancelingEdit"
                          OnPageIndexChanging="grdpackagedetails_PageIndexChanging" OnRowEditing="grdpackagedetails_RowEditing" OnRowDeleting="grdpackagedetails_RowDeleting">
                         <Columns>
@@ -355,26 +436,38 @@
                     </asp:UpdatePanel>
                 </div>
             </div>
-            <div class="row" style="margin: 10px; width:100%; padding: 10px;">
-                <div class="form-group">
+            <div class="row" style="margin: 10px; width:100%;  padding: 10px;">
+                <div class="form-group" >
                     
-                    <table id="tblparameteredit" >
+                    <table id="tblparameteredit"  >
 
-                       
+                        <tr>
+                                <td>
+                                   &nbsp;
+                                </td>
+                                <td>
+                                   <b>Basic</b>
+                                </td>
+                                <td>
+                                   <b>Standard</b> 
+                                </td>
+                                <td>
+                                   <b>Premium</b> 
+                                </td>
+                            </tr>
 
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="txtpackageamountedit" runat="server"  CssClass="form-control"
-                                        Style="font-size: large; font-weight: bold;" Text=" Package Amount Cost" ReadOnly="true"></asp:TextBox>
+                                 <b>Package Amount Cost</b>  
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtbasicpackagecostedit" class="form-control" runat="server" MaxLength="10"></asp:TextBox>
+                                    <asp:TextBox ID="txtbasicpackagecostedit" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtstandardpackagecostedit" class="form-control" runat="server" MaxLength="10"></asp:TextBox>
+                                    <asp:TextBox ID="txtstandardpackagecostedit" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtpremiumpackagecostedit" class="form-control" runat="server" MaxLength="10"></asp:TextBox>
+                                    <asp:TextBox ID="txtpremiumpackagecostedit" onpaste="return false;" onkeypress="if(event.keyCode<48 || event.keyCode>57)event.returnValue=alert('Input only integer');" class="form-control" runat="server" MaxLength="8"></asp:TextBox>
                                 </td>
                             </tr>
                            
@@ -385,16 +478,17 @@
             </div>
              <div class="row" style="margin:10px; padding:10px;">
                 <div class="form-group">
-                    <asp:DropDownList ID="ddlIsActive" runat ="server" class="form-control"  Style="border-radius: 10px;" >
+                    <asp:DropDownList ID="ddlIsActive" runat ="server" CssClass="form-control"  Style="border-radius: 10px;" >
                         <asp:ListItem Value="">Select Active</asp:ListItem>
                         <asp:ListItem Value ="0">Not Active</asp:ListItem>
                         <asp:ListItem Value ="1">Active</asp:ListItem>
+                        <asp:ListItem Value="2">Reject</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>
              <div class="row" style="margin:10px; padding:10px;">
-                <div class="form-group">
-                   <asp:Button ID="btnupdate" runat="server" Text="Update" CssClass="btn btn-primary form-control"
+                <div class="form-group" style="text-align:center;">
+                   <asp:Button ID="btnupdate" runat="server" Text="Update" CssClass="btn btn-success form-control" 
                                         Style="border-radius: 10px;" OnClick="btnupdate_Click" OnClientClick=" return Allvalidationedit();" />
                 </div>
             </div>

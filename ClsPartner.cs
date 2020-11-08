@@ -852,7 +852,7 @@ namespace Benchkart
             {
                 string str ="update Project set ManualType='"+ManualType+"' where ProjectId="+projectid+"";
                
-                string strg = " Update Partner set ManualType = case when Temp1.ManualType='' then '"+ ManualType +"' else  Temp1.ManualType + ','+'"+ ManualType +"' end From Partner Part inner join ( Select PartnerId, ManualType from Partner where Email in ("+Email+")) as Temp1 on Part.PartnerId = Temp1.PartnerId";
+                string strg = " Update Partner set ManualType = case when Temp1.ManualType is null then '"+ ManualType +"' else  Temp1.ManualType + ','+'"+ ManualType +"' end From Partner Part inner join ( Select PartnerId, ManualType from Partner where Email in ("+Email+")) as Temp1 on Part.PartnerId = Temp1.PartnerId";
                
                 SqlCommand command = new SqlCommand(strg, sqlConnection);
                 SqlCommand cmd = new SqlCommand(str, sqlConnection);
@@ -914,7 +914,7 @@ namespace Benchkart
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
                 command.Parameters.Add("@pocFullName", SqlDbType.VarChar).Value = PocFullName;
-                command.Parameters.Add("@images", SqlDbType.VarChar).Value = Images;
+               // command.Parameters.Add("@images", SqlDbType.VarChar).Value = Images;
                 command.Parameters.Add("@companyCity", SqlDbType.VarChar).Value = CompanyCity;
                 command.Parameters.Add("@description1", SqlDbType.VarChar).Value = Description1;
                 command.Parameters.Add("@description2", SqlDbType.VarChar).Value = Description2;
@@ -967,6 +967,31 @@ namespace Benchkart
                 SqlCommand command = new SqlCommand("proc_GetPartnerQuickDetailsByPartnerIdSearch", sqlConnection);
                 //command.CommandType = CommandType.StoredProcedure;
 
+                command.Parameters.Add("@pocFullName", SqlDbType.VarChar).Value = PocFullName;
+                command.Parameters.Add("@companyName", SqlDbType.VarChar).Value = CompanyName;
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtPartnerBankDetails);
+                }
+            }
+
+            return dtPartnerBankDetails;
+        }
+        //end
+
+        //Create Method 02-11-2020
+        public DataTable GetAgencyDetailsByPartnerId()
+        {
+            DataTable dtPartnerBankDetails = new DataTable();
+
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_GetAgencyDetailsByPartnerId", sqlConnection);
+                //command.CommandType = CommandType.StoredProcedure;
+
                 command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
 
                 using (var da = new SqlDataAdapter(command))
@@ -978,6 +1003,6 @@ namespace Benchkart
 
             return dtPartnerBankDetails;
         }
-        //end
+        //End
     }
 }

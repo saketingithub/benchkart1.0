@@ -18,7 +18,10 @@ namespace Benchkart.Partner
         {
             if (!IsPostBack)
             {
-                GetPartner();
+               
+                    GetPartner();
+
+                
             }
         }
 
@@ -32,27 +35,32 @@ namespace Benchkart.Partner
             {
                 txtRepresentativeName.Text = dtpartner.Rows[0]["PocFullName"].ToString();
             }
-            if (dtpartner.Rows[0]["Images"] != DBNull.Value)
-            {
-                imagePic.ImageUrl = "~/Uploadfiles/Partners/" + dtpartner.Rows[0]["Images"].ToString();
-                //imagePic.Attributes.Add("style", "width:120px; height:120px; margin-left:600px;");
-            }
+            //if (dtpartner.Rows[0]["Images"] != DBNull.Value)
+            //{
+            //    imagePic.ImageUrl = dtpartner.Rows[0]["Images"].ToString();
+            //    //imagePic.Attributes.Add("style", "width:120px; height:120px; margin-left:600px;");
+            //}
             if (dtpartner.Rows[0]["CompanyCity"] != DBNull.Value)
             {
                 txtLocation.Text = dtpartner.Rows[0]["CompanyCity"].ToString();
             }
             if (dtpartner.Rows[0]["EmployeeCount"] != DBNull.Value)
             {
-                txtEmployeeCount.Text = dtpartner.Rows[0]["EmployeeCount"].ToString();
+                txtEmployeeCount.Text = "No. of Employees "+ dtpartner.Rows[0]["EmployeeCount"].ToString();
             }
             if (dtpartner.Rows[0]["CompanyStarted"] != DBNull.Value)
             {
-                txtCompanyStarted.Text = dtpartner.Rows[0]["CompanyStarted"].ToString();
+                txtCompanyStarted.Text = "Completed Yrs. " + dtpartner.Rows[0]["CompanyStarted"].ToString();
             }
             if (dtpartner.Rows[0]["Description1"] != DBNull.Value)
             {
                 txtDescribedAs.Text = dtpartner.Rows[0]["Description1"].ToString();
+                pnlpackage.Attributes.Add("style", "display:block;");
+                pnlagency.Attributes.Add("style", "display:none;");
+                GetAgencyDetail();
+                GetPackageData();
             }
+            
             if (dtpartner.Rows[0]["Description2"] != DBNull.Value)
             {
                 txtConsiderUsBecause.Text = dtpartner.Rows[0]["Description2"].ToString();
@@ -66,7 +74,8 @@ namespace Benchkart.Partner
         public static List<string> GetAutoCompleteData(string username)
         {
             List<string> result = new List<string>();
-            using (SqlConnection con = new SqlConnection("Data Source=LAPTOP-V7SETIQK\\SQLEXPRESS;Integrated Security=true;Initial Catalog=Benchkart"))
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(dbConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("proc_GetStateByLike", con))
                 {
@@ -82,7 +91,49 @@ namespace Benchkart.Partner
                 }
             }
         }
+        public void GetPackageType()
+        {
+            ClsPackageType clspk = new ClsPackageType();
+            DataTable dt = new DataTable();
+            clspk.SubCategoryId = Convert.ToInt32(ddlSubCategory.SelectedValue);
+            dt = clspk.GetPackageData();
+            ddlPackageType.DataTextField = "PackageTypeName";
+            ddlPackageType.DataValueField = "PackageTypeId";
+            ddlPackageType.DataSource = dt;
+            ddlPackageType.DataBind();
+            ddlPackageType.Items.Insert(0, new ListItem("Select Package Type", ""));
 
+        }
+        public void GetPackageTypeedit()
+        {
+            ClsPackageType clspk = new ClsPackageType();
+            DataTable dt = new DataTable();
+            clspk.SubCategoryId = Convert.ToInt32(ddlSubCategoryedit.SelectedValue);
+            dt = clspk.GetPackageData();
+            ddlPackageTypeedit.DataTextField = "PackageTypeName";
+            ddlPackageTypeedit.DataValueField = "PackageTypeId";
+            ddlPackageTypeedit.DataSource = dt;
+            ddlPackageTypeedit.DataBind();
+            ddlPackageTypeedit.Items.Insert(0, new ListItem("Select Package Type", ""));
+
+        }
+        public void GetAgencyDetail()
+        {
+            DataTable dt = new DataTable();
+            ClsPartner clspt = new ClsPartner();
+            clspt.PartnerId = Convert.ToInt32(Session["partnerId"]);
+            dt = clspt.GetAgencyDetailsByPartnerId();
+            if (dt.Rows.Count > 0)
+            {
+                grdAgencyDetails.Visible = true;
+                grdAgencyDetails.DataSource = dt;
+                grdAgencyDetails.DataBind();
+            }
+            else
+            {
+                grdAgencyDetails.Visible = false;
+            }
+        }
         public void GetPackageData()
         {
             DataTable dt = new DataTable();
@@ -113,21 +164,23 @@ namespace Benchkart.Partner
             ClsPartner clspt = new ClsPartner();
             clspt.PartnerId = Convert.ToInt32(Session["partnerId"]);
             clspt.PocFullName = txtRepresentativeName.Text;
-            if (imagePic.ImageUrl == "") {
-            string fileName = System.IO.Path.GetFileName(fileuploadPic.PostedFile.FileName);
-            fileuploadPic.PostedFile.SaveAs(Server.MapPath("~/Uploadfiles/Partners/" + fileName));
-            clspt.Images = fileName;
-            }
-            else
-            {
-                clspt.Images = imagePic.ImageUrl;
-            }
+            //if (imagePic.ImageUrl == "") {
+            //string fileName = System.IO.Path.GetFileName(fileuploadPic.PostedFile.FileName);
+            //fileuploadPic.PostedFile.SaveAs(Server.MapPath("~/Uploadfiles/Partners/" + fileName));
+            //clspt.Images = "~/Uploadfiles/Partners/" + fileName;
+            //}
+            //else
+            //{
+            //    clspt.Images = imagePic.ImageUrl;
+            //}
             clspt.CompanyCity = location;
             clspt.Description1 = txtDescribedAs.Text;
             clspt.Description2 = txtConsiderUsBecause.Text;
             clspt.Description3 = txtOurTopCustomersAre.Text;
             clspt.UpdatePartnerQuickByPartnerId();
             GetPackageData();
+            GetAgencyDetail();
+            pnlagency.Attributes.Add("style", "display:none;");
             pnlpackage.Attributes.Add("style", "display:block;");
            
         }
@@ -144,7 +197,7 @@ namespace Benchkart.Partner
             ddlSubCategory.DataValueField = "ServiceId";
 
             ddlSubCategory.DataBind();
-            ddlSubCategory.Items.Insert(0, new ListItem("Select Project SubCategory", ""));
+            ddlSubCategory.Items.Insert(0, new ListItem("Select Project Sub-Category", ""));
             //ddlSubCategory.Items.FindByValue("0").Selected = true;
 
 
@@ -160,7 +213,7 @@ namespace Benchkart.Partner
             ddlSubCategoryedit.DataValueField = "ServiceId";
 
             ddlSubCategoryedit.DataBind();
-            ddlSubCategoryedit.Items.Insert(0, new ListItem("Select Project SubCategory", ""));
+            ddlSubCategoryedit.Items.Insert(0, new ListItem("Select Project Sub-Category", ""));
             //ddlSubCategory.Items.FindByValue("0").Selected = true;
         }
         protected void btnadd_Click(object sender, EventArgs e)
@@ -172,9 +225,36 @@ namespace Benchkart.Partner
             clscpp.PackageType =Convert.ToInt32( ddlPackageType.SelectedValue);
             clscpp.PackageName = txtPackageName.Text;
             clscpp.PackageDescription = txtPackageDescription.Text;
-            clscpp.BasicPackageCost =Convert.ToInt32( txtPackageCost1.Text);
-            clscpp.StandardPackageCost = Convert.ToInt32(txtPackageCost2.Text);
-            clscpp.PremiumPackageCost = Convert.ToInt32(txtPackageCost3.Text);
+            if(txtPackageCost1.Text != "")
+            {
+                clscpp.BasicPackageCost = Convert.ToInt32(txtPackageCost1.Text);
+            }
+            else
+            {
+
+                clscpp.BasicPackageCost = 0;
+            }
+            if (txtPackageCost2.Text != "")
+            {
+                clscpp.StandardPackageCost = Convert.ToInt32(txtPackageCost2.Text);
+            }
+
+            else
+            {
+
+                clscpp.StandardPackageCost = 0;
+            }
+            if (txtPackageCost3.Text != "")
+            {
+                clscpp.PremiumPackageCost = Convert.ToInt32(txtPackageCost3.Text);
+            }
+            else
+            {
+
+                clscpp.PremiumPackageCost = 0;
+            }
+           
+           
             int partnerPackageId=  clscpp.CreatePartnerPackage();
             if (partnerPackageId > 0)
             {
@@ -256,12 +336,12 @@ namespace Benchkart.Partner
                     clsqk.CreatePartnerPackageDetails();
                 }
                 GetPackageData();
-                Response.Write("<script>alert('Package data is saved ')</script>");
+                Response.Write("<script>alert('Your Package is sent for approval')</script>");
                 
             }
             else
             {
-                Response.Write("<script>alert('Package data save error')</script>");
+                Response.Write("<script>alert('Error in saving Package')</script>");
             }
            
 
@@ -290,7 +370,7 @@ namespace Benchkart.Partner
                     int serviceId = Convert.ToInt32(ddlCategoryedit.SelectedValue);
                     SetSubCategoryedit(serviceId);
                     ddlSubCategoryedit.SelectedValue = dt.Rows[0]["SubCategoryId"].ToString();
-                    
+                    GetPackageTypeedit();
                     ddlPackageTypeedit.SelectedValue = dt.Rows[0]["PackageType"].ToString();
                     txtPackageNameedit.Text = dt.Rows[0]["PackageName"].ToString();
                     txtPackageDescriptionedit.Text = dt.Rows[0]["PackageDescription"].ToString();
@@ -386,10 +466,36 @@ namespace Benchkart.Partner
             clscpp.PackageType = Convert.ToInt32(ddlPackageTypeedit.SelectedValue);
             clscpp.PackageName = txtPackageNameedit.Text;
             clscpp.PackageDescription = txtPackageDescriptionedit.Text;
-            clscpp.BasicPackageCost = Convert.ToInt32(txtbasicpackagecostedit.Text);
-            clscpp.StandardPackageCost = Convert.ToInt32(txtstandardpackagecostedit.Text);
-            clscpp.PremiumPackageCost = Convert.ToInt32(txtpremiumpackagecostedit.Text);
+
+            if (txtbasicpackagecostedit.Text!="")
+            {
+                clscpp.BasicPackageCost = Convert.ToInt32(txtbasicpackagecostedit.Text);
+            }
+            else
+            {
+                clscpp.BasicPackageCost = 0;
+            }
+            if (txtstandardpackagecostedit.Text != "")
+            {
+                clscpp.StandardPackageCost = Convert.ToInt32(txtstandardpackagecostedit.Text);
+            }
+            else
+            {
+                clscpp.StandardPackageCost = 0;
+            }
+            if (txtpremiumpackagecostedit.Text != "")
+            {
+                clscpp.PremiumPackageCost = Convert.ToInt32(txtpremiumpackagecostedit.Text);
+            }
+            else
+            {
+                clscpp.PremiumPackageCost = 0;
+            }
+
+           
+            
              clscpp.UpdatePartnerPackage();
+            Response.Write("<script>alert('Edited Package is sent for approval')</script>");
             pnlMyModal.Attributes.Add("style", "display:none;");
             GetPackageData();
         }
@@ -397,6 +503,63 @@ namespace Benchkart.Partner
         protected void grdpackagedetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
+        }
+
+        protected void ddlSubCategoryedit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetPackageTypeedit();
+        }
+
+        protected void ddlSubCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetPackageType();
+        }
+
+        protected void grdAgencyDetails_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "EdtAgency")
+            {
+                pnlagency.Attributes.Add("style", "display:block;");
+                DataTable dtpartner = new DataTable();
+                ClsPartner clspt = new ClsPartner();
+                clspt.PartnerId =Convert.ToInt32( e.CommandArgument.ToString());
+                dtpartner = clspt.GetPartnerQuickByPartnerId();
+                if (dtpartner.Rows[0]["PocFullName"] != DBNull.Value)
+                {
+                    txtRepresentativeName.Text = dtpartner.Rows[0]["PocFullName"].ToString();
+                }
+                //if (dtpartner.Rows[0]["Images"] != DBNull.Value)
+                //{
+                //    imagePic.ImageUrl = dtpartner.Rows[0]["Images"].ToString();
+                //    //imagePic.Attributes.Add("style", "width:120px; height:120px; margin-left:600px;");
+                //}
+                if (dtpartner.Rows[0]["CompanyCity"] != DBNull.Value)
+                {
+                    txtLocation.Text = dtpartner.Rows[0]["CompanyCity"].ToString();
+                }
+                if (dtpartner.Rows[0]["EmployeeCount"] != DBNull.Value)
+                {
+                    txtEmployeeCount.Text = "No. of Employees " + dtpartner.Rows[0]["EmployeeCount"].ToString();
+                }
+                if (dtpartner.Rows[0]["CompanyStarted"] != DBNull.Value)
+                {
+                    txtCompanyStarted.Text = "Completed Yrs. " + dtpartner.Rows[0]["CompanyStarted"].ToString();
+                }
+                if (dtpartner.Rows[0]["Description1"] != DBNull.Value)
+                {
+                    txtDescribedAs.Text = dtpartner.Rows[0]["Description1"].ToString();
+                   
+                }
+
+                if (dtpartner.Rows[0]["Description2"] != DBNull.Value)
+                {
+                    txtConsiderUsBecause.Text = dtpartner.Rows[0]["Description2"].ToString();
+                }
+                if (dtpartner.Rows[0]["Description3"] != DBNull.Value)
+                {
+                    txtOurTopCustomersAre.Text = dtpartner.Rows[0]["Description3"].ToString();
+                }
+            }
         }
     }
 }
