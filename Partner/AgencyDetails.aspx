@@ -244,6 +244,12 @@
     <script type="text/javascript">
         $(document).ready(function () {
             SearchText();
+            $("#ContentPlaceHolder1_txtRepresentativeName").attr("maxlength", 100);
+            $("#ContentPlaceHolder1_txtLocation").attr("maxlength", 100);
+            $("#ContentPlaceHolder1_txtDescribedAs").attr("maxlength", 200);
+            $("#ContentPlaceHolder1_txtConsiderUsBecause").attr("maxlength", 300);
+            $("#ContentPlaceHolder1_txtOurTopCustomersAre").attr("maxlength", 200);
+
             $("#ContentPlaceHolder1_txtPackageName").attr("maxlength", 60);
             $("#ContentPlaceHolder1_txtPackageDescription").attr("maxlength", 250);
             $("#ContentPlaceHolder1_txtPackageNameedit").attr("maxlength", 60);
@@ -610,12 +616,12 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Is Active">
                                 <ItemTemplate>
-                                    <%#Eval("IsActive").ToString()=="0"? "Not Active":"Active" %>
+                                    <%#Eval("IsActive").ToString()=="0"? "Not Active": Eval("IsActive").ToString()=="1"?"Active":"Rejected" %>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Action">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lkbedit" runat="server" ForeColor="Blue" Font-Bold="true"
+                                    <asp:LinkButton ID="lkbedit" runat="server" ForeColor="Blue" Font-Bold="true" Visible=' <%#Eval("IsActive").ToString()=="1"? false:true %>'
                                         Text="Edit" CommandArgument='<%#Eval("PartnerPackageId") %>' CommandName="Edt"></asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>

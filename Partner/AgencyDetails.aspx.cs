@@ -69,6 +69,7 @@ namespace Benchkart.Partner
             {
                 txtOurTopCustomersAre.Text = dtpartner.Rows[0]["Description3"].ToString();
             }
+            btnsubmit.Text = "Update Agency Details";
         }
         [WebMethod]
         public static List<string> GetAutoCompleteData(string username)
