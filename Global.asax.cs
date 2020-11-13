@@ -96,7 +96,7 @@ namespace Benchkart
             routes.MapPageRoute("Partner-AgencyDetails", "Partner/AgencyDetails", "~/Partner/AgencyDetails.aspx");
 
             routes.MapPageRoute("QuickProject-Payment", "QuickProject/Payment", "~/Customer/PaymentQuickProject.aspx");
-
+            routes.MapPageRoute("payment-response", "PaymentResponse", "~/PaymentResponse.aspx");
         }
 
 

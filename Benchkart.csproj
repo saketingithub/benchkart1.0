@@ -62,6 +62,10 @@
       <HintPath>packages\Razorpay.3.0.0\lib\net40\Razorpay.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,6 +74,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -334,6 +341,7 @@
     <Content Include="css_table\util.css" />
     <Content Include="Customer\Bid-Details.aspx" />
     <Content Include="Customer\Book_Consultation.aspx" />
+    <Content Include="Customer\CustomerQuickProject.aspx" />
     <Content Include="Customer\Customer_Review.aspx" />
     <Content Include="Customer\ForgetPassword.aspx" />
     <Content Include="Customer\HowItWorks.html" />
@@ -344,6 +352,7 @@
     <Content Include="Customer\Post_Project.aspx" />
     <Content Include="Customer\Projects_Dashboard.aspx" />
     <Content Include="Customer\Project_Details.aspx" />
+    <Content Include="Customer\QuickProjectPayment.aspx" />
     <Content Include="Customer\RejectPayment.aspx" />
     <Content Include="Customer\ReleasePayment.aspx" />
     <Content Include="Customer\ResetPassword.aspx" />
@@ -454,6 +463,7 @@
     <Content Include="Images\Partner_hiw5.png" />
     <Content Include="ITServices.aspx" />
     <Content Include="Partner\AgencyDetails.aspx" />
+    <Content Include="PaymentResponse.aspx" />
     <Content Include="Policies\Terms-Packages.html" />
     <Content Include="Post-Covid.html" />
     <Content Include="Partner\AcknowledgeSignup.html" />
@@ -1091,6 +1101,13 @@
     <Compile Include="Customer\CustomerProfile.aspx.designer.cs">
       <DependentUpon>CustomerProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CustomerQuickProject.aspx.cs">
+      <DependentUpon>CustomerQuickProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerQuickProject.aspx.designer.cs">
+      <DependentUpon>CustomerQuickProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Customer_Review.aspx.cs">
       <DependentUpon>Customer_Review.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1153,6 +1170,13 @@
     </Compile>
     <Compile Include="Customer\Project_Details.aspx.designer.cs">
       <DependentUpon>Project_Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\QuickProjectPayment.aspx.cs">
+      <DependentUpon>QuickProjectPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\QuickProjectPayment.aspx.designer.cs">
+      <DependentUpon>QuickProjectPayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\RejectPayment.aspx.cs">
       <DependentUpon>RejectPayment.aspx</DependentUpon>
@@ -1362,6 +1386,13 @@
     </Compile>
     <Compile Include="Partner\Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentResponse.aspx.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentResponse.aspx.designer.cs">
+      <DependentUpon>PaymentResponse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Post-COVID.aspx.cs">
       <DependentUpon>Post-COVID.aspx</DependentUpon>
