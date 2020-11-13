@@ -259,112 +259,112 @@ namespace Benchkart
         }
 
 
-        ////customer method
-        //public DataTable GetPartnerPackageAll()
-        //{
-        //    DataTable dtCustomerProfile = new DataTable();
+        //customer method
+        public DataTable GetPartnerPackageAll()
+        {
+            DataTable dtCustomerProfile = new DataTable();
 
-        //    string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        //    using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand("proc_GetPartnerPackageAll", sqlConnection);
-        //        //command.CommandType = CommandType.StoredProcedure;
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_GetPartnerPackageAll", sqlConnection);
+                //command.CommandType = CommandType.StoredProcedure;
 
-        //       // command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
+                // command.Parameters.Add("@partnerId", SqlDbType.Int).Value = PartnerId;
 
-        //        using (var da = new SqlDataAdapter(command))
-        //        {
-        //            command.CommandType = CommandType.StoredProcedure;
-        //            da.Fill(dtCustomerProfile);
-        //        }
-        //    }
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtCustomerProfile);
+                }
+            }
 
-        //    return dtCustomerProfile;
-        //}
+            return dtCustomerProfile;
+        }
 
-        ////customer method
-        //public DataTable GetPartnerPackageSearchor( string Category,string subCategory,String packageTypeName)
-        //{
-        //    DataTable dtPartnerPackage = new DataTable();
+        //customer method
+        public DataTable GetPartnerPackageSearchor(string Category, string subCategory, String packageTypeName)
+        {
+            DataTable dtPartnerPackage = new DataTable();
 
-        //    string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        //    using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
-        //    {
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
 
-        //       // string str = "select * from PartnerPackage  where (PartnerId " + PartnerId + ")and (CategoryId " + CategoryId + ") and (SubCategoryId " + SubCategoryId + ") and (PackageName " + PackageName + ") and(p.PackageType " + PackageType + ")  and IsActive=1";
+                // string str = "select * from PartnerPackage  where (PartnerId " + PartnerId + ")and (CategoryId " + CategoryId + ") and (SubCategoryId " + SubCategoryId + ") and (PackageName " + PackageName + ") and(p.PackageType " + PackageType + ")  and IsActive=1";
 
-        //        SqlCommand command = new SqlCommand("proc_GetPartnerPackageSearch", sqlConnection);
-        //        command.CommandType = CommandType.StoredProcedure;
+                SqlCommand command = new SqlCommand("proc_GetPartnerPackageSearch", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
 
-        //        command.Parameters.Add("@categoryId", SqlDbType.VarChar).Value = Category;
-        //        command.Parameters.Add("@subCategoryId", SqlDbType.VarChar).Value = subCategory;
-        //        command.Parameters.Add("@packageType", SqlDbType.VarChar).Value = packageTypeName;
-               
-        //        using (var da = new SqlDataAdapter(command))
-        //        {
-        //            //command.CommandType = CommandType.StoredProcedure;
-        //            da.Fill(dtPartnerPackage);
-        //        }
+                command.Parameters.Add("@categoryId", SqlDbType.VarChar).Value = Category;
+                command.Parameters.Add("@subCategoryId", SqlDbType.VarChar).Value = subCategory;
+                command.Parameters.Add("@packageType", SqlDbType.VarChar).Value = packageTypeName;
 
-        //    }
-        //    return dtPartnerPackage;
+                using (var da = new SqlDataAdapter(command))
+                {
+                    //command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtPartnerPackage);
+                }
 
-        //}
+            }
+            return dtPartnerPackage;
 
-        ////customer method
-        //public DataTable GetPartnerPackageSearchand()
-        //{
-        //    DataTable dtPartnerPackage = new DataTable();
+        }
 
-        //    string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        //customer method
+        public DataTable GetPartnerPackageSearchand()
+        {
+            DataTable dtPartnerPackage = new DataTable();
 
-        //    using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
-        //    {
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        //        // string str = "select * from PartnerPackage  where (PartnerId " + PartnerId + ")and (CategoryId " + CategoryId + ") and (SubCategoryId " + SubCategoryId + ") and (PackageName " + PackageName + ") and(p.PackageType " + PackageType + ")  and IsActive=1";
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
 
-        //        SqlCommand command = new SqlCommand("proc_GetPartnerPackageSearchand", sqlConnection);
-        //        command.CommandType = CommandType.StoredProcedure;
+                // string str = "select * from PartnerPackage  where (PartnerId " + PartnerId + ")and (CategoryId " + CategoryId + ") and (SubCategoryId " + SubCategoryId + ") and (PackageName " + PackageName + ") and(p.PackageType " + PackageType + ")  and IsActive=1";
 
-        //        command.Parameters.Add("@categoryId", SqlDbType.Int).Value = CategoryId;
-        //        command.Parameters.Add("@subCategoryId", SqlDbType.Int).Value = SubCategoryId;
-        //        command.Parameters.Add("@packageType", SqlDbType.Int).Value = PackageType;
-               
-        //        using (var da = new SqlDataAdapter(command))
-        //        {
-        //            //command.CommandType = CommandType.StoredProcedure;
-        //            da.Fill(dtPartnerPackage);
-        //        }
+                SqlCommand command = new SqlCommand("proc_GetPartnerPackageSearchand", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
 
-        //    }
-        //    return dtPartnerPackage;
+                command.Parameters.Add("@categoryId", SqlDbType.Int).Value = CategoryId;
+                command.Parameters.Add("@subCategoryId", SqlDbType.Int).Value = SubCategoryId;
+                command.Parameters.Add("@packageType", SqlDbType.Int).Value = PackageType;
 
-        //}
+                using (var da = new SqlDataAdapter(command))
+                {
+                    //command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtPartnerPackage);
+                }
 
-        ////customer method
-        //public DataTable GetPartnerPackageByCustomer()
-        //{
-        //    DataTable dtCustomerProfile = new DataTable();
+            }
+            return dtPartnerPackage;
 
-        //    string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        }
 
-        //    using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
-        //    {
-        //        SqlCommand command = new SqlCommand("proc_GetPartnerPackageByCustomer", sqlConnection);
-        //        //command.CommandType = CommandType.StoredProcedure;
+        //customer method
+        public DataTable GetPartnerPackageByCustomer()
+        {
+            DataTable dtCustomerProfile = new DataTable();
 
-        //        command.Parameters.Add("@partnerPackageId", SqlDbType.Int).Value = PartnerPackageId;
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-        //        using (var da = new SqlDataAdapter(command))
-        //        {
-        //            command.CommandType = CommandType.StoredProcedure;
-        //            da.Fill(dtCustomerProfile);
-        //        }
-        //    }
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_GetPartnerPackageByCustomer", sqlConnection);
+                //command.CommandType = CommandType.StoredProcedure;
 
-        //    return dtCustomerProfile;
-        //}
+                command.Parameters.Add("@partnerPackageId", SqlDbType.Int).Value = PartnerPackageId;
+
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dtCustomerProfile);
+                }
+            }
+
+            return dtCustomerProfile;
+        }
     }
 }
