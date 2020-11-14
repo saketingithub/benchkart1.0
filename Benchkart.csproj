@@ -334,6 +334,7 @@
     <Content Include="css\fontello.css" />
     <Content Include="css\green.css" />
     <Content Include="css\partner.css" />
+    <Content Include="css\quick-projects.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style2.css" />
     <Content Include="css\style4.css" />

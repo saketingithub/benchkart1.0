@@ -19,13 +19,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/jquery.min.js"></script>ipt>
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="../css/quick-projects.css" rel="stylesheet" />
     <script type="text/javascript">
         function showmodal() {
-            
+
             $("#myModal").show();
-            
+
         }
         function hidemodal() {
             $("#myModal").hide();
@@ -35,99 +35,155 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-
-        <div class="container-fluid">
-            <div>
-                <div style="background-color: black; color: Black; display: flow-root; height: 60px;">
-                    <div id="logo" style="float: left;">
-                        <h1 class="header"><a href="https://www.benchkart.com" style="text-decoration: none;"><span style="color: #18D26E;"><span style="font-size: 34px;">|</span> bench</span><span style="color: #F79507;">kart</span></a></h1>
-                    </div>
-                    <div style="float: right; margin-top: 20px;">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="https://www.benchkart.com" Text="Home" ForeColor="Blue" Style="color: white; font-size: small; margin-right: 10px; text-decoration: underline;"></asp:HyperLink>
+        <header id="header" style="padding: 0px; position: relative; height: 70px;">
+            <div class="container-fluid" style="background-color: black; min-height: 70px;">
+                <div id="logo" class="pull-left" style="margin-top: 15px;">
+                    <h1>
+                        <a href="https://benchkart.com" class="scrollto"><span style="color: #18D26E;">bench</span><span style="color: coral;">kart</span></a>
+                    </h1>
+                </div>
+                <div style="float: right;">
+                    <div class="dropdown" style="float: right; margin-top: 5px;">
+                        <i onclick="myFunction()" style="font-size: 20px; margin-top: 15px; margin-right: 20px;" class="fa fa-user-circle dropbtn"></i>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="Signin.aspx" class="nav-menu ul li a">Sign in</a>
+                            <a href="Signup.aspx" class="nav-menu ul li a">Sign up</a>
+                            <a href="../Partner/Signup.aspx" class="nav-menu ul li a">For Partner</a>
+                        </div>
                     </div>
                 </div>
+                <!-- #nav-menu-container -->
             </div>
+        </header>
+
+        <div class="container-fluid" style="">
+            <div class="row" style="">
+                <img src="../assets/img/banner/banner1.jpg" style="width:100%;height: 150px;" />
+
+            </div>
+
             <div class="row" style="margin-top: 30px;">
 
-                <div class="col-md-10" style="margin-bottom: 20px;">
-                    <asp:TextBox ID="txtsearch" runat="server" CssClass="form-control" style="border-radius:10px;"></asp:TextBox>
-                </div>
-                <div class="col-md-2" style="margin-bottom: 20px;">
-                    <asp:Button ID="btnSearch" runat="server" Width="60%" style="border-radius:10px;" Text="Search" CssClass="btn btn-success" OnClick="btnSearch_Click" />
-                </div>
 
-            </div>
-           
-                    <div class="row" style="margin-top: 30px;">
-
-
-                        <div class="col-md-5">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h3>Filter & Refilter</h3>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12" style ="margin-top:10px;">
-                                 <b>   Category </b>
-                                <asp:DropDownList ID="ddlCategoryIdRefilter" runat="server" Width="60%"  CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryIdRefilter_SelectedIndexChanged">
-                                    <asp:ListItem Value="">Select Project Category</asp:ListItem>
-                                    <asp:ListItem Value="2">Website & Apps</asp:ListItem>
-                                    <asp:ListItem Value="1">Graphics & Design</asp:ListItem>
-                                    <asp:ListItem Value="3">Digital Marketing</asp:ListItem>
-                                    <asp:ListItem Value="4">Software</asp:ListItem>
-                                    <asp:ListItem Value="5">Cloud & Infra</asp:ListItem>
-                                    <asp:ListItem Value="6">Call Center</asp:ListItem>
-                                    <asp:ListItem Value="7">KPO</asp:ListItem>
-                                    <asp:ListItem Value="8">Back-Office</asp:ListItem>
-                                </asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="row" style ="margin-top:10px;">
-                                <div class="col-md-12">
-                                   <b> SubCategory</b>
-                                <asp:DropDownList ID="ddlSubCategoryIdRefilter"  runat="server" Width="60%" CssClass="form-control"></asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="row" style ="margin-top:10px;">
-                                <div class="col-md-12">
-                                  <b>  PackageType</b>
-                                <asp:DropDownList ID="ddlPackageTypeRefilter" runat="server"  Width="60%" CssClass="form-control">
-                                    <asp:ListItem Value="">Select Package</asp:ListItem>
-                                    <asp:ListItem Value="1">Economy</asp:ListItem>
-                                    <asp:ListItem Value="2">Standard</asp:ListItem>
-                                    <asp:ListItem Value="3">Premium</asp:ListItem>
-                                </asp:DropDownList>
-                                </div>
-                            </div>
-
-
-                            <div class="row" style="margin-bottom: 20px; margin-top: 20px;">
-                                <div class="col-md-12">
-                                    <asp:Button ID="btnSearchRefilter" runat="server" Width="30%" Text="Search" OnClick="btnSearchRefilter_Click"
-                                        CssClass="btn btn-success " style="border-radius:10px;"></asp:Button>
-                                </div>
-                            </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Filter </h4>
                         </div>
-                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    </div>
 
-                <ContentTemplate>
-                        <div class="col-md-7">
-                            <b style="font-size: large;">Package count :</b>
-                            <asp:Label ID="lblcount" Font-Bold="true" Font-Size="Large" runat="server" Text="Package Count"></asp:Label>
-                            <div class="row" style="margin-top: 20px;">
-                                <div class=" card col-md-12">
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top: 10px;">
+                            <b>Category </b>
+                            <asp:DropDownList ID="ddlCategoryIdRefilter" runat="server" Width="60%" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryIdRefilter_SelectedIndexChanged">
+                                <asp:ListItem Value="">Select Project Category</asp:ListItem>
+                                <asp:ListItem Value="2">Website & Apps</asp:ListItem>
+                                <asp:ListItem Value="1">Graphics & Design</asp:ListItem>
+                                <asp:ListItem Value="3">Digital Marketing</asp:ListItem>
+                                <asp:ListItem Value="4">Software</asp:ListItem>
+                                <asp:ListItem Value="5">Cloud & Infra</asp:ListItem>
+                                <asp:ListItem Value="6">Call Center</asp:ListItem>
+                                <asp:ListItem Value="7">KPO</asp:ListItem>
+                                <asp:ListItem Value="8">Back-Office</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-12">
+                            <b>SubCategory</b>
+                            <asp:DropDownList ID="ddlSubCategoryIdRefilter" runat="server" Width="60%" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-12">
+                            <b>PackageType</b>
+                            <asp:DropDownList ID="ddlPackageTypeRefilter" runat="server" Width="60%" CssClass="form-control">
+                                <asp:ListItem Value="">Select Package</asp:ListItem>
+                                <asp:ListItem Value="1">Economy</asp:ListItem>
+                                <asp:ListItem Value="2">Standard</asp:ListItem>
+                                <asp:ListItem Value="3">Premium</asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                    </div>
 
-                                    <asp:DataList ID="dlQuickProjects" runat="server" CellSpacing="5" CellPadding ="4" border-raduis="10" Font-Bold="True" 
-                                        RepeatColumns="1" OnItemCommand="dlQuickProjects_ItemCommand" Width="736px" BorderStyle="Solid" BorderWidth="2px" ForeColor="#333333" GridLines="Both">
-                                        <AlternatingItemStyle BackColor="White" />
-                                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                                        <ItemStyle BackColor="#EFF3FB" />
+
+                    <div class="row" style="margin-bottom: 20px; margin-top: 20px;">
+                        <div class="col-md-12">
+                            <asp:Button ID="btnSearchRefilter" runat="server" Width="30%" Text="Filter" OnClick="btnSearchRefilter_Click"
+                                CssClass="btn btn-info "></asp:Button>
+                        </div>
+                    </div>
+                </div>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+                    <ContentTemplate>
+                        <div class="col-md-8 packageListing">
+                            <div class="row">
+                                <div class="col-md-3" style="padding-left: 0px;">
+                                    <span style="font-size: 14px;">Package count :</span>
+                                    <asp:Label ID="lblcount" Font-Bold="true" Style="font-size: 14px;" runat="server" Text="Package Count"></asp:Label>
+                                </div>
+                                <div class="col-md-9" style="padding-right: 0px;">
+                                    <div class="" style="float: right;">
+                                        <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btn-info btn-search" OnClick="btnSearch_Click" />
+                                    </div>
+                                    <div class="" style="float: right; width: 63%;">
+                                        <asp:TextBox ID="txtsearch" runat="server" placeholder="Search Projects, Packages.." CssClass="form-control btn-searchtext"></asp:TextBox>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-12">
+                                        <asp:Repeater ID="rptr" runat="server" OnItemCommand="rptr_ItemCommand">
+                                            <ItemTemplate>
+                                                <div class="card">
+                                                    <div class="row row-no-gutters p-0">
+                                                        <div class="col-md-5 section leftsection shadow">
+                                                            <div style="" class="col-md-12 pkgName">
+                                                                <%# DataBinder.Eval(Container.DataItem, "PackageName") %>
+                                                            </div>
+                                                            <div class="col-md-12 pkgDescription">
+                                                                <%# DataBinder.Eval(Container.DataItem, "PackageDescription") %>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-5 section sectionSeperator midsection">
+                                                            <div class="col-md-12 pkgDescription">
+                                                                <%# DataBinder.Eval(Container.DataItem, "Description1") %>
+                                                            </div>
+                                                            <div class="col-md-12 pkgDescription">
+                                                                <%# DataBinder.Eval(Container.DataItem, "Description2") %>
+                                                            </div>
+                                                            <div class="col-md-12 pkgDescription">
+                                                                <%# DataBinder.Eval(Container.DataItem, "Description3") %>
+                                                            </div>
+                                                        </div>
+                                                        <div class=" col-md-2 section sectionSeperator rightsection">
+                                                            <div class="col-md-12 pkgAmountText">
+                                                                Starting from:
+                                                            </div>
+                                                            <div class="col-md-12 pkgAmount">
+                                                                <div class="pkgAmtSym">₹</div>
+                                                                <div class="pkgAmtCost"><%# string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}",  decimal.Parse(DataBinder.Eval(Container.DataItem, "BasicPackageCost").ToString(), System.Globalization.CultureInfo.InvariantCulture)) %></div>
+                                                            </div>
+                                                            <div class="col-md-12 pkgAction">
+                                                                <asp:Button ID="lkbViewPackage" CommandArgument='<%#Eval("PartnerPackageId")%>' OnClientClick=" showmodal()" CommandName="Edt" runat="server"
+                                                                    Text="ViewPackage" CssClass="btn btn-success btn-md btn-package"></asp:Button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+
+                                        <%-- <asp:DataList ID="dlQuickProjects" runat="server" RepeatColumns="1" OnItemCommand="dlQuickProjects_ItemCommand" GridLines="Both">
+                                        <AlternatingItemStyle CssClass="rowAlternateStyle" />
+                                        <FooterStyle  />
+                                        <HeaderStyle  />
+                                        <ItemStyle  CssClass="rowStyle"  />
                                         <ItemTemplate>
-                                            <table style="margin-top:20px;">
+                                            <table style="margin-top: 20px;">
                                                 <tr style="margin-top: 20px; margin-bottom: 20px;">
                                                     <td style="width: 300px; text-align: center; margin-top: 20px; margin-bottom: 20px;">
                                                         <b style="margin: 50px; margin-top: 20px; margin-bottom: 20px; color: lightgray;"><%#Eval("PackageName")%></b>
@@ -148,9 +204,9 @@
                                                         <br />
                                                         <br />
                                                         <b style="margin: 50px;">
-                                                          
+
                                                             <asp:Button ID="lkbViewPackage" CommandArgument='<%#Eval("PartnerPackageId")%>' OnClientClick=" showmodal()" CommandName="Edt" runat="server"
-                                                                Text="ViewPackage"  CssClass="btn btn-success btn-md" Style="margin-bottom: 20px; border-radius:10px;"></asp:Button>
+                                                                Text="ViewPackage" CssClass="btn btn-success btn-md" Style="margin-bottom: 20px; border-radius: 10px;"></asp:Button>
                                                         </b>
                                                     </td>
 
@@ -162,176 +218,408 @@
 
                                         <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
 
-                                   </asp:DataList>
+                                    </asp:DataList>--%>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                     </ContentTemplate>
+                    </ContentTemplate>
 
-            </asp:UpdatePanel>
-                    </div>
+                </asp:UpdatePanel>
+            </div>
 
-               
+
         </div>
-       
-        <div class="modal " id="myModal" tabindex="-1" role="dialog"  style="background-color: #f8f8f8; display:none; border: 1px solid green; border-radius: 10px;">
-            <div class="modal-dialog" style="width: 80%; border: 1px solid green; border-radius: 10px;">
+
+        <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-hidden='true'>
+            <div class="modal-dialog" style="width: 70%;">
                 <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
-            <ContentTemplate>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <asp:Button ID="btnhidemodal" class="close" aria-hidden="true" runat ="server" OnClientClick=" return hidemodal();" Text="x" />
-                        
-                        <h4 class="modal-title">Package Details</h4>
-                    </div>
-                    <div class="modal-body" style="background-color: #f8f8f8; border: 1px solid green;">
-
-
-
-                        <div class="row" style="margin: 10px; padding: 10px;">
-                            <div class="form-group">
-                                <b>Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : &nbsp;</b><asp:Label ID="lbltitle" runat ="server" ></asp:Label>
-                              <%--  <asp:DropDownList ID="ddlCategory" class="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged"
-                                    Style="border-radius: 10px;">
-                                    <asp:ListItem Value="">Select Project Category</asp:ListItem>
-                                    <asp:ListItem Value="2">Website & Apps</asp:ListItem>
-                                    <asp:ListItem Value="1">Graphics & Design</asp:ListItem>
-                                    <asp:ListItem Value="3">Digital Marketing</asp:ListItem>
-                                    <asp:ListItem Value="4">Software</asp:ListItem>
-                                    <asp:ListItem Value="5">Cloud & Infra</asp:ListItem>
-                                    <asp:ListItem Value="6">Call Center</asp:ListItem>
-                                    <asp:ListItem Value="7">KPO</asp:ListItem>
-                                    <asp:ListItem Value="8">Back-Office</asp:ListItem>
-
-                                </asp:DropDownList>--%>
-
+                    <ContentTemplate>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Package Details</h4>
                             </div>
-                        </div>
-                        <div class="row" style="margin: 10px; padding: 10px;">
-                            <div class="form-group">
-                             <b>  SubCategory &nbsp;&nbsp; : &nbsp;</b> <asp:Label ID="lblsubtitle" runat ="server" ></asp:Label>
-                               <%-- <asp:DropDownList ID="ddlSubCategory" AutoPostBack="true" class="form-control" runat="server"
-                                    Style="border-radius: 10px;">
-                                </asp:DropDownList>--%>
+                           <%--  <div class="modal-body package-details" style="">
+                                <div class="row col-md-12" style="">
+                                    <div class="category"><asp:Label ID="lbltitle" runat="server"></asp:Label> </div>
+                                    <div class="categoryseperator"> >> </div>
+                                    <div class="subcategory"><asp:Label ID="lblsubtitle" runat="server"></asp:Label></div>
+                                </div>
+                                <div class="row col-md-12 pkgNameContainer" style="">
+                                    <div class="pkgType"> <asp:Label ID="lblpackagetypename" runat ="server" ></asp:Label> </div>
+                                    <div class="pkgNameSepr"> ( </div>
+                                    <div class="pkgNameInDetail"><asp:Label ID="lblPackageName" runat="server"></asp:Label></div>
+                                    <div class="pkgNameSepr"> ) </div>
+                                </div>
+                                <div class="row  col-md-12" style="">
+                                    <div class="form-group">
+                                        <asp:Repeater ID="rptCustomers" runat="server">
+                                            <HeaderTemplate>
+                                                <table cellspacing="0" rules="all" border="1" style="width: 100%;">
+                                                    <tr>
+                                                        <th scope="col" style="width: 80px">Parameter
+                                                        </th>
+                                                        <th scope="col" style="width: 80px">Basic
+                                                        </th>
+                                                        <th scope="col" style="width: 120px">Standard
+                                                        </th>
+                                                        <th scope="col" style="width: 100px">Premium
+                                                        </th>
+                                                    </tr>
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("Parameter") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("BasicDisplayText") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("StandardDisplayText") %>' />
+                                                    </td>
+                                                    <td>
+                                                        <asp:Label ID="lblCountry" runat="server" Text='<%# Eval("PremiumDisplayText") %>' />
+                                                    </td>
+                                                </tr>
 
-                            </div>
-                        </div>
-                         
-                        <div class="row" style="margin: 10px; padding: 10px;">
-                            <div class="form-group">
-                             <b>  Package Type &nbsp; : &nbsp;</b> <asp:Label ID="lblpackagetypename" runat ="server" ></asp:Label>
-                               <%-- <asp:DropDownList ID="ddlPackageType" class="form-control" runat="server"
-                                    Style="border-radius: 10px;">
-                                    <asp:ListItem Value="">Select Package</asp:ListItem>
-                                    <asp:ListItem Value="1">Economy</asp:ListItem>
-                                    <asp:ListItem Value="2">Standard</asp:ListItem>
-                                    <asp:ListItem Value="3">Premium</asp:ListItem>
-                                </asp:DropDownList>--%>
+                                            </ItemTemplate>
+                                            <FooterTemplate>
+                                                </table>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
 
 
-                            </div>
-                        </div>
-
-                        <div class="row" style="margin: 10px; padding: 10px;">
-                            <div class="form-group">
-                             <b>  PackageName &nbsp; :&nbsp;</b> <asp:Label ID="lblPackageName" runat="server" ></asp:Label>
-                            </div>
-                        </div>
-
-
-
-                        <div class="row" style="margin: 10px; width: 80%; padding: 10px;">
-                            <div class="form-group">
-                                <asp:Repeater ID="rptCustomers" runat="server" >
-                                    <HeaderTemplate>
-                                        <table cellspacing="0" rules="all" border="1" style="width:100%;">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px; width: 80%; padding: 10px;">
+                                    <div class="form-group">
+                                        <table style="width: 100%;">
                                             <tr>
-                                                <th scope="col" style="width: 80px">Parameter
-                                                </th>
-                                                <th scope="col" style="width: 80px">Basic
-                                                </th>
-                                                <th scope="col" style="width: 120px">Standard
-                                                </th>
-                                                <th scope="col" style="width: 100px">Premium
-                                                </th>
+                                                <td>PackageCost
+                                                </td>
+                                                <td style="margin-left: 200px;">
+                                                    <asp:Label ID="lblbasiccost" runat="server"></asp:Label>
+                                                </td>
+                                                <td style="margin-left: 200px;">
+                                                    <asp:Label ID="lblstandatrdcost" runat="server"></asp:Label>
+                                                </td>
+                                                <td style="margin-left: 200px;">
+                                                    <asp:Label ID="lblpremiumcost" runat="server"></asp:Label>
+                                                </td>
                                             </tr>
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td>
-                                                <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("Parameter") %>' />
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("BasicDisplayText") %>' />
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("StandardDisplayText") %>' />
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="lblCountry" runat="server" Text='<%# Eval("PremiumDisplayText") %>' />
-                                            </td>
-                                        </tr>
-                                        
-                                    </ItemTemplate>
-                                    <FooterTemplate>
-                                       
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <asp:Button ID="btnbasiclink" runat="server" OnClick="btnbasiclink_Click" Text="Basic" CssClass="btn btn-success" />
+
+                                                </td>
+                                                <td>
+                                                    <asp:Button ID="btnstandardlink" runat="server" Text="Standard" CssClass="btn btn-success " OnClick="btnstandardlink_Click" />
+
+
+                                                </td>
+                                                <td>
+                                                    <asp:Button ID="btnpremium" runat="server" Text="Premium" CssClass="btn btn-success " OnClick="btnpremium_Click" />
+
+
+                                                </td>
+                                            </tr>
                                         </table>
-                                    </FooterTemplate>
-                                </asp:Repeater>
+                                    </div>
+                                </div>
+                            </div>--%>
 
 
-                            </div>
-                        </div>
+
+                            <div class="modal-body package-details" style="">
+                                <div class="">
+                                    <div class="row col-md-12" style="">
+                                        <div class="category">
+                                            <asp:Label ID="lbltitle" runat="server"></asp:Label>
+                                        </div>
+                                        <div class="categoryseperator">>> </div>
+                                        <div class="subcategory">
+                                            <asp:Label ID="lblsubtitle" runat="server"></asp:Label>
+                                        </div>
+                                    </div>
+                                    <div class="row col-md-12 pkgNameContainer" style="">
+                                        <div class="pkgType">
+                                            <asp:Label ID="lblpackagetypename" runat="server"></asp:Label>
+                                        </div>
+                                        <div class="pkgNameSepr">( </div>
+                                        <div class="pkgNameInDetail">
+                                            <asp:Label ID="lblPackageName" runat="server"></asp:Label>
+                                        </div>
+                                        <div class="pkgNameSepr">) </div>
+                                    </div>
+                                    <div class="row  col-md-12" style="">
+                                        <div class="form-group">
+                                          <%--  <asp:Repeater ID="rptCustomers" runat="server">
+                                                <HeaderTemplate>
+                                                    <table cellspacing="0" rules="all" border="1" style="width: 100%;">
+                                                        <tr>
+                                                            <th scope="col" style="width: 80px">Parameter
+                                                            </th>
+                                                            <th scope="col" style="width: 80px">Basic
+                                                            </th>
+                                                            <th scope="col" style="width: 120px">Standard
+                                                            </th>
+                                                            <th scope="col" style="width: 100px">Premium
+                                                            </th>
+                                                        </tr>
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("Parameter") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("BasicDisplayText") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("StandardDisplayText") %>' />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="lblCountry" runat="server" Text='<%# Eval("PremiumDisplayText") %>' />
+                                                        </td>
+                                                    </tr>
+
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </table>
+                                                </FooterTemplate>
+                                            </asp:Repeater>--%>
+                                        </div>
+                                        <div class="row" style="margin: 10px; width: 80%; padding: 10px;">
+                                            <div class="form-group">
+                                                <table style="width: 100%;">
+                                                   <%-- <tr>
+                                                        <td>PackageCost
+                                                        </td>
+                                                        <td style="margin-left: 200px;">
+                                                            <asp:Label ID="lblbasiccost" runat="server"></asp:Label>
+                                                        </td>
+                                                        <td style="margin-left: 200px;">
+                                                            <asp:Label ID="lblstandatrdcost" runat="server"></asp:Label>
+                                                        </td>
+                                                        <td style="margin-left: 200px;">
+                                                            <asp:Label ID="lblpremiumcost" runat="server"></asp:Label>
+                                                        </td>
+                                                    </tr>--%>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                       <%-- <td>
+                                                            <asp:Button ID="btnbasiclink" runat="server" OnClick="btnbasiclink_Click" Text="Basic" CssClass="btn btn-success" />
+
+                                                        </td>
+                                                        <td>
+                                                            <asp:Button ID="btnstandardlink" runat="server" Text="Standard" CssClass="btn btn-success " OnClick="btnstandardlink_Click" />
 
 
-                                <div class="row" style="margin: 10px; width:80%; padding: 10px;">
-                            <div class="form-group">
-                            <table style="width:100%;">
-                                <tr>
-                                            <td>
-                                                  PackageCost
-                                            </td>
-                                            <td style="margin-left:200px;">
-                                                <asp:Label ID="lblbasiccost" runat ="server" ></asp:Label>
-                                            </td>
-                                            <td style="margin-left:200px;">
-                                                 <asp:Label ID="lblstandatrdcost" runat ="server" ></asp:Label>
-                                            </td>
-                                            <td style="margin-left:200px;">
-                                                 <asp:Label ID="lblpremiumcost" runat ="server" ></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>
-                                                <asp:Button ID="btnbasiclink" runat ="server" OnClick="btnbasiclink_Click" Text ="Basic" CssClass ="btn btn-success" />
-                                                                                            
-                                            </td>
-                                            <td>
-                                                <asp:Button ID="btnstandardlink" runat ="server" Text ="Standard" CssClass ="btn btn-success " OnClick="btnstandardlink_Click" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Button ID="btnpremium" runat="server" Text="Premium" CssClass="btn btn-success " OnClick="btnpremium_Click" />
+
+
+                                                        </td>--%>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="">
+                                    <div class="packageContainer">
+                                        <div class="package">
+                                            <div class="packageLeftBar">
+                                                <ul>
+                                                    <li>Individual Package Details</li>
+                                                    <li><i class="fa fa-tags"></i>Price</li>
+                                                    <li><i class="fa xxfa-check"></i>Validity</li>
+                                                    <li><i class="fa xxfa-search"></i>Visibility in Search</li>
+                                                    <li><i class="fa xxfa-camera"></i>Upload Photo</li>
+                                                    <li><i class="fa xxfa-phone"></i>Call User for Free</li>
+                                                    <li><i class="fa xxfa-envelope"></i>SMS Blast</li>
+                                                    <li><i class="fa xxfa-list"></i>Free Listing</li>
+                                                    <li><i class="fa xxfa-home"></i>Hot Properties</li>
+                                                    <li></li>
+                                                </ul>
+                                            </div>
+                                            <div class="packageDetails yellow">
+                                                <ul>
+                                                    <li><span>Basic</span></li>
+                                                    <li>Free</li>
+                                                    <li>30 Days</li>
+                                                    <li>Standard</li>
+                                                    <li>5 Only</li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><a class="signUp">Sign Up</a></li>
+                                                </ul>
+                                            </div>
+                                           <div class="packageDetails orange">
+                                                <ul>
+                                                    <li><span>STANDARD</span></li>
+                                                    <li>Free</li>
+                                                    <li>30 Days</li>
+                                                    <li>Standard</li>
+                                                    <li>5 Only</li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><a class="signUp">Sign Up</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="packageDetails red">
+                                                <ul>
+                                                    <li><span>Premium</span></li>
+                                                    <li>Rs.1750/-</li>
+                                                    <li>60 Days</li>
+                                                    <li>Standard</li>
+                                                    <li>5 Only</li>
+                                                    <li><i class="fa fa-check"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-times"></i></li>
+                                                    <li><i class="fa fa-check"></i></li>
+                                                    <li><a class="signUp">Sign Up</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="">
+                                    <div class="packageContainer containerRepeater">
+                                        <asp:Repeater ID="rptCustomers" runat="server">
+                                            <HeaderTemplate>
+                                                <div class="package">
+                                                    <div class="packageLeftBar">
+                                                        <ul>
+                                                            <li>Individual Package Details</li>
+                                                            <li class="dataCellHeader"><i class="fa fa-tags"></i>Price</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="packageDetails yellow">
+                                                        <ul>
+                                                            <li><span>Basic</span></li>
+                                                            <li>
+                                                                ₹<%# string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}",  decimal.Parse(_packageCostBasic.ToString(), System.Globalization.CultureInfo.InvariantCulture)) %>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="packageDetails orange">
+                                                        <ul>
+                                                            <li><span>Standard</span></li>
+                                                            <li> 
+                                                                ₹<%# string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}",  decimal.Parse(_packageCostStandard.ToString(), System.Globalization.CultureInfo.InvariantCulture)) %>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="packageDetails red">
+                                                        <ul>
+                                                            <li><span>Premium</span></li>
+                                                            <li>
+                                                                ₹<%# string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}",  decimal.Parse(_packageCostPremium.ToString(), System.Globalization.CultureInfo.InvariantCulture)) %>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 
+                                            </HeaderTemplate>
+                                            <ItemTemplate>
+                                                <div class="row col-md-12 itemRow" style="padding:0px;margin:0px;">
+                                                    <div class="packageLeftBar dataCell rowHeader">
+                                                        <%# Eval("Parameter") %>
+                                                    </div>
+                                                    <div class="packageDetails dataCell yellow">
+                                                        <div>
+                                                           <%# Eval("BasicDisplayText") %>
+                                                        </div>
+                                                    </div>
+                                                    <div class="packageDetails dataCell yellow">
+                                                        <div>
+                                                            <%# Eval("StandardDisplayText") %>
+                                                        </div>
+                                                    </div>
+                                                     <div class="packageDetails dataCell yellow">
+                                                       <div>
+                                                           <%# Eval("PremiumDisplayText") %>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 
-                                            </td>
-                                            <td>
-                                                <asp:Button ID="btnpremium" runat ="server" Text ="Premium" CssClass ="btn btn-success " OnClick ="btnpremium_Click" />
-                                               
-                                                 
-                                            </td>
-                                        </tr>
-                            </table>
-                            </div>
+                                            </ItemTemplate>
+                                            <FooterTemplate>
+                                                 <div class="row col-md-12 item footer" style="padding:0px;margin:0px;">
+                                                    <div class="packageLeftBar dataCell rowHeader">
+                                                        <li class="blankCell"></li>    
+                                                    </div>
+                                                    <div class="packageDetails dataCell yellow">
+                                                        <div>
+                                                            <asp:Button ID="btnbasiclink" runat="server" OnClick="btnbasiclink_Click" Text="Basic" CssClass=" signUp" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="packageDetails dataCell orange">
+                                                        <div>
+                                                            <asp:Button ID="btnstandardlink" runat="server" Text="Standard" CssClass=" signUp" OnClick="btnstandardlink_Click" />
+                                                        </div>
+                                                    </div>
+                                                     <div class="packageDetails dataCell red">
+                                                       <div>
+                                                           <asp:Button ID="btnpremium" runat="server" Text="Premium" CssClass=" signUp" OnClick="btnpremium_Click " />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                </div>
+                                            </FooterTemplate>
+                                        </asp:Repeater>
+                                        
+
+                                    </div>
+                                </div>
+                            
+
                         </div>
-
-
-                    </div>
-
-                </div>
-                </ContentTemplate>
-                    </asp:UpdatePanel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
-            
+
     </form>
 </body>
+<script>
+    $("#myModal").on("hidden.bs.modal", function () {
+        //console.log('removex');
+        //setTimeout(function () {
+        //    $(".modal-backdrop.fade.in").remove();
+        //}, 5000);
+    });
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
 </html>

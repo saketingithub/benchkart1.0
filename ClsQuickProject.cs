@@ -20,6 +20,7 @@ namespace Benchkart
         public string  PackageName { get; set; }
         public string PackageDescription { get; set; }
         public int BasicPackageCost { get; set; }
+        public string BasicPackageCostFormatted { get; set; }
         public int StandardPackageCost { get; set; }
         public int PremiumPackageCost { get; set; }
         public int IsActive { get; set; }
