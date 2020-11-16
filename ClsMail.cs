@@ -325,7 +325,10 @@ namespace Benchkart
             NetworkCredential credentials = new NetworkCredential(EmailFrom, EmailFromPwd);
             client.UseDefaultCredentials = true;
             client.Credentials = credentials;
-            client.Send(mailMessage);
+            if (ConfigurationManager.AppSettings["IsMailEnabled"].ToString() == "true")
+            {
+                client.Send(mailMessage);
+            }
         }
 
 

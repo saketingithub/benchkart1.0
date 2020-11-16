@@ -62,7 +62,7 @@
 
             </div>
 
-            <div class="row" style="margin-top: 30px;">
+            <div class="row" style="margin: 30px 0px 0px 0px;">
 
 
                 <div class="col-md-4">
@@ -149,13 +149,22 @@
                                                             </div>
                                                         </div>
                                                         <div class=" col-md-5 section sectionSeperator midsection">
-                                                            <div class="col-md-12 pkgDescription">
+                                                            <div  class="col-md-12 pkgDescription" style="color:#969696;font-style:italic;" runat="server" Visible='<%# DataBinder.Eval(Container.DataItem, "Description1").ToString().Trim() != "" %>'>
+                                                                Brief
+                                                            </div>
+                                                            <div class="col-md-12 pkgDescription" style="color:#18AA23;" >
                                                                 <%# DataBinder.Eval(Container.DataItem, "Description1") %>
                                                             </div>
-                                                            <div class="col-md-12 pkgDescription">
+                                                             <div class="col-md-12 pkgDescription" style="margin-top:15px;color:#969696;font-style:italic;" runat="server" Visible='<%# DataBinder.Eval(Container.DataItem, "Description2").ToString().Trim() != "" %>'>
+                                                                Why us ?
+                                                            </div>
+                                                            <div class="col-md-12 pkgDescription" style="color:#007a9e;">
                                                                 <%# DataBinder.Eval(Container.DataItem, "Description2") %>
                                                             </div>
-                                                            <div class="col-md-12 pkgDescription">
+                                                            <div class="col-md-12 pkgDescription" style="margin-top:15px;color:#969696;font-style:italic;"  runat="server" Visible='<%# DataBinder.Eval(Container.DataItem, "Description3").ToString().Trim() != "" %>'>
+                                                                Who chose us...
+                                                            </div>
+                                                            <div class="col-md-12 pkgDescription" style="color:#FF6B22;">
                                                                 <%# DataBinder.Eval(Container.DataItem, "Description3") %>
                                                             </div>
                                                         </div>
@@ -241,199 +250,31 @@
                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Package Details</h4>
                             </div>
-                           <%--  <div class="modal-body package-details" style="">
-                                <div class="row col-md-12" style="">
-                                    <div class="category"><asp:Label ID="lbltitle" runat="server"></asp:Label> </div>
-                                    <div class="categoryseperator"> >> </div>
-                                    <div class="subcategory"><asp:Label ID="lblsubtitle" runat="server"></asp:Label></div>
-                                </div>
-                                <div class="row col-md-12 pkgNameContainer" style="">
-                                    <div class="pkgType"> <asp:Label ID="lblpackagetypename" runat ="server" ></asp:Label> </div>
-                                    <div class="pkgNameSepr"> ( </div>
-                                    <div class="pkgNameInDetail"><asp:Label ID="lblPackageName" runat="server"></asp:Label></div>
-                                    <div class="pkgNameSepr"> ) </div>
-                                </div>
-                                <div class="row  col-md-12" style="">
-                                    <div class="form-group">
-                                        <asp:Repeater ID="rptCustomers" runat="server">
-                                            <HeaderTemplate>
-                                                <table cellspacing="0" rules="all" border="1" style="width: 100%;">
-                                                    <tr>
-                                                        <th scope="col" style="width: 80px">Parameter
-                                                        </th>
-                                                        <th scope="col" style="width: 80px">Basic
-                                                        </th>
-                                                        <th scope="col" style="width: 120px">Standard
-                                                        </th>
-                                                        <th scope="col" style="width: 100px">Premium
-                                                        </th>
-                                                    </tr>
-                                            </HeaderTemplate>
-                                            <ItemTemplate>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("Parameter") %>' />
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("BasicDisplayText") %>' />
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("StandardDisplayText") %>' />
-                                                    </td>
-                                                    <td>
-                                                        <asp:Label ID="lblCountry" runat="server" Text='<%# Eval("PremiumDisplayText") %>' />
-                                                    </td>
-                                                </tr>
-
-                                            </ItemTemplate>
-                                            <FooterTemplate>
-                                                </table>
-                                            </FooterTemplate>
-                                        </asp:Repeater>
-
-
-                                    </div>
-                                </div>
-                                <div class="row" style="margin: 10px; width: 80%; padding: 10px;">
-                                    <div class="form-group">
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td>PackageCost
-                                                </td>
-                                                <td style="margin-left: 200px;">
-                                                    <asp:Label ID="lblbasiccost" runat="server"></asp:Label>
-                                                </td>
-                                                <td style="margin-left: 200px;">
-                                                    <asp:Label ID="lblstandatrdcost" runat="server"></asp:Label>
-                                                </td>
-                                                <td style="margin-left: 200px;">
-                                                    <asp:Label ID="lblpremiumcost" runat="server"></asp:Label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>
-                                                    <asp:Button ID="btnbasiclink" runat="server" OnClick="btnbasiclink_Click" Text="Basic" CssClass="btn btn-success" />
-
-                                                </td>
-                                                <td>
-                                                    <asp:Button ID="btnstandardlink" runat="server" Text="Standard" CssClass="btn btn-success " OnClick="btnstandardlink_Click" />
-
-
-                                                </td>
-                                                <td>
-                                                    <asp:Button ID="btnpremium" runat="server" Text="Premium" CssClass="btn btn-success " OnClick="btnpremium_Click" />
-
-
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>--%>
+                        
 
 
 
                             <div class="modal-body package-details" style="">
                                 <div class="">
                                     <div class="row col-md-12" style="">
-                                        <div class="category">
+                                        <div class="category arrow">
                                             <asp:Label ID="lbltitle" runat="server"></asp:Label>
                                         </div>
-                                        <div class="categoryseperator">>> </div>
-                                        <div class="subcategory">
+                                        <div class="subcategory banner">
                                             <asp:Label ID="lblsubtitle" runat="server"></asp:Label>
                                         </div>
                                     </div>
-                                    <div class="row col-md-12 pkgNameContainer" style="">
-                                        <div class="pkgType">
-                                            <asp:Label ID="lblpackagetypename" runat="server"></asp:Label>
-                                        </div>
-                                        <div class="pkgNameSepr">( </div>
-                                        <div class="pkgNameInDetail">
-                                            <asp:Label ID="lblPackageName" runat="server"></asp:Label>
-                                        </div>
-                                        <div class="pkgNameSepr">) </div>
+                                     <div class="row col-md-12" style="text-align:center;padding:0px;margin:0px;">
+                                         <div class="banner-packagename">
+                                             <asp:Label ID="lblPackageName" CssClass="pkgNameModal" runat="server"></asp:Label> 
+                                             ( <asp:Label ID="lblpackagetypename" CssClass="pkgTypeModal" runat="server"></asp:Label> )
+                                         </div>
                                     </div>
-                                    <div class="row  col-md-12" style="">
-                                        <div class="form-group">
-                                          <%--  <asp:Repeater ID="rptCustomers" runat="server">
-                                                <HeaderTemplate>
-                                                    <table cellspacing="0" rules="all" border="1" style="width: 100%;">
-                                                        <tr>
-                                                            <th scope="col" style="width: 80px">Parameter
-                                                            </th>
-                                                            <th scope="col" style="width: 80px">Basic
-                                                            </th>
-                                                            <th scope="col" style="width: 120px">Standard
-                                                            </th>
-                                                            <th scope="col" style="width: 100px">Premium
-                                                            </th>
-                                                        </tr>
-                                                </HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <tr>
-                                                        <td>
-                                                            <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("Parameter") %>' />
-                                                        </td>
-                                                        <td>
-                                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("BasicDisplayText") %>' />
-                                                        </td>
-                                                        <td>
-                                                            <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("StandardDisplayText") %>' />
-                                                        </td>
-                                                        <td>
-                                                            <asp:Label ID="lblCountry" runat="server" Text='<%# Eval("PremiumDisplayText") %>' />
-                                                        </td>
-                                                    </tr>
-
-                                                </ItemTemplate>
-                                                <FooterTemplate>
-                                                    </table>
-                                                </FooterTemplate>
-                                            </asp:Repeater>--%>
-                                        </div>
-                                        <div class="row" style="margin: 10px; width: 80%; padding: 10px;">
-                                            <div class="form-group">
-                                                <table style="width: 100%;">
-                                                   <%-- <tr>
-                                                        <td>PackageCost
-                                                        </td>
-                                                        <td style="margin-left: 200px;">
-                                                            <asp:Label ID="lblbasiccost" runat="server"></asp:Label>
-                                                        </td>
-                                                        <td style="margin-left: 200px;">
-                                                            <asp:Label ID="lblstandatrdcost" runat="server"></asp:Label>
-                                                        </td>
-                                                        <td style="margin-left: 200px;">
-                                                            <asp:Label ID="lblpremiumcost" runat="server"></asp:Label>
-                                                        </td>
-                                                    </tr>--%>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                       <%-- <td>
-                                                            <asp:Button ID="btnbasiclink" runat="server" OnClick="btnbasiclink_Click" Text="Basic" CssClass="btn btn-success" />
-
-                                                        </td>
-                                                        <td>
-                                                            <asp:Button ID="btnstandardlink" runat="server" Text="Standard" CssClass="btn btn-success " OnClick="btnstandardlink_Click" />
-
-
-                                                        </td>
-                                                        <td>
-                                                            <asp:Button ID="btnpremium" runat="server" Text="Premium" CssClass="btn btn-success " OnClick="btnpremium_Click" />
-
-
-                                                        </td>--%>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
 
 
-                                <div class="">
+                              <%--  <div class="">
                                     <div class="packageContainer">
                                         <div class="package">
                                             <div class="packageLeftBar">
@@ -495,7 +336,7 @@
                                         </div>
 
                                     </div>
-                                </div>
+                                </div>--%>
 
 
                                 <div class="">
@@ -540,7 +381,7 @@
                                                     <div class="packageLeftBar dataCell rowHeader">
                                                         <%# Eval("Parameter") %>
                                                     </div>
-                                                    <div class="packageDetails dataCell yellow">
+                                                    <div class="packageDetails dataCell yellow" >
                                                         <div>
                                                            <%# Eval("BasicDisplayText") %>
                                                         </div>
@@ -621,5 +462,7 @@
             }
         }
     }
+
+   
 </script>
 </html>

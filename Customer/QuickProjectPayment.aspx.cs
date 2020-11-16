@@ -13,6 +13,7 @@ namespace Benchkart.Customer
 {
     public partial class QuickProjectPayment : System.Web.UI.Page
     {
+        //public string _packageCost;
         public string orderId;
         public string razorPaymentId;
         public string razor_payment_key = RazorPayAppKeys.getKey();
@@ -49,6 +50,7 @@ namespace Benchkart.Customer
                 if (dt.Rows[0]["BasicPackageCost"] != DBNull.Value)
                 {
                     lblpackagecost.Text = dt.Rows[0]["BasicPackageCost"].ToString();
+                    //_packageCost = dt.Rows[0]["BasicPackageCost"].ToString();
                 }
                 //if (dt.Rows[0]["StandardPackageCost"] != DBNull.Value)
                 //{
@@ -80,6 +82,8 @@ namespace Benchkart.Customer
                 if (dt.Rows[0]["StandardPackageCost"] != DBNull.Value)
                 {
                     lblpackagecost.Text = dt.Rows[0]["StandardPackageCost"].ToString();
+                    //_packageCost = dt.Rows[0]["StandardPackageCost"].ToString();
+
                 }
                 //if (dt.Rows[0]["PremiumPackageCost"] != DBNull.Value)
                 //{
@@ -111,6 +115,8 @@ namespace Benchkart.Customer
                 if (dt.Rows[0]["PremiumPackageCost"] != DBNull.Value)
                 {
                     lblpackagecost.Text = dt.Rows[0]["PremiumPackageCost"].ToString();
+                    //_packageCost = dt.Rows[0]["PremiumPackageCost"].ToString();
+
                 }
             }
         }
@@ -133,6 +139,7 @@ namespace Benchkart.Customer
                 clspay.CustomerId = Convert.ToInt32(customerId);
                 clspay.PartnerPackageId = Convert.ToInt32(Request.QueryString["PartnerPackageId"]);
                 clspay.PaymentAmount = Convert.ToInt32(lblpackagecost.Text);
+                //clspay.PaymentAmount = Convert.ToInt32(_packageCost);
                 int paymentid = clspay.CreatePaymentRequestQuick();
                 if (paymentid > 0)
                 {

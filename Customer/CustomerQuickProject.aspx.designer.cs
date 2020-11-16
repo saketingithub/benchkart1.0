@@ -141,15 +141,6 @@ namespace Benchkart.Customer
         protected global::System.Web.UI.WebControls.Label lblsubtitle;
 
         /// <summary>
-        /// lblpackagetypename control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblpackagetypename;
-
-        /// <summary>
         /// lblPackageName control.
         /// </summary>
         /// <remarks>
@@ -157,6 +148,15 @@ namespace Benchkart.Customer
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPackageName;
+
+        /// <summary>
+        /// lblpackagetypename control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblpackagetypename;
 
         /// <summary>
         /// rptCustomers control.
