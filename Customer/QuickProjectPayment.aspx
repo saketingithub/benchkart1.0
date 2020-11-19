@@ -21,6 +21,7 @@
     <%--<script src="../Scripts/bootstrap.min.js"></script>--%>
     <%--<script src="../Scripts/jquery.min.js"></script>--%>
     <link href="../css/quick-projects.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet">
 
     <style>
         @media only screen and (max-width: 799px) {
@@ -102,87 +103,114 @@
             </div>
         </div>
 
-        <div class="container ribbon-container" style="margin-top: 30px;">
-            <section>
-                <div class="ribbon">
-                    <div class="ribbon5">
-                        <span>
-                            <asp:Label ID="lblpackagenamepay" runat="server" Text="PackageName"></asp:Label>
-                            @ ₹<asp:Label ID="lblpackagecost" runat="server" Text="PackageName"></asp:Label>
-                            <%-- <%# string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}",  decimal.Parse(_packageCost.ToString(), System.Globalization.CultureInfo.InvariantCulture)) %>--%>
-                        </span>
-                        <span class="agency-info">Agency Code : 
-                           <asp:Label ID="lblagencycode" runat="server" Text="AgencyCode"></asp:Label>
-                        </span>
+
+        <div class="container-fluid ribbon-container" style="margin-top: 30px;">
+
+            <div class="col-md-4">
+                <div class="container-fluid card shadow-custom d-flex flex-column">
+                    <div class="" style="padding: 2em;">
+                        <h4 style="color: #18d26f;">Assurance Text..</h4>
+                        Rarely have we seen a person fail who has thoroughly followed our path. 
+                                Those who do not recover are people who cannot or will not completely give themselves to this simple program, usually men and women who are constitutionally incapable of being honest with themselves. There are such unfortunates. They are not at fault; they seem to have been born that way. They are naturally incapable of grasping and developing a manner of living which demands rigorous honesty. 
                     </div>
-                    <asp:Panel ID="pnlSignup" DefaultButton="btnPay" runat="server" class="panel" Style="">
-                        <asp:HiddenField runat="server" ID="hfPaymentRequestId" />
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtFullName" class="form-control"
-                                PlaceHolder="Full Name" Style="margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtFullName" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtFullName" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill your full name"
-                                ToolTip="Full Name is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <section>
+                    <div class="ribbon">
+                        <div class="ribbon5">
+                            <span>
+                                <asp:Label ID="lblpackagenamepay" runat="server" Text=""></asp:Label>
+                                @ ₹<%= ViewState["packageDisplayCost"]%>
+                                <asp:Label ID="lblpackagecost" runat="server" Visible="false"></asp:Label>
+                                <%-- <%# string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}",  decimal.Parse(_packageCost.ToString(), System.Globalization.CultureInfo.InvariantCulture)) %>--%>
+                            </span>
+                            <span class="agency-info">Agency Code : 
+                           <asp:Label ID="lblagencycode" runat="server" Text="AgencyCode"></asp:Label>
+                            </span>
                         </div>
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtEmailid" class="form-control"
-                                PlaceHolder="Email" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtEmail" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtEmailid" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill email"
-                                ToolTip="E-mail is required." ValidationGroup="Signup"></asp:RequiredFieldValidator>
+                        <asp:Panel ID="pnlSignup" DefaultButton="btnPay" runat="server" class="panel" Style="">
+                            <asp:HiddenField runat="server" ID="hfPaymentRequestId" />
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtFullName" class="form-control"
+                                    PlaceHolder="Full Name" Style="margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtFullName" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtFullName" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill your full name"
+                                    ToolTip="Full Name is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtEmailid" class="form-control"
+                                    PlaceHolder="Email" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtEmail" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtEmailid" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill email"
+                                    ToolTip="E-mail is required." ValidationGroup="Signup"></asp:RequiredFieldValidator>
 
-                            <asp:RegularExpressionValidator ID="validateEmail" runat="server" ErrorMessage="Invalid email"
-                                SetFocusOnError="True" ControlToValidate="txtEmailid" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
-                                ForeColor="Red" Font-Size="Small" ValidationGroup="Pay" Display="Dynamic" />
-                        </div>
-                        <div class="divfield">
-                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Style="margin-top: 20px;"
-                                CssClass="form-control fa-step-forward" placeholder="Set Password"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtPassword" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill password"
-                                ToolTip="Password is required." ValidationGroup="Pay">Please fill password</asp:RequiredFieldValidator>
-                        </div>
+                                <asp:RegularExpressionValidator ID="validateEmail" runat="server" ErrorMessage="Invalid email"
+                                    SetFocusOnError="True" ControlToValidate="txtEmailid" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
+                                    ForeColor="Red" Font-Size="Small" ValidationGroup="Pay" Display="Dynamic" />
+                            </div>
+                            <div class="divfield">
+                                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Style="margin-top: 20px;"
+                                    CssClass="form-control fa-step-forward" placeholder="Set Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtPassword" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill password"
+                                    ToolTip="Password is required." ValidationGroup="Pay">Please fill password</asp:RequiredFieldValidator>
+                            </div>
 
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtCompanyName" class="form-control"
-                                PlaceHolder="Company Name" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtCompanyName" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtCompanyName" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill your company name"
-                                ToolTip="Company Name is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
-                        </div>
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtContactNumber" class="form-control"
-                                PlaceHolder="Contact Number" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtContactNumber" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtContactNumber" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill contact number"
-                                ToolTip="Contact number is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="regtxtContactNumber" runat="server" ErrorMessage="Invalid phone - accept only 10 digit mobile number"
-                                SetFocusOnError="True" ControlToValidate="txtContactNumber" ValidationExpression="^[0-9]{10}$"
-                                ForeColor="Red" Font-Size="Small" ValidationGroup="Pay" Display="Dynamic" />
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtCompanyName" class="form-control"
+                                    PlaceHolder="Company Name" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtCompanyName" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtCompanyName" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill your company name"
+                                    ToolTip="Company Name is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
+                            </div>
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtContactNumber" class="form-control"
+                                    PlaceHolder="Contact Number" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtContactNumber" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtContactNumber" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill contact number"
+                                    ToolTip="Contact number is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="regtxtContactNumber" runat="server" ErrorMessage="Invalid phone - accept only 10 digit mobile number"
+                                    SetFocusOnError="True" ControlToValidate="txtContactNumber" ValidationExpression="^[0-9]{10}$"
+                                    ForeColor="Red" Font-Size="Small" ValidationGroup="Pay" Display="Dynamic" />
 
-                        </div>
+                            </div>
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="tbPaymentAmount" class="form-control"
+                                    PlaceHolder="" Style="margin-top: 10px; margin-left: 0px; width: 50%; display: inline-block;"></asp:TextBox>
+                                <span style="color: #808080">@ <%=ViewState["paymentPercentage"] %>% of ₹<%= ViewState["packageDisplayCost"]%>
+                                </span>
 
-                        <div class="divfield">
-                            <h5 class="TermsnCond">
-                                <asp:CheckBox runat="server" ID="chkTerms" ValidationGroup="Pay" />&nbsp;&nbsp;I Agree to the 
+                            </div>
+
+
+                            <div class="divfield">
+                                <h5 class="TermsnCond">
+                                    <asp:CheckBox runat="server" ID="chkTerms" ValidationGroup="Pay" />&nbsp;&nbsp;I Agree to the 
                                     <a href="../Policies/Terms-of-use-for-Clients.html" target="_blank">Terms of use for Clients</a>&nbsp;&&nbsp;<a href="../Policies/Benchkart-Privacy-Policy.html" target="_blank">Privacy Policy</a>
-                            </h5>
-                            <asp:Label runat="server" ID="lblTerms" Style="display: none; font-size: small;" ForeColor="Red" Text="Please check and agree to the Terms & Conditions"></asp:Label>
-                            <asp:CustomValidator ID="CustomValidator1" ValidationGroup="Pay" runat="server" Display="Dynamic" ClientValidationFunction="ValidateCheckBox"></asp:CustomValidator>
-                        </div>
-                        <div class="formindent divfield TermsnCond" style="font-size: small;">
-                            Already user? &nbsp;
+                                </h5>
+                                <asp:Label runat="server" ID="lblTerms" Style="display: none; font-size: small;" ForeColor="Red" Text="Please check and agree to the Terms & Conditions"></asp:Label>
+                                <asp:CustomValidator ID="CustomValidator1" ValidationGroup="Pay" runat="server" Display="Dynamic" ClientValidationFunction="ValidateCheckBox"></asp:CustomValidator>
+                            </div>
+                            <div class="formindent divfield TermsnCond" style="font-size: small;">
+                                Already user? &nbsp;
                             <button type="button" data-toggle="modal" class="btn btn-info" data-target="#myModal">Sign in</button>
 
-                        </div>
-                        <div class="formindent divfield">
-                            <asp:Button ID="btnPay" runat="server" Width="100%" ValidationGroup="Pay" CssClass="button" Text="Pay" OnClick="btnPay_Click" />
-                        </div>
+                            </div>
+                            <div class="formindent divfield">
+                                <asp:Button ID="btnPay" runat="server" Width="100%" ValidationGroup="Pay" CssClass="button" Text="Pay" OnClick="btnPay_Click" />
+                            </div>
 
-                    </asp:Panel>
-                </div>
+                            <div class="formindent divfield contactusform">
+                                <span>Still not sure? <a href="javscscript:void(0);" onclick="openContactForm();">Contact us</a> and we will be happy to assist.</span>
+                            </div>
 
-            </section>
+                        </asp:Panel>
+                    </div>
+
+                </section>
+            </div>
+
 
         </div>
 
@@ -288,15 +316,7 @@
                 </div>
             </div>
         </div>--%>
-        <div class="modal-footer" style="background-color: white; position: relative; bottom: 0; width: 100%; color: black;">
-            <div class="container text-center" style="">
-                <br />
-                <h5>Benchkart Services Pvt Ltd</h5>
-                <a href="../Policies/Terms-of-use-for-Clients.html" target="_blank">TERMS OF USE FOR CLIENTS</a><br />
-                <a href="../Policies/Benchkart-Privacy-Policy.html" target="_blank">PRIVACY POLICY</a>
-                <br />
-            </div>
-        </div>
+       
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="" aria-hidden="true">
             <div class="modal-dialog" style="width: 50%;">
 
@@ -364,51 +384,72 @@
             </div>
         </div>
     </div>
-    <%-- <button class="btn btn-primary" onclick="processPymResp(23456789, 66775544)" >CLICK ME</button>
-    <script>
-        function processPymResp(RazorpayRespnse, RazorpayPaymentId) {
-            $.ajax({
-                type: 'POST',
-                url: '/PaymentResponse.aspx?RazorpayRespnse=' + RazorpayRespnse + '&RazorpayPaymentId=' + RazorpayPaymentId,
-                contentType: 'json',
-                dataType: 'json',
-                data: {  },
-                success: function (data) {
-                },
-                error: function (xhr) {
-                }
-            });
-        }
-    </script>--%>
 
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
 
-    <%--<script src='https://checkout.razorpay.com/v1/checkout.js'></script>
-    <script> 
-        var options = {
-            'key': 'rzp_test_n0Go0s9iSZW1OA', 'amount': '1100000', 'currency': 'INR', 'name': 'Benchkart', 'description': 'Quick Project Payment', 'image': 'https://razorpay.com/favicon.png', 'order_id': 'order_G0XeBDwz0LP5WF',
-            'handler': function (response) {
-                if (response && response.razorpay_signature && response.razorpay_signature != '') {
-                    $('#modalpayresp').modal('show');
-                    processPymResp(response.RazorpayRespnse, response.RazorpayPaymentId);
-                }
-            }, 'prefill': { 'name': '', 'email': 'QikPrj_17@client.com', 'contact': '1231231234' }, 'notes': { 'address': '' }, 'theme': { 'color': '#F37254' }
-        };
-        var rzp1 = new Razorpay(options);
-        rzp1.on('payment.failed', function (response) {
-            /*   alert(response.error.code);    alert(response.error.description);    alert(response.error.source);    alert(response.error.step);    alert(response.error.reason);    alert(response.error.metadata.order_id);    alert(response.error.metadata.payment_id);    */
-        });
-        rzp1.open();
-        function processPymResp(RazorpayRespnse, RazorpayPaymentId)
-        {
-            $.ajax({
-                type: 'POST', url: '/PaymentResponse.aspx?RazorpayRespnse=' + RazorpayRespnse + '&RazorpayPaymentId=' + RazorpayPaymentId,
-                contentType: 'json',
-                dataType: 'json',
-                data: {},
-                success: function (data) {
-                    window.location.href = '/Customer/Projects_Dashboard';
-                }, error: function (xhr) { }
-            });
-        }</script>--%>
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h1>benchkart</h1>
+                        <p>Benchkart is a new age digital marketplace for procurement of digital B2B services. Founded by an erstwhile member of Microsoft India Leadership, we are committed to solving the challenges in procurement of services, especially for start-ups and small businesses across the world.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="ion-ios-arrow-right"></i><a href="#">Home</a></li>
+                            <li><i class="ion-ios-arrow-right"></i><a href="About" target="_blank">About us</a></li>
+                            <li><i class="ion-ios-arrow-right"></i><a href="Html/Faq.html" target="_blank">FAQs</a></li>
+                            <li><i class="ion-ios-arrow-right"></i><a href="Partner/Signup">Become a Partner</a></li>
+                            <li><i class="ion-ios-arrow-right"></i><a href="Policies/Terms-of-use-for-Clients.html" target="_blank">TERMS OF USE FOR CLIENTS</a></li>
+                            <li><i class="ion-ios-arrow-right"></i><a href="Policies/Terms-of-use-for-Partners.html" target="_blank">TERMS OF USE FOR PARTNERS</a></li>
+                            <li><i class="ion-ios-arrow-right"></i><a href="Policies/Benchkart-Privacy-Policy.html" target="_blank">PRIVACY POLICY</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            DW 254, Nirvana Country
+                            <br>
+                            Gurgaon, Haryana  122018<br>
+                            India
+                            <br>
+                            <strong>Phone:</strong> +91 9911780051<br>
+                            <strong>Email:</strong> outsource@benchkart.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="https://twitter.com/benchkart?ref_src=twsrc%5Etfw" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="https://facebook.com/benchkart-111486960437160" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <%--<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>--%>
+                            <a href="https://linkedin.com/company/benchkart" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>BECOME A PARTNER</h4>
+                        <p>We are inviting only a few of India's top rated (mid-sized) agencies to join the benchkart platform. If you feel your domain expertise & innovation can add value to our customers, please let our assessment team know.</p>
+                        <%--<form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>--%>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><%=DateTime.Now.Year %> Benchkart Services Pvt Ltd</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

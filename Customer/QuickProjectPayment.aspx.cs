@@ -13,7 +13,8 @@ namespace Benchkart.Customer
 {
     public partial class QuickProjectPayment : System.Web.UI.Page
     {
-        //public string _packageCost;
+        //private int _paymentPercentage = 0;
+        private string _packageDisplayCost;
         public string orderId;
         public string razorPaymentId;
         public string razor_payment_key = RazorPayAppKeys.getKey();
@@ -24,6 +25,7 @@ namespace Benchkart.Customer
         {
             _client = new RazorpayClient(razor_payment_key, razor_payment_secret);
            
+           
             if (!IsPostBack)
             {
                 GetData();
@@ -33,6 +35,9 @@ namespace Benchkart.Customer
         public void GetData()
         {
             int partnerPackageId = Convert.ToInt32(Request.QueryString["PartnerPackageId"]);
+            string PackageAmount = "";
+            ViewState["paymentPercentage"] = "10";
+            
             if (Request.QueryString["action"] == "1")
             {
                 ClsQuickProject clsqp = new ClsQuickProject();
@@ -49,8 +54,8 @@ namespace Benchkart.Customer
                 }
                 if (dt.Rows[0]["BasicPackageCost"] != DBNull.Value)
                 {
-                    lblpackagecost.Text = dt.Rows[0]["BasicPackageCost"].ToString();
-                    //_packageCost = dt.Rows[0]["BasicPackageCost"].ToString();
+                    lblpackagecost.Text = PackageAmount = dt.Rows[0]["BasicPackageCost"].ToString();
+                    _packageDisplayCost = string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}", decimal.Parse(dt.Rows[0]["BasicPackageCost"].ToString(), System.Globalization.CultureInfo.InvariantCulture));
                 }
                 //if (dt.Rows[0]["StandardPackageCost"] != DBNull.Value)
                 //{
@@ -81,8 +86,8 @@ namespace Benchkart.Customer
                 //}
                 if (dt.Rows[0]["StandardPackageCost"] != DBNull.Value)
                 {
-                    lblpackagecost.Text = dt.Rows[0]["StandardPackageCost"].ToString();
-                    //_packageCost = dt.Rows[0]["StandardPackageCost"].ToString();
+                    lblpackagecost.Text = PackageAmount = dt.Rows[0]["StandardPackageCost"].ToString();
+                    _packageDisplayCost = string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}", decimal.Parse(dt.Rows[0]["StandardPackageCost"].ToString(), System.Globalization.CultureInfo.InvariantCulture));
 
                 }
                 //if (dt.Rows[0]["PremiumPackageCost"] != DBNull.Value)
@@ -114,15 +119,19 @@ namespace Benchkart.Customer
                 //}
                 if (dt.Rows[0]["PremiumPackageCost"] != DBNull.Value)
                 {
-                    lblpackagecost.Text = dt.Rows[0]["PremiumPackageCost"].ToString();
-                    //_packageCost = dt.Rows[0]["PremiumPackageCost"].ToString();
+                    lblpackagecost.Text = PackageAmount = dt.Rows[0]["PremiumPackageCost"].ToString();
+                    _packageDisplayCost = string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}", decimal.Parse(dt.Rows[0]["PremiumPackageCost"].ToString(), System.Globalization.CultureInfo.InvariantCulture));
 
                 }
             }
+            tbPaymentAmount.Text = string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}", decimal.Parse(_packageDisplayCost, System.Globalization.CultureInfo.InvariantCulture));
+            ViewState["packageDisplayCost"] = tbPaymentAmount.Text;
+            tbPaymentAmount.Attributes["disabled"] = "disabled";
         }
         
         protected void btnPay_Click(object sender, EventArgs e)
         {
+
             ClsCustomer clscm = new ClsCustomer();
             ClsPayment clspay = new ClsPayment();
             clscm.FullName = txtFullName.Text;
@@ -153,7 +162,8 @@ namespace Benchkart.Customer
                     Dictionary<string, object> input = new Dictionary<string, object>();
 
                     int amount = Convert.ToInt32(clspay.PaymentAmount);
-                    input.Add("amount", amount * 100); // this amount should be same as transaction amount
+                    int amountPayable = (amount * Convert.ToInt32(ViewState["paymentPercentage"]))/ 100;
+                    input.Add("amount", amountPayable * 100); // this amount should be same as transaction amount
                     input.Add("currency", "INR");
                     input.Add("receipt", "benchkart");
                     input.Add("payment_capture", 1);
@@ -164,6 +174,9 @@ namespace Benchkart.Customer
 
                     string redirectURL = "/Customer/Projects_Dashboard";
                     string paymentUrl = "/PaymentResponse.aspx";
+                   
+
+                    tbPaymentAmount.Text = string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}", decimal.Parse(ViewState["packageDisplayCost"].ToString(), System.Globalization.CultureInfo.InvariantCulture));
 
                     //set session values to capture after resposne..
                     Session["PaymentRequestId"] = Convert.ToInt32(hfPaymentRequestId.Value);
@@ -175,7 +188,7 @@ namespace Benchkart.Customer
                         "var options = " +
                         "{ " +
                         "   'key': '" + razor_payment_key + "', " +
-                        "   'amount': '" + amount * 100 + "'," +
+                        "   'amount': '" + amountPayable * 100 + "'," +
                         "   'currency': 'INR', " +
                         "   'name': 'Benchkart', " +
                         "   'description': 'Quick Project Payment', " +

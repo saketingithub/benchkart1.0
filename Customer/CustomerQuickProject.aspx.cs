@@ -236,7 +236,10 @@ namespace Benchkart.Customer
                     lbltitle.Text = dt.Rows[0]["CategoryId"].ToString();
                     lblsubtitle.Text = dt.Rows[0]["SubCategoryId"].ToString();
                     lblpackagetypename.Text = dt.Rows[0]["PackageTypeName"].ToString();
+                    //_packageType = dt.Rows[0]["PackageTypeName"].ToString();
                     lblPackageName.Text = dt.Rows[0]["PackageName"].ToString();
+                    lblPackageDescription.Text = dt.Rows[0]["PackageDescription"].ToString();
+                    //_packageName = dt.Rows[0]["PackageName"].ToString();
                     //lblbasiccost.Text = dt.Rows[0]["BasicPackageCost"].ToString();
                     //lblstandatrdcost.Text = dt.Rows[0]["StandardPackageCost"].ToString();
                     //lblpremiumcost.Text = dt.Rows[0]["PremiumPackageCost"].ToString();

@@ -1,4 +1,39 @@
-﻿.Image {
+﻿.shadow-custom {
+    border: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.filterSection {
+    font-size: 0.8em;
+   
+}
+
+
+.filterSection h4 {
+    font-size: 1.3em;
+}
+
+    .filterSection .form-control {
+        font-size: 1em;
+        height: 2em !important;
+        padding: 2px;
+        margin-left: 10px;
+        margin-bottom: 8px;
+        min-width: 15em !important
+    }
+
+    .filterSection .btn {
+        font-size: 1em;
+        height: 2em !important;
+        padding: 2px;
+    }
+
+
+
+.Image {
     height: 500px;
     width: 850px;
     padding: 50px 70px 30px 70px;
@@ -157,8 +192,7 @@ br {
 }
 
     .packageListing .card .section {
-        min-height: 200px;
-        padding: 5px;
+        padding:8px;
     }
 
     .packageListing .card .sectionSeperator {
@@ -172,6 +206,7 @@ br {
     }
 
     .packageListing .card .rightSection {
+        
     }
 
 .pkgName {
@@ -185,37 +220,38 @@ br {
     color: #bababa;
 }
 
+.pkgDescriptionLabel {
+    font-size: 13px;
+    color: #d1d1d1;
+    font-style: italic;
+}
+
 .pkgDescription {
     font-size: 13px;
-    color: #bababa;
+    color: #8c8c8c !important;
 }
 
 .pkgAmount {
-    margin-left: 10%;
     font-size: 18px;
     color: #04b4cf;
 }
 
 .pkgAmtSym {
     font-weight: bold;
-    float: left;
 }
 
 .pkgAmtCost {
-    padding-left: 2px;
-    float: left;
 }
 
 .pkgAmountText {
-    margin: 30% 0% 0% 10%;
     color: coral;
 }
 
 .pkgAction {
-    margin-left: 10%
 }
 
 .btn-package {
+    font-size:small;
 }
 
 .btn-search {
@@ -226,7 +262,6 @@ br {
     border-radius: 4px 0px 0px 4px;
     border-right: 0px !important;
 }
-
 
 
 /*START - MODAL form PACKAGE DETAILS*/
@@ -380,16 +415,16 @@ li {
     margin-left: -65px;
     width: 130px;
     display: block;
-    background-color: #d9a702;
+    background-color: #ff7f50;
     position: absolute;
     top: -5px;
-    box-shadow: 3px 3px 0px #b68c03;
+    box-shadow: 3px 3px 0px #b55a38;
     font-family: 'Exo', sans-serif;
     font-weight: 400;
 }
 
 .packageDetails.yellow li:first-child {
-    background-color: #EBC137;
+    background-color: #18d26f;
     color: #FFF;
     line-height: 16px;
 }
@@ -409,52 +444,52 @@ li {
 }
 
 .packageDetails.yellow li:nth-child(2) {
-    background: #EBC137;
+    background: #18d26f;
 }
 
 .packageDetails.yellow .signUp {
-    background-color: #d9a702;
-    box-shadow: 3px 3px 0px #b68c03;
+    background-color: #ff7f50;
+    box-shadow: 3px 3px 0px #b55a38;
 }
 
 .packageDetails.orange li:first-child {
-    background-color: #E38C2D;
+    background-color: #15ad5c;
     color: #FFF;
     line-height: 16px;
 }
 
     .packageDetails.orange li:first-child span {
-        background-color: #cf7a1c;
-        box-shadow: 3px 3px 0px #b36004;
+        background-color: #ff7f50;
+        box-shadow: 3px 3px 0px #b55a38;
     }
 
 .packageDetails.orange li:nth-child(2) {
-    background: #E38C2D;
+    background: #15ad5c;
 }
 
 .packageDetails.orange .signUp {
-    background-color: #cf7a1c;
-    box-shadow: 3px 3px 0px #b36004;
+    background-color: #ff7f50;
+    box-shadow: 3px 3px 0px #b55a38;
 }
 
 .packageDetails.red li:first-child {
-    background-color: #e84c3d;
+    background-color: #0a8041;
     color: #FFF;
     line-height: 16px;
 }
 
     .packageDetails.red li:first-child span {
-        background-color: #b52918;
-        box-shadow: 3px 3px 0px #9c4239;
+        background-color: #ff7f50;
+        box-shadow: 3px 3px 0px #b55a38;
     }
 
 .packageDetails.red li:nth-child(2) {
-    background: #e84c3d;
+    background: #0f8044;
 }
 
 .packageDetails.red .signUp {
-    background-color: #b52918;
-    box-shadow: 3px 3px 0px #9c4239;
+    background-color: #ff7f50;
+    box-shadow: 3px 3px 0px #b55a38;
 }
 
 .packageDetails.maroon li:first-child {
@@ -464,8 +499,8 @@ li {
 }
 
     .packageDetails.maroon li:first-child span {
-        background-color: #531106;
-        box-shadow: 3px 3px 0px #380a03;
+        background-color: #ff7f50;
+        box-shadow: 3px 3px 0px #b55a38;
     }
 
 .packageDetails.maroon li:nth-child(2) {
@@ -473,8 +508,8 @@ li {
 }
 
 .packageDetails.maroon .signUp {
-    background-color: #531106;
-    box-shadow: 3px 3px 0px #380a03;
+    background-color: #ff7f50;
+    box-shadow: 3px 3px 0px #b55a38;
 }
 
 .packageDetails #economy li:nth-child(2) {
@@ -558,7 +593,8 @@ ol, ul {
 .arrow {
     display: inline-block;
     height: auto;
-    background-color: #02a7c4;
+    background-color: #868686;
+    font-size:13px;
 }
 
     .arrow span {
@@ -575,7 +611,7 @@ ol, ul {
         right: 0 top: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-left: 10px solid #02a7c4;
+        border-left: 10px solid #868686;
         content: "";
     }
 
@@ -590,7 +626,8 @@ ol, ul {
 .banner {
     display: inline-block;
     height: auto;
-    background-color: #6dcede;
+    background-color: #868686;
+    font-size: 13px;
 }
 
     .banner span {
@@ -607,22 +644,38 @@ ol, ul {
     box-shadow: 0 8px 6px -6px black;
     margin-top: 15px;
     height: 30px;
-    border: 1px solid #cdcdcd
+    border: 1px solid #cdcdcd;
+    background-color: #f5f5f5;
+    padding: 2px 10px;
 }
 
 
 .pkgNameModal {
     font-weight: bold;
-    color: #18C235;
+    /*color: #18C235;*/
 }
 
 .pkgTypeModal {
-    color: #FF7F50;
+    /*color: #FF7F50;*/
 }
 
 .TermsnCond{
     color:#bababa;
 }
+
+
+
+
+.contactusform {
+    color: #ff7f50;
+}
+
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
 
 /*START  - RIBBON EFFECT*/
 .ribbon-container section {
@@ -872,10 +925,10 @@ ol, ul {
     text-align: center;
     margin-left: -10px;
     margin-right: -10px;
-    background: #EDBA19;
+    background: #ff7f50;
     position: relative;
     top: 20px;
-    font-size:20px;
+    font-size: 20px;
 }
 
     .ribbon5:before, .ribbon5:after {
