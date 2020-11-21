@@ -90,6 +90,28 @@
 
 </head>
 <body style="background-color: #f8f8f8;">
+    <%-- <div class="col-md-12">
+          <input id="btnClick" type="button" value="Ajax Call" onclick="CallHandler()" />
+        <div id="display">
+        </div>
+        <script type="text/javascript">
+
+            function CallHandler() {
+                //console.log('HANDLER...');
+                $.ajax({
+                    type: "GET",
+                    url: "/Handlers/PaymentResponse.ashx",
+                    data: "MethodName=GetData",
+                    success: function (data) {
+                        $('#display').html("<h1> Hi, " + data.FirstName + " " +
+                            data.LastName + " your Blog Address is http://" +
+                            data.Blog + "</h1>");
+                    }
+                });
+            }
+        </script>
+    </div>--%>
+
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>

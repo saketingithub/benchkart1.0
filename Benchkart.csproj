@@ -464,7 +464,6 @@
     <Content Include="Images\Partner_hiw5.png" />
     <Content Include="ITServices.aspx" />
     <Content Include="Partner\AgencyDetails.aspx" />
-    <Content Include="PaymentResponse.aspx" />
     <Content Include="Policies\Terms-Packages.html" />
     <Content Include="Post-Covid.html" />
     <Content Include="Partner\AcknowledgeSignup.html" />
@@ -765,6 +764,7 @@
     <Content Include="KeepSessionAlive.ashx" />
     <Content Include="Partner\Site1.Master" />
     <Content Include="Customer\Site1.Master" />
+    <Content Include="Handlers\PaymentResponse.ashx" />
     <None Include="Properties\PublishProfiles\benchkart.com - Web Deploy.pubxml" />
     <Content Include="style\images\2_test.webp" />
     <None Include="Web.config">
@@ -1298,6 +1298,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\PaymentResponse.ashx.cs">
+      <DependentUpon>PaymentResponse.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ITServices.aspx.cs">
       <DependentUpon>ITServices.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1387,13 +1390,6 @@
     </Compile>
     <Compile Include="Partner\Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PaymentResponse.aspx.cs">
-      <DependentUpon>PaymentResponse.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PaymentResponse.aspx.designer.cs">
-      <DependentUpon>PaymentResponse.aspx</DependentUpon>
     </Compile>
     <Compile Include="Post-COVID.aspx.cs">
       <DependentUpon>Post-COVID.aspx</DependentUpon>

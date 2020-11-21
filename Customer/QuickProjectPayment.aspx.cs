@@ -173,8 +173,8 @@ namespace Benchkart.Customer
 
 
                     string redirectURL = "/Customer/Projects_Dashboard";
-                    string paymentUrl = "/PaymentResponse.aspx";
-                   
+                    string paymentUrl = "/Handlers/PaymentResponse.ashx";
+
 
                     tbPaymentAmount.Text = string.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:#,#}", decimal.Parse(ViewState["packageDisplayCost"].ToString(), System.Globalization.CultureInfo.InvariantCulture));
 
