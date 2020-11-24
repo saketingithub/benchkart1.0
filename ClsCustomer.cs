@@ -206,6 +206,45 @@ namespace Benchkart
         }
 
         // end method
+
+        //krishan create method 18-11-2020
+        public int LoginCustomer()
+        {
+            //try
+            //{
+            int authenticate;
+            string dbConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            using (SqlConnection sqlConnection = new SqlConnection(dbConnectionString))
+            {
+                SqlCommand command = new SqlCommand("proc_LoginCustomer", sqlConnection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = Email;
+
+                command.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
+
+                command.Parameters.Add("@exist", SqlDbType.Int);
+                command.Parameters["@exist"].Direction = ParameterDirection.Output;
+                
+
+                
+                command.CommandType = CommandType.StoredProcedure;
+
+                sqlConnection.Open();
+                command.ExecuteNonQuery();
+               
+                authenticate = Convert.ToInt32(command.Parameters["@exist"].Value);
+
+                
+                sqlConnection.Close();
+
+            }
+            return authenticate;
+           
+
+        }
+        //end method
         //krishan create method 02-06-2020
 
         public int CustomerPartnerSetPassword()

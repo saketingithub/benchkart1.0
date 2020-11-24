@@ -271,7 +271,7 @@ br {
 
     .package-details .category {
         float: left;
-        color: #868686;
+        color: #a1a1a1;
     }
 
     .package-details .categoryseperator {
@@ -593,8 +593,8 @@ ol, ul {
 .arrow {
     display: inline-block;
     height: auto;
-    background-color: #868686;
-    font-size:13px;
+    background-color: #a1a1a1;
+    font-size: 13px;
 }
 
     .arrow span {
@@ -611,7 +611,7 @@ ol, ul {
         right: 0 top: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-left: 10px solid #868686;
+        border-left: 10px solid #a1a1a1;
         content: "";
     }
 
@@ -626,7 +626,7 @@ ol, ul {
 .banner {
     display: inline-block;
     height: auto;
-    background-color: #868686;
+    background-color: #a1a1a1;
     font-size: 13px;
 }
 

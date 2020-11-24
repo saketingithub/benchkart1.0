@@ -111,21 +111,31 @@
                 return false;
             }
             var packagecostbasicedit = document.getElementById("txtbasicpackagecostedit").value;
-            if (packagecostbasicedit == "") {
-                alert("Please fill the package basic cost");
-                document.getElementById("txtbasicpackagecostedit").focus;
-                return false;
-            }
+            //if (packagecostbasicedit == "") {
+            //    alert("Please fill the package basic cost");
+            //    document.getElementById("txtbasicpackagecostedit").focus;
+            //    return false;
+            //}
             var packagecoststandardcostedit = document.getElementById("txtstandardpackagecostedit").value;
-            if (packagecoststandardcostedit == "") {
-                alert("Please fill the package standard cost");
-                document.getElementById("txtstandardpackagecostedit").focus;
+            //if (packagecoststandardcostedit == "") {
+            //    alert("Please fill the package standard cost");
+            //    document.getElementById("txtstandardpackagecostedit").focus;
+            //    return false;
+            //}
+            var packagecostpremiumedit = document.getElementById("txtpremiumpackagecostedit").value;
+            //if (packagecostpremiumedit == "") {
+            //    alert("Please fill the package premium cost");
+            //    document.getElementById("txtpremiumpackagecostedit").focus;
+            //    return false;
+            //}
+            if (packagecostbasicedit == "" && packagecoststandardcostedit == "" && packagecostpremiumedit == "") {
+                alert("You must enter the package cost");
+                document.getElementById("ContentPlaceHolder1_txtbasicpackagecostedit").focus;
                 return false;
             }
-            var packagecostpremiumedit = document.getElementById("txtpremiumpackagecostedit").value;
-            if (packagecostpremiumedit == "") {
-                alert("Please fill the package premium cost");
-                document.getElementById("txtpremiumpackagecostedit").focus;
+            if (parseInt($.trim(packagecostbasicedit)) > 500000 || parseInt($.trim(packagecoststandardcostedit)) > 500000 || parseInt($.trim(packagecostpremiumedit)) > 500000) {
+
+                alert("Amount should be between 1 and 500000");
                 return false;
             }
 
@@ -135,9 +145,9 @@
           $(document).ready(function () {
                $("#txtPackageNameedit").attr("maxlength", 60);
               $("#txtPackageDescriptionedit").attr("maxlength", 250);
-              $("#txtbasicpackagecostedit").attr("maxlength", 8);
-              $("#txtstandardpackagecostedit").attr("maxlength", 8);
-              $("#txtpremiumpackagecostedit").attr("maxlength", 8);
+              $("#txtbasicpackagecostedit").attr("maxlength", 6);
+              $("#txtstandardpackagecostedit").attr("maxlength", 6);
+              $("#txtpremiumpackagecostedit").attr("maxlength", 6);
           });
       </script>
 </head>

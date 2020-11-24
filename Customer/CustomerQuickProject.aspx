@@ -83,8 +83,8 @@
                                     <b>Filter </b>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <div>Category</div>
-                                    <div>
+                                    <div class="col-sm-12 col-md-6">Category</div>
+                                    <div  class="col-sm-12 col-md-6">
                                         <asp:DropDownList ID="ddlCategoryIdRefilter" runat="server" Width="60%" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryIdRefilter_SelectedIndexChanged">
                                             <asp:ListItem Value="">Select Project Category</asp:ListItem>
                                             <asp:ListItem Value="2">Website & Apps</asp:ListItem>
@@ -99,18 +99,18 @@
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <div>
+                                    <div class="col-sm-12 col-md-6">
                                         Sub Category
                                     </div>
-                                    <div>
+                                    <div class="col-sm-12 col-md-6">
                                         <asp:DropDownList ID="ddlSubCategoryIdRefilter" runat="server" Width="60%" CssClass="form-control"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <div>
+                                    <div class="col-sm-12 col-md-6">
                                         Package Type
                                     </div>
-                                    <div>
+                                    <div class="col-sm-12 col-md-6">
                                         <asp:DropDownList ID="ddlPackageTypeRefilter" runat="server" Width="60%" CssClass="form-control">
                                             <asp:ListItem Value="">Select Package</asp:ListItem>
                                             <asp:ListItem Value="1">Economy</asp:ListItem>

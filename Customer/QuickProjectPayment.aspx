@@ -57,11 +57,18 @@
         }
 
         .panel {
-            margin: 0 auto;
-            margin-top: 70px;
             padding: 20px;
             width: 100%;
             min-height: 300px;
+            margin-top:50px;
+        }
+        .mt-0{
+            margin-top:0px !important;
+        }
+        .noshadow {
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
         }
 
         br {
@@ -75,6 +82,17 @@
             margin-bottom: 20px;
             width: 70%;
         }
+        .radio {
+            color:#808080;
+            font-weight:normal;
+            padding-right:10px;
+        }
+        .radio input{
+             margin-left: 0px !important;
+        }
+        .radio lablel{
+             margin-left: 0px !important;
+        }
     </style>
     <script type="text/javascript">
         function ValidateCheckBox(sender, args) {
@@ -86,33 +104,71 @@
                 return false;
             }
         }
+        $(document).ready(function () {
+
+
+
+
+
+        })
+        function showemailorpasswordtext() {
+            $("#pnlSignup").hide();
+            $("#pnlSignin").show();
+
+        }
+        function showname() {
+            $("#pnlSignup").show();
+            $("#pnlSignin").hide();
+            $("#pnlForgetpassword").hide();
+
+        }
+        function showforgetpassword() {
+            $("#pnlForgetpassword").show();
+            $("#pnlSendOTP").show();
+            
+            $("#pnlSignup").hide();
+            $("#pnlSignin").hide();
+            $("#pnlsubmit").hide();
+
+        }
+        function cancelPasswordOTP() {
+            $("#pnlSignup").hide();
+            $("#pnlSignin").show();
+            $("#pnlForgetpassword").hide();
+        }
+        function showotptextbox() {
+            $("#forgetsbtnshow").show();
+            $("#pnlSignup").hide();
+            $("#pnlSignin").hide();
+            $("#pnlsubmit").show();
+        }
+        function backRequest() {
+            $("#forgetsbtnshow").hide();
+            $("#pnlSignup").show();
+            $("#pnlSignin").hide();
+            $("#pnlsubmit").show();
+            $("#pnlQuickContract").hide();
+        }
+        function quickContract() {
+            $("#forgetsbtnshow").hide();
+            $("#pnlSignup").hide();
+            $("#pnlSignin").hide();
+            $("#pnlsubmit").hide();
+            $("#pnlQuickContract").show();
+        }
+        function showQuickContract() {
+            $("#forgetsbtnshow").hide();
+            $("#pnlSignup").hide();
+            $("#pnlSignin").hide();
+            $("#pnlsubmit").hide();
+            $("#pnlQuickContract").show();
+        }
+
     </script>
 
 </head>
 <body style="background-color: #f8f8f8;">
-    <%-- <div class="col-md-12">
-          <input id="btnClick" type="button" value="Ajax Call" onclick="CallHandler()" />
-        <div id="display">
-        </div>
-        <script type="text/javascript">
-
-            function CallHandler() {
-                //console.log('HANDLER...');
-                $.ajax({
-                    type: "GET",
-                    url: "/Handlers/PaymentResponse.ashx",
-                    data: "MethodName=GetData",
-                    success: function (data) {
-                        $('#display').html("<h1> Hi, " + data.FirstName + " " +
-                            data.LastName + " your Blog Address is http://" +
-                            data.Blog + "</h1>");
-                    }
-                });
-            }
-        </script>
-    </div>--%>
-
-    <form id="form1" runat="server">
+   <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div>
             <div style="background-color: black; color: Black; display: flow-root; height: 60px;">
@@ -126,7 +182,7 @@
         </div>
 
 
-        <div class="container-fluid ribbon-container" style="margin-top: 30px;">
+        <div class="container-fluid ribbon-container" style="margin-top: 30px;margin-bottom: 30px;">
 
             <div class="col-md-4">
                 <div class="container-fluid card shadow-custom d-flex flex-column">
@@ -216,7 +272,7 @@
                             </div>
                             <div class="formindent divfield TermsnCond" style="font-size: small;">
                                 Already user? &nbsp;
-                            <button type="button" data-toggle="modal" class="btn btn-info" data-target="#myModal">Sign in</button>
+                            <button type="button" data-toggle="modal" class="btn btn-info" onclick="return showemailorpasswordtext();">Sign In</button>
 
                             </div>
                             <div class="formindent divfield">
@@ -224,10 +280,210 @@
                             </div>
 
                             <div class="formindent divfield contactusform">
-                                <span>Still not sure? <a href="javscscript:void(0);" onclick="openContactForm();">Contact us</a> and we will be happy to assist.</span>
+                                <span>Still not sure? <a href="javscscript:void(0);" onclick="return quickContract();">Contact us</a> and we will be happy to assist.</span>
                             </div>
 
                         </asp:Panel>
+
+                        <asp:Panel ID="pnlSignin" DefaultButton="btnsign" runat="server" class="panel" Style="display: none;">
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtemailsignin" class="form-control"
+                                    PlaceHolder="Email" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtemailsignin" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtemailsignin" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill email"
+                                    ToolTip="E-mail is required." ValidationGroup="Signin"></asp:RequiredFieldValidator>
+
+                                <asp:RegularExpressionValidator ID="rgetxtemailsignin" runat="server" ErrorMessage="Invalid email"
+                                    SetFocusOnError="True" ControlToValidate="txtemailsignin" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
+                                    ForeColor="Red" Font-Size="Small" ValidationGroup="Signin" Display="Dynamic" />
+                            </div>
+                            <div class="divfield">
+                                <asp:TextBox ID="txtpasswordsignin" runat="server" TextMode="Password" Style="margin-top: 20px;"
+                                    CssClass="form-control fa-step-forward" placeholder="Set Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtpasswordsignin" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtpasswordsignin" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill password"
+                                    ToolTip="Password is required." ValidationGroup="Signin">Please fill password</asp:RequiredFieldValidator>
+                            </div>
+                           <%-- <div class="formindent divfield" style="font-size: small;">
+                                <p id="signup">
+                                    New user? &nbsp;
+                                    <asp:LinkButton ID="lkbsignup" runat="server" data-toggle="modal" OnClientClick=" return showname();">Signup</asp:LinkButton>
+                                </p>
+                                <p id="forgetpassword">
+                                    <asp:LinkButton ID="lkgpassword" runat="server" data-toggle="modal" Text="ForgetPassword" OnClientClick=" return showforgetpassword();"></asp:LinkButton>
+                                </p>
+                                <p>
+                                    <asp:LinkButton ID="lkbcontractQuick" runat="server" Text="ContractQuick" data-toggle="modal" OnClientClick=" return showQuickContract();"></asp:LinkButton>
+                                </p>
+                            </div>--%>
+
+                            <div class="formindent divfield TermsnCond" style="font-size: small;">
+                                New user? &nbsp; <button type="button" data-toggle="modal" class="btn btn-info" onclick="return showname();">Sign Up</button>
+                            </div>
+
+                            <div class="formindent divfield TermsnCond" style="font-size: small;">
+                                <a href="javascript:void(0);" onclick="return showforgetpassword();" >Forgot Password ?</a>
+                            </div>
+
+                            <div class="formindent divfield">
+                                  <asp:Button ID="btnsign" runat ="server" Text ="Sign In and Pay" ValidationGroup="Signin" OnClick="btnsign_Click" CssClass="btn btn-success form-control" />
+
+                            </div>
+                        </asp:Panel>
+
+                        <asp:Panel ID="pnlForgetpassword" DefaultButton="btnotp" runat="server" class="panel" Style="display: none;">
+                            <div style="padding:20px;" id="pnlSendOTP" runat="server">
+                                <div class="divfield">
+                                    <asp:TextBox runat="server" ID="txtemailforgetpassword" class="form-control"
+                                        PlaceHolder="Email" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="reqtxtemailforgetpassword" runat="server" SetFocusOnError="True"
+                                        Display="Dynamic" ControlToValidate="txtemailforgetpassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill email"
+                                        ToolTip="E-mail is required." ValidationGroup="Send"></asp:RequiredFieldValidator>
+
+                                    <asp:RegularExpressionValidator ID="rgetxtemailforgetpassword" runat="server" ErrorMessage="Invalid email"
+                                        SetFocusOnError="True" ControlToValidate="txtemailforgetpassword" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
+                                        ForeColor="Red" Font-Size="Small" ValidationGroup="Send" Display="Dynamic" />
+                                </div>
+                                <div id="otpbtn" class="formindent divfield">
+                                    <%-- <asp:Button ID="btnotp" runat="server" Width="100%" ValidationGroup="Send" OnClick="btnotp_Click" OnClientClick=" return showotptextbox();" Text="Send Otp" />--%>
+                                    <asp:Button ID="btnotp" runat="server" Text="Send OTP" ValidationGroup="Signin" OnClick="btnotp_Click" OnClientClick="return showotptextbox();" CssClass="btn btn-success form-control" />
+
+                                </div>
+                                <div class="formindent divfield TermsnCond" style="font-size: small;">
+                                    <a href="javascript:void(0);" onclick="return cancelPasswordOTP();">Cancel</a>
+                                </div>
+                            </div>
+                            
+                            <asp:Panel ID="pnlsubmit" DefaultButton="btnsubmit" runat="server" class="panel noshadow mt-0" Style="display: none;">
+                                <div class="divfield">
+                                    <asp:TextBox ID="tbOPTforEmail" runat="server" Style="margin-top: 10px;"
+                                        CssClass="form-control " placeholder="Set otp"></asp:TextBox>
+                                </div>
+                                <div id="otp" class="divfield">
+                                    <asp:TextBox ID="txtotp" runat="server" Style="margin-top: 10px;"
+                                        CssClass="form-control " placeholder="Set otp"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="reqtxtotp" runat="server" SetFocusOnError="True"
+                                        Display="Dynamic" ControlToValidate="txtotp" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill otp"
+                                        ToolTip="Otp is required." ValidationGroup="Submit">Please fill otp</asp:RequiredFieldValidator>
+                                </div>
+                                <div id="passwordforgetpassword" class="divfield">
+                                    <asp:TextBox ID="txtpasswordforgetpassword" runat="server" TextMode="Password" Style="margin-top: 20px;"
+                                        CssClass="form-control fa-step-forward" placeholder="Set Password"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="reqtxtpasswordforgetpassword" runat="server" SetFocusOnError="True"
+                                        Display="Dynamic" ControlToValidate="txtpasswordforgetpassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill password"
+                                        ToolTip="Password is required." ValidationGroup="Submit">Please fill password</asp:RequiredFieldValidator>
+                                </div>
+                                <div id="cpassword" class="divfield">
+                                    <asp:TextBox ID="txtcpassword" runat="server" TextMode="Password" Style="margin-top: 20px;"
+                                        CssClass="form-control fa-step-forward" placeholder="Confirm Password"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="reqtxtcpassword" runat="server" SetFocusOnError="True"
+                                        Display="Dynamic" ControlToValidate="txtcpassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Please confirm password"
+                                        ToolTip="Confirm password is required." ValidationGroup="Submit">Please confirm password</asp:RequiredFieldValidator>
+                                    <asp:CompareValidator ID="cmptxtcpassword" runat="server" SetFocusOnError="True"
+                                        Display="Dynamic" ControlToValidate="txtcpassword" ControlToCompare="txtpasswordforgetpassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Password is not match"
+                                        ToolTip="Password is not match." ValidationGroup="Submit">
+
+                                    </asp:CompareValidator>
+                                </div>
+                               <%-- <div>
+                                    <p>
+                                        New user? &nbsp;
+                                        <asp:LinkButton ID="lkbsignups" runat="server" data-toggle="modal" OnClientClick=" return showname();">Signup</asp:LinkButton>
+                                    </p>
+                                </div>--%>
+                                 <div id="forgetsbtnshow" class="formindent divfield">
+                                    <asp:Button ID="btnsubmit" runat="server" Text="Set New Password" OnClick="btnsubmit_Click" ValidationGroup="Submit" CssClass="btn btn-success form-control" />
+                                </div>
+                              <%--  <div class="formindent divfield TermsnCond" style="font-size: small;">
+                                    New User ?
+                                    <a href="javascript:void(0);" onclick="return showname();">Sign Up</a>
+                                </div>--%>
+                               <div class="formindent divfield TermsnCond" style="font-size: small;">
+                                    <a href="javascript:void(0);" onclick="return cancelPasswordOTP();">Cancel</a>
+                                </div>
+                            </asp:Panel>
+                           <%-- <div class="formindent divfield TermsnCond" style="font-size: small;padding-left:20px;">
+                                    <a href="javascript:void(0);" onclick="return cancelPasswordOTP();">Cancel</a>
+                                </div>--%>
+                        </asp:Panel>
+
+                        <asp:Panel ID="pnlQuickContract" DefaultButton="btnotp" runat="server" class="panel" Style="display: none;">
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtFullNameQuick" class="form-control"
+                                    PlaceHolder="Full Name (Optional)" Style="margin-left: 0px;"></asp:TextBox>
+
+                            </div>
+
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtEmailQuick" class="form-control"
+                                    PlaceHolder="Email" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtEmailQuick" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtEmailQuick" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill email"
+                                    ToolTip="E-mail is required." ValidationGroup="SendContract"></asp:RequiredFieldValidator>
+
+                                <asp:RegularExpressionValidator ID="rgetxtEmailQuick" runat="server" ErrorMessage="Invalid email"
+                                    SetFocusOnError="True" ControlToValidate="txtEmailQuick" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
+                                    ForeColor="Red" Font-Size="Small" ValidationGroup="SendContract" Display="Dynamic" />
+                            </div>
+
+
+
+
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtCompanyNameQuick" class="form-control"
+                                    PlaceHolder="Company Name (Optional)" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+
+                            </div>
+                            <div class="divfield">
+                                <asp:TextBox runat="server" ID="txtContactNumberQuick" class="form-control"
+                                    PlaceHolder="Contact Number" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtContactNumberQuick" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtContactNumberQuick" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill contact number"
+                                    ToolTip="Contact number is required." ValidationGroup="SendContract"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="rgetxtContactNumberQuick" runat="server" ErrorMessage="Invalid phone - accept only 10 digit mobile number"
+                                    SetFocusOnError="True" ControlToValidate="txtContactNumberQuick" ValidationExpression="^[0-9]{10}$"
+                                    ForeColor="Red" Font-Size="Small" ValidationGroup="SendContract" Display="Dynamic" />
+
+                            </div>
+
+                            <div class="divfield">
+                                <asp:TextBox ID="txtDescription" runat="server" CssClass="form-control" TextMode="MultiLine" Height="100px" Placeholder="Request Description"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="reqtxtDescription" runat="server" SetFocusOnError="True"
+                                    Display="Dynamic" ControlToValidate="txtDescription" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill description"
+                                    ValidationGroup="SendContract"></asp:RequiredFieldValidator>
+                            </div>
+
+                            <div class="divfield form-check TermsnCond">
+                                <span>Preferred Contact Method</span>
+                                <div class="col-md-12" style="padding-left:0px">
+                                    <asp:RadioButtonList ID="rblContactPreferrence" Width="" CssClass="form-group" runat="server"
+                                        RepeatDirection="Horizontal" data-toggle="buttons">
+                                        <asp:ListItem class="form-check-input radio" Value="1" Selected="True">Call</asp:ListItem>
+                                        <asp:ListItem class="form-check-input  radio" Value="2" >Email</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </div>
+                               
+                            </div>
+
+                            <%--<div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Default radio
+                                </label>
+                            </div>--%>
+
+                            <div class="formindent divfield">
+
+                                <asp:Button ID="btnsendcontract" runat="server" Width="100%" ValidationGroup="SendContract" CssClass="button" Text="Submit" OnClick="btnsendcontract_Click" />
+                                <br />
+                                <br />
+                                <div class="formindent divfield TermsnCond" style="font-size: small;float: left;margin-top: 10px;">
+                                    <a href="javascript:void(0);" onclick="return backRequest();">Cancel</a>
+                                </div>
+                               <%-- <asp:Button ID="btncancel" runat="server" Width="100%" Style="margin-top: 10px;" CssClass="btn btn-danger form-control" OnClientClick=" return backRequest();" Text="Cancel" />--%>
+                            </div>
+                        </asp:Panel>
+
                     </div>
 
                 </section>
@@ -236,159 +492,7 @@
 
         </div>
 
-        <%--<div>
-
-            <div class="row" style="width: 100%;">
-
-                <div id="divsignup" class="content">
-
-                    <asp:Panel ID="pnlSignup" DefaultButton="btnPay" runat="server" class="panel" Style="margin: 0 auto; padding: 20px;">
-
-                        <asp:HiddenField runat="server" ID="hfPaymentRequestId" />
-                        <div class="divfield">
-                            <table style="background-color: antiquewhite; width: 100%;">
-                                <tr>
-                                    <td>PackageName 
-                                    </td>
-                                    <td>
-                                       <asp:Label ID="lblpackagenamepay" runat="server" Text="PackageName"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>AgencyCode
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblagencycode" runat="server" Text="AgencyCode"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>PackageCost 
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblpackagecost" runat="server" Text="PackageCost"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
-
-                        </div>
-
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtFullName" class="form-control"
-                                PlaceHolder="Full Name" Style="margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtFullName" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtFullName" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill your full name"
-                                ToolTip="Full Name is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
-                        </div>
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtEmailid" class="form-control"
-                                PlaceHolder="Email" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtEmail" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtEmailid" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill email"
-                                ToolTip="E-mail is required." ValidationGroup="Signup"></asp:RequiredFieldValidator>
-
-                            <asp:RegularExpressionValidator ID="validateEmail" runat="server" ErrorMessage="Invalid email"
-                                SetFocusOnError="True" ControlToValidate="txtEmailid" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
-                                ForeColor="Red" Font-Size="Small" ValidationGroup="Pay" Display="Dynamic" />
-                        </div>
-                        <div class="divfield">
-                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Style="margin-top: 20px;"
-                                CssClass="form-control fa-step-forward" placeholder="Set Password"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtPassword" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtPassword" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill password"
-                                ToolTip="Password is required." ValidationGroup="Pay">Please fill password</asp:RequiredFieldValidator>
-                        </div>
-
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtCompanyName" class="form-control"
-                                PlaceHolder="Company Name" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtCompanyName" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtCompanyName" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill your company name"
-                                ToolTip="Company Name is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
-                        </div>
-                        <div class="divfield">
-                            <asp:TextBox runat="server" ID="txtContactNumber" class="form-control"
-                                PlaceHolder="Contact Number" Style="margin-top: 10px; margin-left: 0px;"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="reqtxtContactNumber" runat="server" SetFocusOnError="True"
-                                Display="Dynamic" ControlToValidate="txtContactNumber" ForeColor="Red" Font-Size="Small" ErrorMessage="Please fill contact number"
-                                ToolTip="Contact number is required." ValidationGroup="Pay"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="regtxtContactNumber" runat="server" ErrorMessage="Invalid phone - accept only 10 digit mobile number"
-                                SetFocusOnError="True" ControlToValidate="txtContactNumber" ValidationExpression="^[0-9]{10}$"
-                                ForeColor="Red" Font-Size="Small" ValidationGroup="Pay" Display="Dynamic" />
-
-                        </div>
-
-                        <div class="divfield">
-                            <h5>
-                                <asp:CheckBox runat="server" ID="chkTerms" ValidationGroup="Pay" />&nbsp;&nbsp;I Agree to the 
-                                    <a href="../Policies/Terms-of-use-for-Clients.html" target="_blank">Terms of use for Clients</a>&nbsp;&&nbsp;<a href="../Policies/Benchkart-Privacy-Policy.html" target="_blank">Privacy Policy</a>
-                            </h5>
-                            <asp:Label runat="server" ID="lblTerms" Style="display: none; font-size: small;" ForeColor="Red" Text="Please check and agree to the Terms & Conditions"></asp:Label>
-                            <asp:CustomValidator ID="CustomValidator1" ValidationGroup="Pay" runat="server" Display="Dynamic" ClientValidationFunction="ValidateCheckBox"></asp:CustomValidator>
-                        </div>
-                        <div class="formindent divfield" style="font-size: small;">
-                            Already user? &nbsp;
-                            <button type="button" data-toggle="modal" data-target="#myModal">Signin</button>
-
-                        </div>
-                        <div class="formindent divfield">
-                            <asp:Button ID="btnPay" runat="server" Width="100%" ValidationGroup="Pay" CssClass="button" Text="Pay" OnClick="btnPay_Click" />
-                        </div>
-
-                    </asp:Panel>
-                </div>
-            </div>
-        </div>--%>
        
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="" aria-hidden="true">
-            <div class="modal-dialog" style="width: 50%;">
-
-                <asp:UpdatePanel ID="upModal" runat="server">
-                    <ContentTemplate>
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                                <h4 class="modal-title">Sign In</h4>
-                            </div>
-                            <div class="modal-body" style="">
-                                <div class="container-fluid">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <asp:TextBox runat="server" ID="txtLogin" ValidationGroup="Signin" class="form-control"
-                                                Width="90%" PlaceHolder="Email" Style="margin-top: 20px; margin-left: 0px;"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="reqtxtLogin" ValidationGroup="Signin" runat="server" Display="Dynamic" Font-Size="Small"
-                                                SetFocusOnError="True" ControlToValidate="txtLogin" ForeColor="Red" ErrorMessage="E-mail is required."
-                                                ToolTip="E-mail is required.">Please fill Email</asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="regtxtLogin" runat="server" ErrorMessage="Invalid email." Display="Dynamic" Font-Size="Small"
-                                                SetFocusOnError="True" ControlToValidate="txtLogin" ValidationExpression="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"
-                                                ForeColor="Red" ValidationGroup="Signin" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="">
-                                        <div class="form-group">
-                                            <asp:TextBox runat="server" TextMode="Password" Style="margin-top: 20px;" ID="txtLoginpassword" ValidationGroup="Signin"
-                                                class="form-control " Width="90%" PlaceHolder="Password"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="reqtxtLoginpassword" runat="server" SetFocusOnError="True" Font-Size="Small"
-                                                ControlToValidate="txtLoginpassword" ForeColor="Red" ErrorMessage="Password is required."
-                                                ToolTip="Password is required." ValidationGroup="Signin">Please fill Password</asp:RequiredFieldValidator>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3" style="">
-                                        <div class="form-group">
-                                            <asp:Button ID="btnSigninPay" runat="server" Text="Pay" CssClass="button" />
-                                            <br />
-                                            <asp:HyperLink ID="hyplforgetpassword" runat="server" NavigateUrl="../">Forgot Password</asp:HyperLink>
-                                            <br />
-                                            <asp:HyperLink ID="hyplnewuser" runat="server" NavigateUrl="../">New User</asp:HyperLink>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
-            </div>
-        </div>
     </form>
     <div class='modal fade' id='modalpayresp' tabindex='-1' data-backdrop="static" role='dialog' aria-labelledby='modalpayrespLabel' aria-hidden='true'>
         <div class='modal-dialog' role='document'>

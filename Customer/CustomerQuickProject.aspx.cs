@@ -147,72 +147,7 @@ namespace Benchkart.Customer
             }
            
         }
-
-        //protected void dlQuickProjects_ItemCommand(object source, DataListCommandEventArgs e)
-        //{
-        //    if (e.CommandName == "Edt")
-        //    {
-        //        int partnerPackageId = Convert.ToInt32(e.CommandArgument.ToString());
-        //        DataTable dt = new DataTable();
-        //        ClsQuickProject clsqp = new ClsQuickProject();
-        //        ClsQuickPackageDetails clsqpd = new ClsQuickPackageDetails();
-        //        clsqp.PartnerPackageId = partnerPackageId;
-        //        dt = clsqp.GetPartnerPackageByCustomer();
-        //        if (dt.Rows.Count > 0)
-        //        {
-
-        //            //ddlCategory.SelectedValue = dt.Rows[0]["CategoryId"].ToString();
-
-        //            //    int serviceId = Convert.ToInt32(ddlCategory.SelectedValue);
-        //            //    SetSubCategory(serviceId);
-        //            //    ddlSubCategory.SelectedValue = dt.Rows[0]["SubCategoryId"].ToString();
-
-        //            //ddlPackageType.SelectedValue = dt.Rows[0]["PackageType"].ToString();
-        //            lbltitle.Text = dt.Rows[0]["CategoryId"].ToString();
-        //            lblsubtitle.Text= dt.Rows[0]["SubCategoryId"].ToString();
-        //            lblpackagetypename.Text=dt.Rows[0]["PackageTypeName"].ToString();
-        //            lblPackageName.Text = dt.Rows[0]["PackageName"].ToString();
-        //           lblbasiccost .Text= dt.Rows[0]["BasicPackageCost"].ToString();
-        //            lblstandatrdcost.Text= dt.Rows[0]["StandardPackageCost"].ToString();
-        //           lblpremiumcost.Text= dt.Rows[0]["PremiumPackageCost"].ToString();
-        //            ViewState["PartnerPackageId"]= dt.Rows[0]["PartnerPackageId"].ToString();
-        //            DataTable dtq = new DataTable();
-        //            clsqpd.PartnerPackageId = Convert.ToInt32(e.CommandArgument.ToString());
-        //            dtq = clsqpd.GetPartnerPackageDetailsByPartnerPackageId();
-        //            if (dtq.Rows.Count > 0)
-        //            {
-        //                rptCustomers.Visible = true;
-        //                rptCustomers.DataSource = dtq;
-        //                rptCustomers.DataBind();
-        //                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-        //                upModal.Update();
-        //            }
-        //            else
-        //            {
-        //                rptCustomers.Visible = false;
-        //            }
-        //        }
-        //    }
-        //}
-
-        protected void btnbasiclink_Click(object sender, EventArgs e)
-        {
-            int a = 1;
-            Response.Redirect("~/Customer/QuickProjectPayment.aspx?PartnerPackageId="+ViewState["PartnerPackageId"]+"&action="+a);
-        }
-
-        protected void btnstandardlink_Click(object sender, EventArgs e)
-        {
-            int a = 2;
-            Response.Redirect("~/Customer/QuickProjectPayment.aspx?PartnerPackageId=" + ViewState["PartnerPackageId"]+"&action="+a);
-        }
-
-        protected void btnpremium_Click(object sender, EventArgs e)
-        {
-            int a = 3;
-            Response.Redirect("~/Customer/QuickProjectPayment.aspx?PartnerPackageId=" + ViewState["PartnerPackageId"]+"&action="+a);
-        }
-
+      
         protected void rptr_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Edt")
@@ -252,8 +187,6 @@ namespace Benchkart.Customer
                     dtq = clsqpd.GetPartnerPackageDetailsByPartnerPackageId();
                     if (dtq.Rows.Count > 0)
                     {
-                        //filter rows
-                        dtq = dtq.Select("[Parameter] is NOT NULL AND [Parameter] <> ''").CopyToDataTable();
                         rptCustomers.Visible = true;
                         rptCustomers.DataSource = dtq;
                         rptCustomers.DataBind();
@@ -266,6 +199,24 @@ namespace Benchkart.Customer
                     }
                 }
             }
+        }
+
+        protected void btnbasiclink_Click(object sender, EventArgs e)
+        {
+            int a = 1;
+            Response.Redirect("~/Customer/QuickProjectPayment.aspx?PartnerPackageId="+ViewState["PartnerPackageId"]+"&action="+a);
+        }
+
+        protected void btnstandardlink_Click(object sender, EventArgs e)
+        {
+            int a = 2;
+            Response.Redirect("~/Customer/QuickProjectPayment.aspx?PartnerPackageId=" + ViewState["PartnerPackageId"]+"&action="+a);
+        }
+
+        protected void btnpremium_Click(object sender, EventArgs e)
+        {
+            int a = 3;
+            Response.Redirect("~/Customer/QuickProjectPayment.aspx?PartnerPackageId=" + ViewState["PartnerPackageId"]+"&action="+a);
         }
 
 

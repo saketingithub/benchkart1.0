@@ -181,19 +181,14 @@
                 document.getElementById("ContentPlaceHolder1_txtPackageCost1").focus;
                 return false;
             }
+            if (parseInt($.trim(packagecostbasic)) > 500000 || parseInt($.trim(packagecoststandardcost)) > 500000 || parseInt($.trim(packagecostpremium)) > 500000) {
+               
+                alert("Amount should be between 1 and 500000");
+                return false;
+            } 
            
             
-            //if (packagecoststandardcost == "") {
-            //    alert("Please fill the package standard cost");
-            //    document.getElementById("ContentPlaceHolder1_txtPackageCost2").focus;
-            //    return false;
-            //}
            
-            //if (packagecostpremium == "") {
-            //    alert("Please fill the package premium cost");
-            //    document.getElementById("ContentPlaceHolder1_txtPackageCost3").focus;
-            //    return false;
-            //}
 
         }
         function Allvalidationedit() {
@@ -235,7 +230,11 @@
                 document.getElementById("ContentPlaceHolder1_txtbasicpackagecostedit").focus;
                 return false;
             }
+            if (parseInt($.trim(packagecostbasicedit)) > 500000 || parseInt($.trim(packagecoststandardcostedit)) > 500000 || parseInt($.trim(packagecostpremiumedit)) > 500000) {
 
+                alert("Amount should be between 1 and 500000");
+                return false;
+            } 
 
 
 
@@ -254,12 +253,12 @@
             $("#ContentPlaceHolder1_txtPackageDescription").attr("maxlength", 250);
             $("#ContentPlaceHolder1_txtPackageNameedit").attr("maxlength", 60);
             $("#ContentPlaceHolder1_txtPackageDescriptionedit").attr("maxlength", 250);
-            $("#ContentPlaceHolder1_txtPackageCost1").attr("maxlength", 8);
-            $("#ContentPlaceHolder1_txtPackageCost2").attr("maxlength", 8);
-            $("#ContentPlaceHolder1_txtPackageCost3").attr("maxlength", 8);
-            $("#ContentPlaceHolder1_txtbasicpackagecostedit").attr("maxlength", 8);
-            $("#ContentPlaceHolder1_txtstandardpackagecostedit").attr("maxlength", 8);
-            $("#ContentPlaceHolder1_txtpremiumpackagecostedit").attr("maxlength", 8);
+            $("#ContentPlaceHolder1_txtPackageCost1").attr("maxlength", 6);
+            $("#ContentPlaceHolder1_txtPackageCost2").attr("maxlength", 6);
+            $("#ContentPlaceHolder1_txtPackageCost3").attr("maxlength", 6);
+            $("#ContentPlaceHolder1_txtbasicpackagecostedit").attr("maxlength", 6);
+            $("#ContentPlaceHolder1_txtstandardpackagecostedit").attr("maxlength", 6);
+            $("#ContentPlaceHolder1_txtpremiumpackagecostedit").attr("maxlength", 6);
 
         });
         //function ShowImagePreview(input) {

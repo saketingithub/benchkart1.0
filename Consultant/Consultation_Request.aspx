@@ -148,6 +148,9 @@
                                 </th>
                                 <th style="display: table-cell;">Company Name
                                 </th>
+                                <th style="display:table-cell;">PartnerPackageId
+
+                                </th>
                                 <th style="display: table-cell;" data-hide="tablet">Creation Date
                                 </th>
                                 <th style="display: table-cell;">Query
@@ -178,7 +181,9 @@
                             <td>
                                 <%#Eval("CompanyName")%>
                             </td>
-
+                            <td>
+                                <%#Eval("PartnerPackageId") %>
+                            </td>
                             <td>
                                 <%#Eval("CreationDate")%>
                             </td>

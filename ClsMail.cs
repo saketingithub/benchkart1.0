@@ -122,6 +122,7 @@ namespace Benchkart
         }
 
         public static void SendEmail(string name, string email, string subject, string body)
+        
         {
             //Create the msg object to be sent
             //MailMessage msg = new MailMessage();
@@ -244,6 +245,7 @@ namespace Benchkart
         /// <param name="relativeFilePathsToBeAttached">~/TEMP FILES/IMG_20200621_0001.jpg</param>
         /// <param name="IsBodyHtml"></param>
         public static void ExecuteSendEmail(string mailBody, string mailSubject, List<string> toAddress, List<string> bccAddress, List<string> ccAddress, List<string> relativeFilePathsToBeAttached, bool IsBodyHtml)
+        
         {
 
             //--------------------START SAMPLE CODE

@@ -26,6 +26,9 @@ namespace Benchkart
 
         public string Query { get; set; }
 
+        //krishan create line
+        public int PartnerPackageId { get; set; }
+
         public void BookFreeConsultation()
         {
             string connectionstring = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -95,6 +98,34 @@ namespace Benchkart
             return dtConsultList;
         }
 
+        //Create method krishan 23-11-2020
+        public void BookFreeConsultationQuick()
+        {
+            string connectionstring = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionstring))
+            {
+                SqlCommand cmd = new SqlCommand("proc_BookFreeConsultationQuick", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.Add("@CustomerId", SqlDbType.Int).Value = CustomerId;
+                cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = Name;
+                cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = Email;
+                cmd.Parameters.Add("@contactNumber", SqlDbType.VarChar).Value = ContactNumber;
+                cmd.Parameters.Add("@companyName", SqlDbType.VarChar).Value = CompanyName;
 
+                cmd.Parameters.Add("@preferredContactMethod", SqlDbType.Int).Value = PreferredContactMethod;
+                cmd.Parameters.Add("@query", SqlDbType.VarChar).Value = Query;
+                cmd.Parameters.Add("@partnerPackageId", SqlDbType.Int).Value = PartnerPackageId;
+                //cmd.Parameters.Add("@consultId", SqlDbType.Int);
+                //cmd.Parameters["@consultId"].Direction = ParameterDirection.Output;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                //consultId = Convert.ToInt32(cmd.Parameters["@RequestId"].Value);
+
+                con.Close();
+
+            }
+
+        }
+        //End
     }
 }
