@@ -368,6 +368,7 @@
     <Content Include="Customer\Signup.aspx" />
     <Content Include="Customer\ucCustomerFooter.ascx" />
     <Content Include="Customer\ucCustomerMenu.ascx" />
+    <Content Include="Error.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DigitalTransformation.aspx" />
     <Content Include="EmailTemplates\General_template.html" />
@@ -1280,6 +1281,13 @@
     </Compile>
     <Compile Include="Customer\ucCustomerMenu.ascx.designer.cs">
       <DependentUpon>ucCustomerMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
