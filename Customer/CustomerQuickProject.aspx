@@ -77,49 +77,44 @@
                 </div>
                 <div class="row" style="margin: 30px 0px 0px 0px;">
                     <div class="col-md-4 filterSection pl-0" style="xxposition: fixed; max-height: 100%;">
-                        <div class="container-fluid card shadow-custom d-flex flex-column sticky">
-                            <div class="d-flex flex-column">
-                                <div style="font-size: 14px;">
+                        <div class="container-fluid card shadow-custom d-flex flex-column sticky p-2">
+                            <div class="xxd-flex flex-column">
+                                <div class="col-md-12 pl-0" style="font-size: 14px;">
                                     <b>Filter </b>
                                 </div>
-                                <div class="d-flex flex-row">
-                                    <div class="col-sm-12 col-md-6">Category</div>
-                                    <div  class="col-sm-12 col-md-6">
-                                        <asp:DropDownList ID="ddlCategoryIdRefilter" runat="server" Width="60%" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryIdRefilter_SelectedIndexChanged">
-                                            <asp:ListItem Value="">Select Project Category</asp:ListItem>
-                                            <asp:ListItem Value="2">Website & Apps</asp:ListItem>
-                                            <asp:ListItem Value="1">Graphics & Design</asp:ListItem>
-                                            <asp:ListItem Value="3">Digital Marketing</asp:ListItem>
-                                            <asp:ListItem Value="4">Software</asp:ListItem>
-                                            <asp:ListItem Value="5">Cloud & Infra</asp:ListItem>
-                                            <asp:ListItem Value="6">Call Center</asp:ListItem>
-                                            <asp:ListItem Value="7">KPO</asp:ListItem>
-                                            <asp:ListItem Value="8">Back-Office</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
+                                <div class="col-sm-12 col-md-6 pl-0  float-left">Category</div>
+                                <div class="col-sm-12 col-md-6 pl-0  float-left">
+                                    <asp:DropDownList ID="ddlCategoryIdRefilter" runat="server" CssClass="form-control ddlFilter" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryIdRefilter_SelectedIndexChanged">
+                                        <asp:ListItem Value="">Select Project Category</asp:ListItem>
+                                        <asp:ListItem Value="2">Website & Apps</asp:ListItem>
+                                        <asp:ListItem Value="1">Graphics & Design</asp:ListItem>
+                                        <asp:ListItem Value="3">Digital Marketing</asp:ListItem>
+                                        <asp:ListItem Value="4">Software</asp:ListItem>
+                                        <asp:ListItem Value="5">Cloud & Infra</asp:ListItem>
+                                        <asp:ListItem Value="6">Call Center</asp:ListItem>
+                                        <asp:ListItem Value="7">KPO</asp:ListItem>
+                                        <asp:ListItem Value="8">Back-Office</asp:ListItem>
+                                    </asp:DropDownList>
                                 </div>
-                                <div class="d-flex flex-row">
-                                    <div class="col-sm-12 col-md-6">
-                                        Sub Category
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <asp:DropDownList ID="ddlSubCategoryIdRefilter" runat="server" Width="60%" CssClass="form-control"></asp:DropDownList>
-                                    </div>
+                                <div class="col-sm-12 col-md-6 pl-0 float-left ">
+                                    Sub Category
                                 </div>
-                                <div class="d-flex flex-row">
-                                    <div class="col-sm-12 col-md-6">
-                                        Package Type
-                                    </div>
-                                    <div class="col-sm-12 col-md-6">
-                                        <asp:DropDownList ID="ddlPackageTypeRefilter" runat="server" Width="60%" CssClass="form-control">
-                                            <asp:ListItem Value="">Select Package</asp:ListItem>
-                                            <asp:ListItem Value="1">Economy</asp:ListItem>
-                                            <asp:ListItem Value="2">Standard</asp:ListItem>
-                                            <asp:ListItem Value="3">Premium</asp:ListItem>
-                                        </asp:DropDownList>
-                                    </div>
+                                <div class="col-sm-12 col-md-6 pl-0  float-left">
+                                    <asp:DropDownList ID="ddlSubCategoryIdRefilter" runat="server" CssClass="form-control ddlFilter"></asp:DropDownList>
                                 </div>
-                                <div>
+                                <div class="col-sm-12 col-md-6 pl-0  float-left">
+                                    Package Type
+                                </div>
+                                <div class="col-sm-12 col-md-6 pl-0 float-left ">
+                                    <asp:DropDownList ID="ddlPackageTypeRefilter" runat="server" CssClass="form-control ddlFilter">
+                                        <asp:ListItem Value="">Select Package</asp:ListItem>
+                                        <asp:ListItem Value="1">Economy</asp:ListItem>
+                                        <asp:ListItem Value="2">Standard</asp:ListItem>
+                                        <asp:ListItem Value="3">Premium</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                               
+                                <div class="col-md-12 pl-0">
                                     <div class="col-md-12 p-0">
                                         <asp:Button ID="btnSearchRefilter" runat="server" Width="30%" Text="Filter" OnClick="btnSearchRefilter_Click" CssClass="btn btn-info "></asp:Button>
                                     </div>
@@ -133,33 +128,32 @@
                         </div>
                     </div>
 
-                    <div class="col-md-8  packageListing" style="xxposition: absolute; right: 0;">
-                        <div class="container-fluid">
+                    <div class="col-md-8  packageListing pl-0 pr-0" style="xxposition: absolute; right: 0;">
+                        <div class="container-fluid pl-0">
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
-                                    <div class="row">
-                                        <div class="col-md-3" style="padding-left: 0px;">
-                                            <span style="font-size: 14px;">Package count :</span>
-                                            <asp:Label ID="lblcount" Font-Bold="true" Style="font-size: 14px;" runat="server" Text="Package Count"></asp:Label>
-                                        </div>
-                                        <div class="col-md-9" style="padding-right: 0px;">
-                                            <div class="" style="float: right;">
+                                    <div class="col-12 col-md-4 pl-0 float-left">
+                                        <span style="font-size: 14px;">Package count :</span>
+                                        <asp:Label ID="lblcount" Font-Bold="true" Style="font-size: 14px;" runat="server" Text="Package Count"></asp:Label>
+                                    </div>
+                                    <div class="col-12 col-md-8 float-md-right pl-0 pr-0">
+                                        <div class="d-flex flex-row float-right text-right w-100">
+                                            <div class="w-100 w-md-75">                                                <asp:TextBox ID="txtsearch" runat="server" placeholder="Search Packages.." CssClass="form-control btn-searchtext"></asp:TextBox>
+                                            </div>
+                                             <div>
                                                 <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="btn btn-info btn-search" OnClick="btnSearch_Click" />
                                             </div>
-                                            <div class="" style="float: right; width: 63%;">
-                                                <asp:TextBox ID="txtsearch" runat="server" placeholder="Search Packages.." CssClass="form-control btn-searchtext"></asp:TextBox>
-                                            </div>
                                         </div>
-
                                     </div>
-                                    <div class="row">
-                                        <div class="row" style="margin-top: 20px;">
+                                    <div class="clearfix"></div>
+                                    <div class="row no-gutters">
+                                        <div class="row no-gutters col-md-12" style="margin-top: 20px;">
                                             <div class="col-md-12">
                                                 <asp:Repeater ID="rptr" runat="server" OnItemCommand="rptr_ItemCommand">
                                                     <ItemTemplate>
                                                         <div class="card">
-                                                            <div class="d-flex flex-row">
-                                                                <div class="section leftsection shadow d-flex flex-column" style="width: 35%">
+                                                            <div class="row no-gutters col-12 p-0">
+                                                                <div class="section leftsection shadow col-12 col-sm-4 float-left">
                                                                     <div style="" class="pkgName">
                                                                         <%# DataBinder.Eval(Container.DataItem, "PackageName") %>
                                                                     </div>
@@ -183,7 +177,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <div class="section sectionSeperator midsection d-flex flex-column" style="width: 40%">
+                                                                <div class="section sectionSeperator midsection col-12  col-sm-4 float-left">
                                                                     <div>
                                                                         <div class="pkgDescriptionLabel" style="" runat="server" visible='<%# DataBinder.Eval(Container.DataItem, "Description1").ToString().Trim() != "" %>'>
                                                                             About us
@@ -209,7 +203,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="section sectionSeperator rightsection d-flex- flex-column " style="width: 25%; text-align: center;">
+                                                                <div class="section sectionSeperator rightsection col-12  col-sm-4 float-left" text-align: center;">
                                                                     <div class="pkgAmountText">
                                                                         Starting from:
                                                                     </div>
@@ -226,8 +220,6 @@
                                                         </div>
                                                     </ItemTemplate>
                                                 </asp:Repeater>
-
-
                                             </div>
                                         </div>
                                     </div>

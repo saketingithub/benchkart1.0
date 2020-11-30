@@ -23,9 +23,9 @@ namespace Benchkart
         {
             //General
             routes.MapPageRoute("Categories", "Category", "~/Category.aspx");
-            //General
+            routes.MapPageRoute("Home", "Home", "~/Default.aspx");
+            routes.MapPageRoute("Error", "Error", "~/Error.aspx");
             routes.MapPageRoute("About-Us", "About", "~/About.aspx");
-            //routes.MapPageRoute("Home", "Default", "~");
             routes.MapPageRoute("Covid", "Post-COVID", "~/Post-COVID.aspx");
             routes.MapPageRoute("Case-studies", "Case-Study", "~/CaseStudy.aspx");
             routes.MapPageRoute("ITServices", "ITServices", "~/ITServices.aspx");
@@ -94,8 +94,9 @@ namespace Benchkart
             routes.MapPageRoute("Partner-Skills", "Partner/Skills", "~/Partner/Skills.aspx");
             routes.MapPageRoute("Partner-Support", "Partner/Support", "~/Partner/Support.aspx");
             routes.MapPageRoute("Partner-AgencyDetails", "Partner/AgencyDetails", "~/Partner/AgencyDetails.aspx");
-
             routes.MapPageRoute("QuickProject-Payment", "QuickProject/Payment", "~/Customer/PaymentQuickProject.aspx");
+            //routes.MapPageRoute("NotFound", "{*url}", "~/Default.aspx");
+
         }
 
 
@@ -127,7 +128,7 @@ namespace Benchkart
         {
             //Comment during development
             //ClsLogError.LogErrorToText(Server.GetLastError().GetBaseException());
-            //Response.Redirect("~/");
+            Response.Redirect("~/");
         }
 
         protected void Session_End(object sender, EventArgs e)

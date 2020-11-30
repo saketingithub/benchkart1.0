@@ -16,20 +16,25 @@
     font-size: 1.3em;
 }
 
-    .filterSection .form-control {
-        font-size: 1em;
-        height: 2em !important;
-        padding: 2px;
-        margin-left: 10px;
-        margin-bottom: 8px;
-        min-width: 15em !important
-    }
+.filterSection .form-control {
+    font-size: 1em;
+    height: 2em !important;
+    padding: 2px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
 
-    .filterSection .btn {
-        font-size: 1em;
-        height: 2em !important;
-        padding: 2px;
-    }
+.ddlFilter {
+    margin-left: 0px !important;
+}
+
+
+
+.filterSection .btn {
+    font-size: 1em;
+    height: 2em !important;
+    padding: 2px;
+}
 
 
 
@@ -195,9 +200,9 @@ br {
         padding:8px;
     }
 
-    .packageListing .card .sectionSeperator {
-        border-left: 1px solid rgba(0,0,0,0.2);
-    }
+    /*.packageListing .card .sectionSeperator {
+        border-left: 0px solid rgba(0,0,0,0.2);
+    }*/
 
     .packageListing .card .leftSection {
     }
@@ -209,11 +214,17 @@ br {
         
     }
 
-.pkgName {
-    font-size: 13px;
-    font-weight: bold;
-    color: #18C235;
+@media (min-width: 576px) {
+    .packageListing .card .sectionSeperator {
+        border-left: 1px solid rgba(0,0,0,0.2) !important;
+        border-top: 0px solid rgba(0,0,0,0.2) !important;
+    }
 }
+.packageListing .card .sectionSeperator {
+    border-left: 0px solid rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
 
 .pkgDescription {
     font-size: 13px;
